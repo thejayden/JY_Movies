@@ -12,10 +12,10 @@ if (mysqli_connect_errno()) {
 <title>W3.CSS Template</title>
 <meta charset="UTF-8">
 <meta name="viewport" content="width=device-width, initial-scale=1">
-<!-- <link rel="stylesheet" href="https://www.w3schools.com/w3css/4/w3.css"> -->
-<link rel="stylesheet" href="../js/main.css">
+<link rel="stylesheet" href="../css/main.css">
 <link rel="stylesheet" href="https://fonts.googleapis.com/css?family=Raleway">
 <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/4.7.0/css/font-awesome.min.css">
+<link rel="stylesheet" href="../css/carousel.css">
 <style>
   body,
   h1,
@@ -33,6 +33,10 @@ if (mysqli_connect_errno()) {
     line-height: 1.8;
   }
 
+  body {
+    background-image: url("../images/bluegradient1.jpg");
+  }
+
   /* Full height image header */
   .bgimg-1 {
     background-position: center;
@@ -45,7 +49,7 @@ if (mysqli_connect_errno()) {
     padding: 16px;
   }
 
-  div.gallery_wrap{
+  div.gallery_wrap {
     float: left;
   }
 
@@ -57,13 +61,13 @@ if (mysqli_connect_errno()) {
     width: 150px;
     transition: ease 0.3s all;
     /* z-index: 999; */
-    display:inline-block;
+    display: inline-block;
     /* z-index: -1; */
   }
 
   div.gallery_wrap:hover {
     /* border: 1px solid #777; */
-    transform: scale(1.2);	
+    transform: scale(1.2);
     box-shadow: 0 1em 2em rgba(0, 0, 0, 0.2);
     transition: ease 0.3s all;
     background-color: black;
@@ -71,11 +75,11 @@ if (mysqli_connect_errno()) {
     position: relative;
   }
 
-  .gallery_wrap:hover .gallery{
+  .gallery_wrap:hover .gallery {
     border: none;
   }
 
-  .gallery_wrap:hover .desc{
+  .gallery_wrap:hover .desc {
     display: inline-block;
     /* z-index: 999;
     position: relative; */
@@ -112,7 +116,7 @@ if (mysqli_connect_errno()) {
     /* filter: none; */
   }
 
-  p.movie_title{
+  p.movie_title {
     font-size: larger;
     margin: 0;
     padding: 0 0 5px 0;
@@ -120,12 +124,12 @@ if (mysqli_connect_errno()) {
     font-weight: bold;
   }
 
-  p.movie_info{
+  p.movie_info {
     font-size: x-small;
     margin: 0;
     padding: 0px 0 0px 0;
     line-height: 15px;
-    font-weight:lighter;
+    font-weight: lighter;
     color: #C39F0B;
   }
 
@@ -153,14 +157,15 @@ if (mysqli_connect_errno()) {
   <!-- Navbar (sit on top) -->
   <div class="w3-top">
     <div class="w3-bar w3-white w3-card" id="myNavbar">
-      <a href="#home" class="w3-bar-item w3-button w3-wide">LOGO</a>
+      <a href="#Home" style="color: rgb(241, 212, 47); text-decoration: none; font-size: large; font-weight: bold;">
+        <img border="0" alt="W3Schools" src="../images/pagelogo.jpg" width="50" height="38"> JY MOVIES</a>
       <!-- Right-sided navbar links -->
       <div class="w3-right w3-hide-small">
-        <a href="#about" class="w3-bar-item w3-button">ABOUT</a>
-        <a href="#team" class="w3-bar-item w3-button"><i class="fa fa-user"></i> TEAM</a>
-        <a href="#work" class="w3-bar-item w3-button"><i class="fa fa-th"></i> WORK</a>
-        <a href="#pricing" class="w3-bar-item w3-button"><i class="fa fa-usd"></i> PRICING</a>
-        <a href="#contact" class="w3-bar-item w3-button"><i class="fa fa-envelope"></i> CONTACT</a>
+        <a href="#about" class="w3-bar-item w3-button">HOME</a>
+        <a href="#team" class="w3-bar-item w3-button"></i> MOVIES</a>
+        <a href="#work" class="w3-bar-item w3-button"></i> CINEMA</a>
+        <a href="#pricing" class="w3-bar-item w3-button"></i> QUICK BOOKING</a>
+
       </div>
       <!-- Hide right-floated links on small screens and replace them with a menu icon -->
 
@@ -170,50 +175,74 @@ if (mysqli_connect_errno()) {
     </div>
   </div>
 
+  <marquee behavior="alternate" direction="left" style="padding-top: 60px">
+    <img src="../images/image1.jpg" width="350" height="200">
+    <img src="../images/image4.jpg" width="350" height="200">
+    <img src="../images/image5.jpg" width="350" height="200">
+    <img src="../images/image7.jpg" width="350" height="200">
+    <img src="../images/image3.jpg" width="350" height="200">
+    <img src="../images/image2.jpg" width="350" height="200">
+    <img src="../images/image6.jpg" width="350" height="200">
+    <img src="../images/image8.jpg" width="350" height="200">
+    <img src="../images/image1.jpg" width="350" height="200">
+    <img src="../images/image4.jpg" width="350" height="200">
+    <img src="../images/image5.jpg" width="350" height="200">
+    <img src="../images/image7.jpg" width="350" height="200">
+    <img src="../images/image3.jpg" width="350" height="200">
+    <img src="../images/image2.jpg" width="350" height="200">
+    <img src="../images/image6.jpg" width="350" height="200">
+    <img src="../images/image8.jpg" width="350" height="200">
+  </marquee>
+
+  <div style="text-align: center; padding-top: 30px;">
+    <a href="https://www.w3schools.com">
+      <img border="0" src="../images/shangchigif.gif" width="400px" height="220">
+      <div style="color: rgba(104, 237, 255, 0.993); font-family: sans-serif"><strong>CLICK HERE TO GET YOUR TICKET(S) TODAY!</strong></div>
+    </a>
+  </div>
+
+  <!-- Slideshow container -->
+
+
+
   <!-- Header with full-height image -->
-  <header class="bgimg-1 w3-display-container" id="home">
-    <div class="w3-display-left w3-text-white" style="padding:48px">
+  <header class="bgimg-1 w3-display-container" id="home" style="padding: 50px 50px 0 50px;">
+    <div class="slideshow-container fade" style="float: left;">
+
+      <!-- Full images with numbers and message Info -->
+      <div class="Containers">
+        <img src="../images/promo1.jpg" style="width: 100%">
+      </div>
+
+      <div class="Containers">
+        <img src="../images/promo2.jpg" style="width: 100%; ">
+      </div>
+
+      <div class="Containers">
+        <img src="../images/promo3.jpg" style="width:100%">
+      </div>
     </div>
-    
-    <div style="padding: 200px;">
+    <div style="float: right;">
       <?php
       $qry = "select * from movies";
       // echo '<table><tr>';
       if ($result = $db->query($qry)) {
         while ($row = $result->fetch_row()) {
-          // echo '<td>';
-          // echo '<div class="gallery">';
-          // echo '<div class="nowshowing">NOW SHOWING</div>';
-          // echo '<img src="data:image/jpeg;base64,' . base64_encode($row[3]) . '" />';
-          // // echo '<div class="desc">' . $row[1] .'</div>';
-          // echo '</td><td>';
-          // echo '<div class="desc">' . $row[1] .'</div></div>';
-          // echo '</td>';
           echo '<div class="gallery_wrap">';
           echo '<div class="gallery">';
           echo '<div class="nowshowing">NOW SHOWING</div>';
           echo '<img src="data:image/jpeg;base64,' . base64_encode($row[3]) . '" />';
           echo '</div>';
-          echo '<div class="desc"><p class="movie_title">' . $row[1] . '</p>' . 
-          '<p style="color=#C39F0B">' . $row[4] . '</p>' .
-          '<p class="movie_info" style="padding-top:5px;">' . $row[2] . '</p>' . 
-          '<p class="movie_info">' . $row[5] . ' mins </p>' . 
-          '<p class="movie_info">' . $row[6] . '</p>' . '</div>';
+          echo '<div class="desc"><p class="movie_title">' . $row[1] . '</p>' .
+            '<p style="color=#C39F0B">' . $row[4] . '</p>' .
+            '<p class="movie_info" style="padding-top:5px;">' . $row[2] . '</p>' .
+            '<p class="movie_info">' . $row[5] . ' mins </p>' .
+            '<p class="movie_info">' . $row[6] . '</p>' . '</div>';
           echo '</div>';
-          
-
-        //   echo '<div class="dropdown">
-        //   <img src="data:image/jpeg;base64,' . base64_encode($row[3]) . '" alt="Cinque Terre" width="100" height="50">
-        //   <div class="dropdown-content">
-        //   <img src="data:image/jpeg;base64,' . base64_encode($row[3]) . '" alt="Cinque Terre" width="300" height="200">
-        //   </div>
-        // </div>';
         }
         $result->free_result();
       }
-      // echo '</tr></table>';
       $db->close();
-      // <img src="img_5terre.jpg" alt="Cinque Terre" width="600" height="400">
       ?></div>
   </header>
 
@@ -231,7 +260,8 @@ if (mysqli_connect_errno()) {
     <p>Powered by <a href="https://www.w3schools.com/w3css/default.asp" title="W3.CSS" target="_blank" class="w3-hover-text-green">w3.css</a></p>
   </footer>
 
-
+  <script type="text/javascript" src="../js/carousel.js">
+  </script>
 </body>
 
 </html>
