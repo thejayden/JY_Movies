@@ -175,7 +175,7 @@ if (mysqli_connect_errno()) {
     </div>
   </div>
 
-  <marquee behavior="alternate" direction="left" style="padding-top: 60px" scrollamount="200">
+  <marquee behavior="alternate" direction="left" style="padding-top: 60px" >
     <img src="../images/image1.jpg" width="350" height="200">
     <img src="../images/image4.jpg" width="350" height="200">
     <img src="../images/image5.jpg" width="350" height="200">
