@@ -1,0 +1,47 @@
+  <?php
+  $qry = "select * from movies";
+  if ($result = $db->query($qry)) {
+    while ($row = $result->fetch_row()) {
+      // echo '<img src="data:image;base64,' . $row[3] . ' ">';
+      // echo '<img src="'.$row[3].'">';
+      // printf ("(%s) %s\n", $row[0], $row[1]);
+      echo '<img src="data:image/jpeg;base64,' . base64_encode($row[3]) . '" />';
+    }
+    $result->free_result();
+  }
+  $db->close();
+  // <img src="img_5terre.jpg" alt="Cinque Terre" width="600" height="400">
+  ?>
+
+-------------------------------------
+
+  <div class="gallery">
+      <?php
+      $qry = "select * from movies";
+      if ($result = $db->query($qry)) {
+        while ($row = $result->fetch_row()) {
+          echo '<img src="data:image/jpeg;base64,' . base64_encode($row[3]) . '" />';
+        }
+        $result->free_result();
+      }
+      $db->close();
+      // <img src="img_5terre.jpg" alt="Cinque Terre" width="600" height="400">
+      ?>
+      <div class="desc">Add a description of the image here</div>
+    </div>
+
+
+https://www.w3schools.com/css/css_image_gallery.asp
+
+SELECT CustomerName, City FROM Customers;
+
+(insert image into sql)
+https://www.youtube.com/watch?v=jXEkcBJJHoM&ab_channel=1BestCsharpblog
+
+(save/retrieve images from mysql)
+https://www.youtube.com/watch?v=4ZpqQ3j1o2w&ab_channel=ProgrammingAtKstark
+
+(html template)
+https://www.w3schools.com/w3css/tryit.asp?filename=tryw3css_templates_startup
+
+https://www.w3schools.com/PHP/func_mysqli_fetch_row.asp
