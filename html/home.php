@@ -66,12 +66,19 @@ if (mysqli_connect_errno()) {
     transform: scale(1.2);	
     box-shadow: 0 1em 2em rgba(0, 0, 0, 0.2);
     transition: ease 0.3s all;
+    background-color: black;
     z-index: 999;
+    position: relative;
+  }
+
+  .gallery_wrap:hover .gallery{
+    border: none;
   }
 
   .gallery_wrap:hover .desc{
     display: inline-block;
-    z-index: 999;
+    /* z-index: 999;
+    position: relative; */
     /* float: right; */
   }
 
@@ -88,11 +95,14 @@ if (mysqli_connect_errno()) {
     /* padding: 5px; */
     display: none;
     text-align: left;
-    max-width: 50px;
-    background-color: black;
+    vertical-align: top;
+    width: auto;
+    max-width: 110px;
+    /* background-color: black; */
     color: #F6C90E;
     font-size: smaller;
     z-index: 999;
+    padding: 5px 10px 0 5px;
   }
 
   div.nowshowing {
@@ -102,7 +112,24 @@ if (mysqli_connect_errno()) {
     /* filter: none; */
   }
 
-  .dropdown {
+  p.movie_title{
+    font-size: larger;
+    margin: 0;
+    padding: 0 0 5px 0;
+    line-height: 20px;
+    font-weight: bold;
+  }
+
+  p.movie_info{
+    font-size: x-small;
+    margin: 0;
+    padding: 0px 0 0px 0;
+    line-height: 15px;
+    font-weight:lighter;
+    color: #C39F0B;
+  }
+
+  /* .dropdown {
   position: relative;
   display: inline-block;
 }
@@ -118,7 +145,7 @@ if (mysqli_connect_errno()) {
 
 .dropdown:hover .dropdown-content {
   display: block;
-}
+} */
 </style>
 
 <body>
@@ -167,7 +194,11 @@ if (mysqli_connect_errno()) {
           echo '<div class="nowshowing">NOW SHOWING</div>';
           echo '<img src="data:image/jpeg;base64,' . base64_encode($row[3]) . '" />';
           echo '</div>';
-          echo '<div class="desc">' . $row[1] .'</div>';
+          echo '<div class="desc"><p class="movie_title">' . $row[1] . '</p>' . 
+          '<p style="color=#C39F0B">' . $row[4] . '</p>' .
+          '<p class="movie_info" style="padding-top:5px;">' . $row[2] . '</p>' . 
+          '<p class="movie_info">' . $row[5] . ' mins </p>' . 
+          '<p class="movie_info">' . $row[6] . '</p>' . '</div>';
           echo '</div>';
           
 
