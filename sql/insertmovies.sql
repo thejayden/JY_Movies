@@ -2,7 +2,7 @@ use moviesdb;
 
 -- DECLARE @ImgPath AS VARCHAR(255);
 -- set @imgPath := 'C:/Users/Acer/Desktop';
-set @imgPath := 'C:/Users/Acer/Documents/School Subjects/Y4S1/IM4717 Web App Design/Project/JY_Movies/images/movie_poster';
+set @imgPath := 'C:/xampp/htdocs/proj1/images/movie_poster';
 -- set @teststr := CONCAT(@imgPath,'/shangchi.jpg');
 
 insert into movies values
