@@ -188,24 +188,6 @@ legend {
     white-space: normal
 }
 
-textarea {
-    overflow: auto
-}
-
-[type=checkbox],
-[type=radio] {
-    padding: 0
-}
-
-[type=number]::-webkit-inner-spin-button,
-[type=number]::-webkit-outer-spin-button {
-    height: auto
-}
-
-[type=search] {
-    -webkit-appearance: textfield;
-    outline-offset: -2px
-}
 
 [type=search]::-webkit-search-decoration {
     -webkit-appearance: none

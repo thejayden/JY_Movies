@@ -1,12 +1,3 @@
-<?php
-@$db = new mysqli('localhost', 'root', '', 'moviesdb');
-
-if (mysqli_connect_errno()) {
-  echo "Error: Could not connect to database.  Please try again later.";
-  exit;
-}
-?>
-
 <!DOCTYPE html>
 <html>
 <title>W3.CSS Template</title>
@@ -16,6 +7,7 @@ if (mysqli_connect_errno()) {
 <link rel="stylesheet" href="https://fonts.googleapis.com/css?family=Raleway">
 <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/4.7.0/css/font-awesome.min.css">
 <link rel="stylesheet" href="../css/carousel.css">
+
 <style>
   body,
   h1,
@@ -133,16 +125,6 @@ if (mysqli_connect_errno()) {
     color: #C39F0B;
   }
 
-  .footer{
-    font-family: 'Arial Narrow', Arial, sans-serif;
-    font-size: medium;
-    padding-top: 50px;
-    color: whitesmoke;
-    background-color: black;
-    height: 200px;
-    
-  }
-
   /* .dropdown {
   position: relative;
   display: inline-block;
@@ -160,6 +142,87 @@ if (mysqli_connect_errno()) {
 .dropdown:hover .dropdown-content {
   display: block;
 } */
+
+  .moviemiddle1 {
+    height: 150px;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    margin: 0 auto;
+  }
+
+  .moviemiddle2 {
+    justify-content: center;
+    display: flex;
+  }
+
+  .moviebox1 {
+    width: 1000px;
+    height: 49px;
+    background-color: rgba(7, 21, 78, 0.623);
+    color: whitesmoke;
+    letter-spacing: 2.3px ;
+    font-size: 30px;
+    font-family:'Franklin Gothic Medium', 'Arial Narrow', Arial, sans-serif;
+    text-align: left;
+  }
+  
+  .moviebox2 {
+    width: 1000px;
+    height: 500px;
+    background-color: rgba(7, 21, 78, 0.623);
+    color: whitesmoke;
+    letter-spacing: 2.3px ;
+    font-size: 30px;
+    text-align: left;
+  }
+
+  .newsletter{   
+    
+      background-color: whitesmoke;
+      justify-content: center;
+    display: flex;
+  }
+
+  .newsletterbox{
+      padding-top: 30px;
+      text-align: left;
+      color: black;
+      font-size: medium;
+      font-family: 'Franklin Gothic Medium', 'Arial Narrow', Arial, sans-serif;
+  }
+  input {
+        border-top-style: hidden;
+        border-right-style: hidden;
+        border-left-style: hidden;
+        border-bottom-style: groove;
+        background-color:whitesmoke;   
+        outline: none;
+        color: black;
+        font-family: 'Arial Narrow';
+      }
+  .footer{
+    font-family: 'Arial Narrow', Arial, sans-serif;
+    font-size: medium;
+    padding-top: 50px;
+    color: whitesmoke;
+    background-color: black;
+    height: 200px;
+    
+  }
+  .button {
+  background-color: black;
+  border: none;
+  color: whitesmoke;
+  padding: 10px 22px;
+  text-align: center;
+  text-decoration: none;
+  display: inline-block;
+  font-size: 18px;
+  margin: 4px 2px;
+  cursor: pointer;
+}
+
 </style>
 
 <body>
@@ -168,18 +231,19 @@ if (mysqli_connect_errno()) {
   <div class="w3-top">
     <div class="w3-bar w3-white w3-card" id="myNavbar">
       <a href="#Home" style="color: rgb(241, 212, 47); text-decoration: none; font-size: large; font-weight: bold;">
-      <img border="0"  src="../images/pagelogo.jpg" width="75" height="60"> JY MOVIES</a>
+        <img border="0"  src="../images/pagelogo.jpg" width="75" height="60"> JY MOVIES</a>
       <!-- Right-sided navbar links -->
       <div class="w3-right w3-hide-small">
-      <a href="home.php" class="w3-bar-item w3-button">HOME</a>
+        <a href="home.php" class="w3-bar-item w3-button">HOME</a>
         <a href="movies.php" class="w3-bar-item w3-button"></i> MOVIES</a>
         <a href="cinema.php" class="w3-bar-item w3-button"></i> CINEMA</a>
         <a href="quickbooking.php" class="w3-bar-item w3-button"></i> QUICK BOOKING</a>
+
       </div>
     </div>
   </div>
 
-  <marquee behavior="alternate" direction="left" style="padding-top: 90px" >
+  <marquee behavior="alternate" direction="left" style="padding-top: 90px">
     <img src="../images/image1.jpg" width="350" height="200">
     <img src="../images/image4.jpg" width="350" height="200">
     <img src="../images/image5.jpg" width="350" height="200">
@@ -197,64 +261,22 @@ if (mysqli_connect_errno()) {
     <img src="../images/image6.jpg" width="350" height="200">
     <img src="../images/image8.jpg" width="350" height="200">
   </marquee>
-
   <div>
-  
-  <div>
-   fvbnvbnk
+  <div class="moviemiddle1";>
+    <div class="moviebox1">&nbsp; NOW IN THEATRES</div>
   </div>
-  
-  
-  <div style="text-align: center; padding-top: 30px;">
+
+  <div class="moviemiddle2";>
+    <div class="moviebox2">
     <a href="moviesinformation.php">
-      <img border="0" src="../images/shangchigif.gif" width="400px" height="220">
-      <div style="color: rgba(104, 237, 255, 0.993); font-family: sans-serif"><strong>CLICK HERE TO GET YOUR TICKET(S) TODAY!</strong></div>
+    <img src="../images/image1.jpg" width="350" height="200">
     </a>
-  </div>
-</div>
-
-
-
-  <!-- Header with full-height image -->
-  <header class="bgimg-1 w3-display-container" id="home" style="padding: 50px 50px 0 10px;">
-    <div class="slideshow-container fade" style="float: left;">
-
-      <!-- Full images with numbers and message Info -->
-      <div class="Containers">
-        <img src="../images/promo1.jpg" style="width: 100%">
-      </div>
-
-      <div class="Containers">
-        <img src="../images/promo2.jpg" style="width: 100%; ">
-      </div>
-
-      <div class="Containers">
-        <img src="../images/promo3.jpg" style="width:100%">
-      </div>
     </div>
-    <div style="float: right;">
-      <?php
-      $qry = "select * from movies";
-      // echo '<table><tr>';
-      if ($result = $db->query($qry)) {
-        while ($row = $result->fetch_row()) {
-          echo '<div class="gallery_wrap">';
-          echo '<div class="gallery">';
-          echo '<div class="nowshowing">NOW SHOWING</div>';
-          echo '<img src="data:image/jpeg;base64,' . base64_encode($row[3]) . '" />';
-          echo '</div>';
-          echo '<div class="desc"><p class="movie_title">' . $row[1] . '</p>' .
-            '<p style="color=#C39F0B">' . $row[4] . '</p>' .
-            '<p class="movie_info" style="padding-top:5px;">' . $row[2] . '</p>' .
-            '<p class="movie_info">' . $row[5] . ' mins </p>' .
-            '<p class="movie_info">' . $row[6] . '</p>' . '</div>';
-          echo '</div>';
-        }
-        $result->free_result();
-      }
-      $db->close();
-      ?></div>
-  </header>
+  </div>
+
+  
+  </div>
+
 
   <footer style="padding-top: 60px;">
   
