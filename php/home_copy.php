@@ -9,7 +9,7 @@ if (mysqli_connect_errno()) {
 
 <!DOCTYPE html>
 <html>
-<title>JY MOVIES</title>
+<title>W3.CSS Template</title>
 <meta charset="UTF-8">
 <meta name="viewport" content="width=device-width, initial-scale=1">
 <link rel="stylesheet" href="../css/main.css">
@@ -38,12 +38,12 @@ if (mysqli_connect_errno()) {
   }
 
   /* Full height image header */
-  /* .bgimg-1 {
+  .bgimg-1 {
     background-position: center;
     background-size: cover;
     background-image: url("/w3images/mac.jpg");
     min-height: 100%;
-  } */
+  }
 
   .w3-bar .w3-button {
     padding: 16px;
@@ -71,7 +71,7 @@ if (mysqli_connect_errno()) {
     box-shadow: 0 1em 2em rgba(0, 0, 0, 0.2);
     transition: ease 0.3s all;
     background-color: black;
-    z-index: 2;
+    z-index: 999;
     position: relative;
   }
 
@@ -105,7 +105,7 @@ if (mysqli_connect_errno()) {
     /* background-color: black; */
     color: #F6C90E;
     font-size: smaller;
-    z-index: 2;
+    z-index: 999;
     padding: 5px 10px 0 5px;
   }
 
@@ -133,17 +133,6 @@ if (mysqli_connect_errno()) {
     color: #C39F0B;
   }
 
-  .footer {
-    font-family: 'Arial Narrow', Arial, sans-serif;
-    font-size: medium;
-    padding: 30px 0 60px 0;
-    color: whitesmoke;
-    /* background-color: #131313; */
-    background-color: black;
-    /* height: 200px; */
-
-  }
-
   /* .dropdown {
   position: relative;
   display: inline-block;
@@ -169,18 +158,24 @@ if (mysqli_connect_errno()) {
   <div class="w3-top">
     <div class="w3-bar w3-white w3-card" id="myNavbar">
       <a href="#Home" style="color: rgb(241, 212, 47); text-decoration: none; font-size: large; font-weight: bold;">
-        <img border="0" src="../images/pagelogo.jpg" width="75" height="60"> JY MOVIES</a>
+        <img border="0" alt="W3Schools" src="../images/pagelogo.jpg" width="50" height="38"> JY MOVIES</a>
       <!-- Right-sided navbar links -->
       <div class="w3-right w3-hide-small">
-        <a href="home.php" class="w3-bar-item w3-button">HOME</a>
-        <a href="movies.php" class="w3-bar-item w3-button"></i> MOVIES</a>
-        <a href="cinema.php" class="w3-bar-item w3-button"></i> CINEMA</a>
-        <a href="quickbooking.php" class="w3-bar-item w3-button"></i> QUICK BOOKING</a>
+        <a href="#about" class="w3-bar-item w3-button">HOME</a>
+        <a href="#team" class="w3-bar-item w3-button"></i> MOVIES</a>
+        <a href="#work" class="w3-bar-item w3-button"></i> CINEMA</a>
+        <a href="#pricing" class="w3-bar-item w3-button"></i> QUICK BOOKING</a>
+
       </div>
+      <!-- Hide right-floated links on small screens and replace them with a menu icon -->
+
+      <a href="javascript:void(0)" class="w3-bar-item w3-button w3-right w3-hide-large w3-hide-medium" onclick="w3_open()">
+        <i class="fa fa-bars"></i>
+      </a>
     </div>
   </div>
 
-  <marquee behavior="alternate" direction="left" style="padding-top: 90px">
+  <marquee behavior="alternate" direction="left" style="padding-top: 60px" >
     <img src="../images/image1.jpg" width="350" height="200">
     <img src="../images/image4.jpg" width="350" height="200">
     <img src="../images/image5.jpg" width="350" height="200">
@@ -199,35 +194,14 @@ if (mysqli_connect_errno()) {
     <img src="../images/image8.jpg" width="350" height="200">
   </marquee>
 
-  <div>
-    <div style="text-align: center; padding-top: 30px;">
-      <a href="moviesinformation.php">
-        <img border="0" src="../images/shangchigif.gif" width="400px" height="220">
-        <div style="color: rgba(104, 237, 255, 0.993); font-family: sans-serif"><strong>CLICK HERE TO GET YOUR TICKET(S) TODAY!</strong></div>
-      </a>
-    </div>
-  </div>
+  <!-- Slideshow container -->
+
+
 
   <!-- Header with full-height image -->
-  <div id="home" style="padding: 50px 50px 0px 10px;">
-    <div class="slideshow-container fade" style="float: left;">
-
-      <!-- Full images with numbers and message Info -->
-      <div class="Containers">
-        <img src="../images/promo1.jpg" style="width: 100%">
-      </div>
-
-      <div class="Containers">
-        <img src="../images/promo2.jpg" style="width: 100%; ">
-      </div>
-
-      <div class="Containers">
-        <img src="../images/promo3.jpg" style="width:100%">
-      </div>
-    </div>
-    <div style="padding: 0 0px 0 100px; justify-content:left; flex-wrap:wrap; display:flex">
+  <header class="bgimg-1 w3-display-container" id="home" style="padding: 50px 50px 0 50px;">
+    <div style="float: right;">
       <?php
-      // $qry = "select * from movies LIMIT 8";
       $qry = "select * from movies";
       // echo '<table><tr>';
       if ($result = $db->query($qry)) {
@@ -247,31 +221,21 @@ if (mysqli_connect_errno()) {
         $result->free_result();
       }
       $db->close();
-      ?>
-    </div>
-  </div>
+      ?></div>
+  </header>
 
-  <footer style="padding-top: 60px;">
-    <div>
-      <table class="footer" width="100%">
-        <tr>
-          <th>Follow Us:</th>
-          <th>Download Our Mobile App:</th>
-          <th>Contact us:</th>
-        </tr>
-        <tr>
-          <th><img src="../images/twitter.png" width="30" height="30">&nbsp;
-            <img src="../images/instagram.png" width="30" height="30"> &nbsp;
-            <img src="../images/facebook.png" width="30" height="30">
-          </th>
-          <th>
-            <img src="../images/appstore.png" width="90" height="30"> &nbsp;
-            <img src="../images/appstore2.png" width="30" height="30">
-          </th>
-          <th>90807053</th>
-        </tr>
-      </table>
+  <!-- Footer -->
+  <footer class="w3-center w3-black w3-padding-64">
+    <a href="#home" class="w3-button w3-light-grey"><i class="fa fa-arrow-up w3-margin-right"></i>To the top</a>
+    <div class="w3-xlarge w3-section">
+      <i class="fa fa-facebook-official w3-hover-opacity"></i>
+      <i class="fa fa-instagram w3-hover-opacity"></i>
+      <i class="fa fa-snapchat w3-hover-opacity"></i>
+      <i class="fa fa-pinterest-p w3-hover-opacity"></i>
+      <i class="fa fa-twitter w3-hover-opacity"></i>
+      <i class="fa fa-linkedin w3-hover-opacity"></i>
     </div>
+    <p>Powered by <a href="https://www.w3schools.com/w3css/default.asp" title="W3.CSS" target="_blank" class="w3-hover-text-green">w3.css</a></p>
   </footer>
 
   <script type="text/javascript" src="../js/carousel.js">

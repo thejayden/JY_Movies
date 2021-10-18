@@ -125,6 +125,24 @@
     color: #C39F0B;
   }
 
+  /* .dropdown {
+  position: relative;
+  display: inline-block;
+}
+
+.dropdown-content {
+  display: none;
+  position: absolute;
+  background-color: #f9f9f9;
+  min-width: 160px;
+  box-shadow: 0px 8px 16px 0px rgba(0,0,0,0.2);
+  z-index: 1;
+}
+
+.dropdown:hover .dropdown-content {
+  display: block;
+} */
+
   .moviemiddle1 {
     height: 150px;
     display: flex;
@@ -143,7 +161,7 @@
   .moviebox1 {
     width: 1000px;
     height: 49px;
-    background-color: rgba(7, 21, 78, 0.623);
+    background-color:rgba(7, 21, 78, 0.623);
     color: whitesmoke;
     letter-spacing: 2.3px;
     font-size: 30px;
@@ -165,39 +183,26 @@
     padding: 20px 0 0 20px;
 
   }
-
   .movieimagemini {
     float: left;
     padding: 10px 0 0 10px;
 
   }
 
-  .movieright {
+  .movieright{
     float: left;
     padding: 20px 0 0 30px;
     color: #b1b1b3;
 
   }
 
-  .movieboxtitle {
+  .movieboxtitle{
     color: #ccb543;
   }
-
-  .name {
+  .name{
     color: #e3e3e3;
   }
 </style>
-<?php
-@$db = new mysqli('localhost', 'root', '', 'moviesdb');
-
-if (mysqli_connect_errno()) {
-  echo "Error: Could not connect to database.  Please try again later.";
-  exit;
-}
-
-$id = $_POST['booknow'];
-echo $id;
-?>
 
 <body>
 
@@ -205,37 +210,31 @@ echo $id;
   <div class="w3-top">
     <div class="w3-bar w3-white w3-card" id="myNavbar">
       <a href="#Home" style="color: rgb(241, 212, 47); text-decoration: none; font-size: large; font-weight: bold;">
-        <img border="0" src="../images/pagelogo.jpg" width="75" height="60"> JY MOVIES</a>
+      <img border="0"  src="../images/pagelogo.jpg" width="75" height="60"> JY MOVIES</a>
       <!-- Right-sided navbar links -->
       <div class="w3-right w3-hide-small">
-        <a href="home.php" class="w3-bar-item w3-button">HOME</a>
+      <a href="home.php" class="w3-bar-item w3-button">HOME</a>
         <a href="movies.php" class="w3-bar-item w3-button"></i> MOVIES</a>
         <a href="cinema.php" class="w3-bar-item w3-button"></i> CINEMA</a>
         <a href="quickbooking.php" class="w3-bar-item w3-button"></i> QUICK BOOKING</a>
 
       </div>
-
+      
     </div>
   </div>
-  <?php
-    $qry = "select * from movies where movie_id = $id";
-    $result = $db->query($qry);
-    $row = $result->fetch_row();
-  ?>
   <div>
     <div class="moviemiddle1">
-      <div class="moviebox1">&nbsp; <?php echo $row[1];?> </div>
+      <div class="moviebox1">&nbsp; SHANG-CHI AND THE LEGEND OF THE TEN RINGS</div>
     </div>
 
     <div class="moviemiddle2">
       <div class="moviebox2">
         <div class="movieimage">
-          <?php echo '<img src="data:image/jpeg;base64,' . base64_encode($row[3]) . '" width="315" height="315" />'?>
-          <!-- <img src="../images/movieshangchi.jpg" width="315" height="315"> -->
+          <img  src="../images/movieshangchi.jpg" width="315" height="315">
           <p><video width="315" height="200" controls>
-              <source src="../images/shangchitrailer.mp4" type="video/mp4">
+            <source src="../images/shangchitrailer.mp4" type="video/mp4">
               Your browser does not support the video tag.
-            </video>
+          </video>
           </p>
         </div>
         <div class="movieright">
@@ -243,13 +242,12 @@ echo $id;
           <img class="movieimagemini" src="../images/image1.jpg" width="150" height="80">
           <img class="movieimagemini" src="../images/image2.jpg" width="150" height="80">
           <img class="movieimagemini" src="../images/image3.jpg" width="150" height="80">
-          <br><br><br><br>
+                    <br><br><br><br>
           <span class="movieboxtitle">DETAILS:</span><br>
           <table>
             <tr>
               <td>Casts: <span class='name'> Simu Liu, Tony Leung<span></td>
-              <td>Produced by: <span class='name'> Kevin Feige, Jonathan Schwartz<span></td>
-            </tr>
+              <td>Produced by: <span class='name'> Kevin Feige, Jonathan Schwartz<span></td>            </tr>
             <tr>
               <td>Director: <span class='name'> Destin Daniel Cretton &nbsp;<span></td>
               <td>Production Company: <span class='name'> Marvel Studios<span></td>
@@ -260,8 +258,8 @@ echo $id;
             </tr>
           </table><br>
           <span class="movieboxtitle">SYPNOSIS:</span><br>
-          <span class='name'> Martial-arts master Shang-Chi confronts
-            <br>the past he thought he left behind when he's drawn
+          <span class='name'> Martial-arts master Shang-Chi confronts 
+            <br>the past he thought he left behind when he's drawn 
             <br> into the web of the mysterious Ten Rings organization.<span>
         </div>
 
@@ -272,9 +270,9 @@ echo $id;
   </div>
 
   <footer style="color: antiquewhite; background-color:aqua;">
-    <p>Author: Hege Refsnes</p>
-    <p><a href="mailto:hege@example.com">hege@example.com</a></p>
-  </footer>
+  <p>Author: Hege Refsnes</p>
+  <p><a href="mailto:hege@example.com">hege@example.com</a></p>
+</footer>
 
   <script type="text/javascript" src="../js/carousel.js">
   </script>
