@@ -1,6 +1,26 @@
 <!DOCTYPE html>
 <html>
-<title>W3.CSS Template</title>
+<?php
+@$db = new mysqli('localhost', 'root', '', 'moviesdb');
+
+if (mysqli_connect_errno()) {
+  echo "Error: Could not connect to database.  Please try again later.";
+  exit;
+}
+
+$id = $_POST['booknow'];
+echo $id;
+?>
+<?php
+$qry = "select * from movies where movie_id = $id";
+$result1 = $db->query($qry);
+$row1 = $result1->fetch_row();
+
+$qry2 = "select * from movieinfo where movie_id = $id";
+$result2 = $db->query($qry2);
+$row2 = $result2->fetch_assoc();
+?>
+<title>Book Now - <?php echo $row1[1]; ?></title>
 <meta charset="UTF-8">
 <meta name="viewport" content="width=device-width, initial-scale=1">
 <link rel="stylesheet" href="../css/main.css">
@@ -26,7 +46,7 @@
   }
 
   body {
-    background-image: url("../images/bluegradient1.jpg");
+    background-image: url("../images/others/bluegradient1.jpg");
   }
 
   /* Full height image header */
@@ -157,12 +177,12 @@
     background-color: rgba(7, 21, 78, 0.623);
     color: whitesmoke;
     text-align: left;
-
+    /* display: flexbox; */
   }
 
   .movieimage {
     float: left;
-    padding: 20px 0 0 20px;
+    padding: 20px 50px 0 20px;
 
   }
 
@@ -173,10 +193,10 @@
   }
 
   .movieright {
-    float: left;
-    padding: 20px 0 0 30px;
+    /* float: left; */
+    padding: 20px 20px 0 0px;
     color: #b1b1b3;
-
+    position: relative;
   }
 
   .movieboxtitle {
@@ -187,17 +207,6 @@
     color: #e3e3e3;
   }
 </style>
-<?php
-@$db = new mysqli('localhost', 'root', '', 'moviesdb');
-
-if (mysqli_connect_errno()) {
-  echo "Error: Could not connect to database.  Please try again later.";
-  exit;
-}
-
-$id = $_POST['booknow'];
-echo $id;
-?>
 
 <body>
 
@@ -205,7 +214,7 @@ echo $id;
   <div class="w3-top">
     <div class="w3-bar w3-white w3-card" id="myNavbar">
       <a href="#Home" style="color: rgb(241, 212, 47); text-decoration: none; font-size: large; font-weight: bold;">
-        <img border="0" src="../images/pagelogo.jpg" width="75" height="60"> JY MOVIES</a>
+        <img border="0" src="../images/others/pagelogo.jpg" width="75" height="60"> JY MOVIES</a>
       <!-- Right-sided navbar links -->
       <div class="w3-right w3-hide-small">
         <a href="home.php" class="w3-bar-item w3-button">HOME</a>
@@ -217,52 +226,48 @@ echo $id;
 
     </div>
   </div>
-  <?php
-    $qry = "select * from movies where movie_id = $id";
-    $result = $db->query($qry);
-    $row = $result->fetch_row();
-  ?>
   <div>
     <div class="moviemiddle1">
-      <div class="moviebox1">&nbsp; <?php echo $row[1];?> </div>
+      <div class="moviebox1">&nbsp; <?php echo $row1[1]; ?> </div>
     </div>
 
     <div class="moviemiddle2">
       <div class="moviebox2">
         <div class="movieimage">
-          <?php echo '<img src="data:image/jpeg;base64,' . base64_encode($row[3]) . '" width="315" height="315" />'?>
+          <?php echo '<img src="data:image/jpeg;base64,' . base64_encode($row1[3]) . '" width="315" height="auto" />' ?>
           <!-- <img src="../images/movieshangchi.jpg" width="315" height="315"> -->
-          <p><video width="315" height="200" controls>
-              <source src="../images/shangchitrailer.mp4" type="video/mp4">
-              Your browser does not support the video tag.
-            </video>
+          <p><iframe width="315" height="200" 
+              src=<?php echo '"'.$row2["video"].'">'?>
+            </iframe>
+            <!-- Your browser does not support the video tag. -->
           </p>
         </div>
         <div class="movieright">
-          <span class="movieboxtitle">PHOTOS:</span><br>
-          <img class="movieimagemini" src="../images/image1.jpg" width="150" height="80">
-          <img class="movieimagemini" src="../images/image2.jpg" width="150" height="80">
-          <img class="movieimagemini" src="../images/image3.jpg" width="150" height="80">
+          <span class="movieboxtitle">PHOTOS: </span><br>
+          <img class="movieimagemini" src=<?php echo '"data:image/jpeg;base64,' . base64_encode($row2["image1"]) . '"'; ?> width="150" height="80">
+          <img class="movieimagemini" src=<?php echo '"data:image/jpeg;base64,' . base64_encode($row2["image2"]) . '"'; ?> width="150" height="80">
+          <img class="movieimagemini" src=<?php echo '"data:image/jpeg;base64,' . base64_encode($row2["image3"]) . '"'; ?> width="150" height="80">
           <br><br><br><br>
           <span class="movieboxtitle">DETAILS:</span><br>
           <table>
             <tr>
-              <td>Casts: <span class='name'> Simu Liu, Tony Leung<span></td>
-              <td>Produced by: <span class='name'> Kevin Feige, Jonathan Schwartz<span></td>
+              <td>Casts: <span class='name'> <?php echo $row2["casts"]; ?><span></td>
+              <td>Produced by: <span class='name'> <?php echo $row2["producers"]; ?><span></td>
             </tr>
             <tr>
-              <td>Director: <span class='name'> Destin Daniel Cretton &nbsp;<span></td>
-              <td>Production Company: <span class='name'> Marvel Studios<span></td>
+              <td>Director: <span class='name'> <?php echo $row2["director"]; ?> &nbsp;<span></td>
+              <td>Production Company: <span class='name'> <?php echo $row2["company"]; ?><span></td>
             </tr>
             <tr>
-              <td>Release Date: <span class='name'> 3 Sep 2021<span></td>
-              <td>Running Time: <span class='name'> 2H 12M<span></td>
+              <td>Release Date: <span class='name'> <?php echo $row2["released"]; ?><span></td>
+              <td>Running Time: <span class='name'> <?php echo $row1[5]; ?> minutes <span></td>
             </tr>
           </table><br>
           <span class="movieboxtitle">SYPNOSIS:</span><br>
-          <span class='name'> Martial-arts master Shang-Chi confronts
+          <!-- <span class='name'> Martial-arts master Shang-Chi confronts
             <br>the past he thought he left behind when he's drawn
-            <br> into the web of the mysterious Ten Rings organization.<span>
+            <br> into the web of the mysterious Ten Rings organization.<span> -->
+          <span class='name'><?php echo $row2["summary"]; ?><span>
         </div>
 
       </div>

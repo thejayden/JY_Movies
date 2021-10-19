@@ -26,7 +26,7 @@
   }
 
   body {
-    background-image: url("../images/bluegradient1.jpg");
+    background-image: url("../images/others/bluegradient1.jpg");
   }
 
   /* Full height image header */
@@ -308,7 +308,7 @@ if (mysqli_connect_errno()) {
   <div class="w3-top">
     <div class="w3-bar w3-white w3-card" id="myNavbar">
       <a href="#Home" style="color: rgb(241, 212, 47); text-decoration: none; font-size: large; font-weight: bold;">
-        <img border="0" src="../images/pagelogo.jpg" width="75" height="60"> JY MOVIES</a>
+        <img border="0" src="../images/others/pagelogo.jpg" width="75" height="60"> JY MOVIES</a>
       <!-- Right-sided navbar links -->
       <div class="w3-right w3-hide-small">
         <a href="home.php" class="w3-bar-item w3-button">HOME</a>
@@ -386,13 +386,13 @@ if (mysqli_connect_errno()) {
           <th>Contact us:</th>
         </tr>
         <tr>
-          <th><img src="../images/twitter.png" width="30" height="30">&nbsp;
-            <img src="../images/instagram.png" width="30" height="30"> &nbsp;
-            <img src="../images/facebook.png" width="30" height="30">
+          <th><img src="../images/others/twitter.png" width="30" height="30">&nbsp;
+            <img src="../images/others/instagram.png" width="30" height="30"> &nbsp;
+            <img src="../images/others/facebook.png" width="30" height="30">
           </th>
           <th>
-            <img src="../images/appstore.png" width="90" height="30"> &nbsp;
-            <img src="../images/appstore2.png" width="30" height="30">
+            <img src="../images/others/appstore.png" width="90" height="30"> &nbsp;
+            <img src="../images/others/appstore2.png" width="30" height="30">
           </th>
           <th>90807053</th>
         </tr>

@@ -34,7 +34,7 @@ if (mysqli_connect_errno()) {
   }
 
   body {
-    background-image: url("../images/bluegradient1.jpg");
+    background-image: url("../images/others/bluegradient1.jpg");
   }
 
   /* Full height image header */
@@ -169,7 +169,7 @@ if (mysqli_connect_errno()) {
   <div class="w3-top">
     <div class="w3-bar w3-white w3-card" id="myNavbar">
       <a href="#Home" style="color: rgb(241, 212, 47); text-decoration: none; font-size: large; font-weight: bold;">
-        <img border="0" src="../images/pagelogo.jpg" width="75" height="60"> JY MOVIES</a>
+        <img border="0" src="../images/others/pagelogo.jpg" width="75" height="60"> JY MOVIES</a>
       <!-- Right-sided navbar links -->
       <div class="w3-right w3-hide-small">
         <a href="home.php" class="w3-bar-item w3-button">HOME</a>
@@ -202,7 +202,7 @@ if (mysqli_connect_errno()) {
   <div>
     <div style="text-align: center; padding-top: 30px;">
       <a href="moviesinformation.php">
-        <img border="0" src="../images/shangchigif.gif" width="400px" height="220">
+        <img border="0" src="../images/others/shangchigif.gif" width="400px" height="220">
         <div style="color: rgba(104, 237, 255, 0.993); font-family: sans-serif"><strong>CLICK HERE TO GET YOUR TICKET(S) TODAY!</strong></div>
       </a>
     </div>
@@ -214,15 +214,15 @@ if (mysqli_connect_errno()) {
 
       <!-- Full images with numbers and message Info -->
       <div class="Containers">
-        <img src="../images/promo1.jpg" style="width: 100%">
+        <img src="../images/others/promo1.jpg" style="width: 100%">
       </div>
 
       <div class="Containers">
-        <img src="../images/promo2.jpg" style="width: 100%; ">
+        <img src="../images/others/promo2.jpg" style="width: 100%; ">
       </div>
 
       <div class="Containers">
-        <img src="../images/promo3.jpg" style="width:100%">
+        <img src="../images/others/promo3.jpg" style="width:100%">
       </div>
     </div>
     <div style="padding: 0 0px 0 100px; justify-content:left; flex-wrap:wrap; display:flex">
@@ -260,13 +260,13 @@ if (mysqli_connect_errno()) {
           <th>Contact us:</th>
         </tr>
         <tr>
-          <th><img src="../images/twitter.png" width="30" height="30">&nbsp;
-            <img src="../images/instagram.png" width="30" height="30"> &nbsp;
-            <img src="../images/facebook.png" width="30" height="30">
+          <th><img src="../images/others/twitter.png" width="30" height="30">&nbsp;
+            <img src="../images/others/instagram.png" width="30" height="30"> &nbsp;
+            <img src="../images/others/facebook.png" width="30" height="30">
           </th>
           <th>
-            <img src="../images/appstore.png" width="90" height="30"> &nbsp;
-            <img src="../images/appstore2.png" width="30" height="30">
+            <img src="../images/others/appstore.png" width="90" height="30"> &nbsp;
+            <img src="../images/others/appstore2.png" width="30" height="30">
           </th>
           <th>90807053</th>
         </tr>
