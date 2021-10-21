@@ -41,107 +41,7 @@
     padding: 16px;
   }
 
-  div.gallery_wrap {
-    float: left;
-  }
 
-  div.gallery {
-    margin: 5px;
-    border: 1px solid #ccc;
-    /* float: left; */
-    /* width: 180px; */
-    width: 150px;
-    transition: ease 0.3s all;
-    /* z-index: 999; */
-    display: inline-block;
-    /* z-index: -1; */
-  }
-
-  div.gallery_wrap:hover {
-    /* border: 1px solid #777; */
-    transform: scale(1.2);
-    box-shadow: 0 1em 2em rgba(0, 0, 0, 0.2);
-    transition: ease 0.3s all;
-    background-color: black;
-    z-index: 999;
-    position: relative;
-  }
-
-  .gallery_wrap:hover .gallery {
-    border: none;
-  }
-
-  .gallery_wrap:hover .desc {
-    display: inline-block;
-    /* z-index: 999;
-    position: relative; */
-    /* float: right; */
-  }
-
-  div.gallery img {
-    width: 100%;
-    height: auto;
-    filter: grayscale(50%);
-    /* z-index: -1; */
-    /* width: 40%;
-    height: auto; */
-  }
-
-  div.desc {
-    /* padding: 5px; */
-    display: none;
-    text-align: left;
-    vertical-align: top;
-    width: auto;
-    max-width: 110px;
-    /* background-color: black; */
-    color: #F6C90E;
-    font-size: smaller;
-    z-index: 999;
-    padding: 5px 10px 0 5px;
-  }
-
-  div.nowshowing {
-    /* padding: 15px; */
-    text-align: center;
-    background-color: #F6C90E;
-    /* filter: none; */
-  }
-
-  p.movie_title {
-    font-size: larger;
-    margin: 0;
-    padding: 0 0 5px 0;
-    line-height: 20px;
-    font-weight: bold;
-  }
-
-  p.movie_info {
-    font-size: x-small;
-    margin: 0;
-    padding: 0px 0 0px 0;
-    line-height: 15px;
-    font-weight: lighter;
-    color: #C39F0B;
-  }
-
-  /* .dropdown {
-  position: relative;
-  display: inline-block;
-}
-
-.dropdown-content {
-  display: none;
-  position: absolute;
-  background-color: #f9f9f9;
-  min-width: 160px;
-  box-shadow: 0px 8px 16px 0px rgba(0,0,0,0.2);
-  z-index: 1;
-}
-
-.dropdown:hover .dropdown-content {
-  display: block;
-} */
 
   .moviemiddle1 {
     height: 150px;
@@ -217,82 +117,104 @@
 
   }
 
-  /* .button {
-    background-color: black;
-    border: none;
-    color: whitesmoke;
-    padding: 10px 22px;
-    text-align: center;
-    text-decoration: none;
-    display: inline-block;
-    font-size: 18px;
-    margin: 4px 2px;
-    cursor: pointer;
-  } */
+  /* the only thing changed here is below:*/
 
-  /* main {
-    display: flex;
-    flex-wrap: wrap;
-    justify-content: center;
-  } */
-
-  .booknow {
-    background-color: black;
-    color: #F6C90E;
-    font-size: 16px;
-    font-weight: bold;
-    border: 0;
-    border-radius: 50px;
-    padding: 10px 20px;
-    margin-top: 5px;
-    cursor:pointer;
-    justify-content:center;
-  }
-
-  .movie {
-    width: 300px;
-    margin: 1rem;
-    border-radius: 5px;
-    box-shadow: 0.2px 4px 5px rgba(0, 0, 0, 0.1);
-    background-color: #F6C90E;
-    position: relative;
-    overflow: hidden;
-  }
-
-  .movie img {
-    width: 100%;
-  }
-
-  .movie-info {
-    color: #eee;
+  .locationsbox{
     display: flex;
     align-items: center;
-    justify-content: space-between;
-    padding: 0.5rem 1rem 1rem;
-    letter-spacing: 0.5px;
+    justify-content: center;
+    margin: 0 auto;
   }
+.locations{
+    width: 1000px;
+    height: 49px;
+       
+}
+figcaption{
+    color: whitesmoke;
+    font-family:  Arial, sans-serif;
+    padding: 20px 0 10px 0;
+}#myImg:hover {opacity: 0.7;}
 
-  .movie-info h4 {
-    margin-top: 0;
-    font-weight: bolder;
-    color:black;
-  }
+/* The Modal (background) */
+.modal {
+  display: none; /* Hidden by default */
+  position: fixed; /* Stay in place */
+  z-index: 1; /* Sit on top */
+  padding-top: 100px; /* Location of the box */
+  left: 0;
+  top: 0;
+  width: 100%; /* Full width */
+  height: 100%; /* Full height */
+  overflow: auto; /* Enable scroll if needed */
+  background-color: rgb(0,0,0); /* Fallback color */
+  background-color: rgba(0,0,0,0.9); /* Black w/ opacity */
+}
 
-  .overview {
-    position: absolute;
-    left: 0;
-    right: 0;
-    bottom: 0;
-    background-color: rgba(255,255,255, 0.9);
-    padding: 1rem;
-    max-height: 100%;
-    transform: translateY(101%);
-    transition: transform 0.3s ease-in;
-  }
+/* Modal Content (image) */
+.modal-content {
+  margin: auto;
+  display: block;
+  width: 80%;
+  max-width: 700px;
+}
 
-  .movie:hover .overview {
-    transform: translateY(0)
+/* Caption of Modal Image */
+#caption {
+  margin: auto;
+  display: block;
+  width: 80%;
+  max-width: 700px;
+  text-align: center;
+  color: whitesmoke;
+  padding: 10px 0;
+  height: 150px;
+}
+
+/* Add Animation */
+.modal-content, #caption {  
+  -webkit-animation-name: zoom;
+  -webkit-animation-duration: 0.6s;
+  animation-name: zoom;
+  animation-duration: 0.6s;
+}
+
+@-webkit-keyframes zoom {
+  from {-webkit-transform:scale(0)} 
+  to {-webkit-transform:scale(1)}
+}
+
+@keyframes zoom {
+  from {transform:scale(0)} 
+  to {transform:scale(1)}
+}
+
+/* The Close Button */
+.close {
+  position: absolute;
+  top: 15px;
+  right: 35px;
+  color: whitesmoke;
+  font-size: 60px;
+  font-weight: bold;
+padding-top: 30px;
+  transition: 0.3s;
+}
+
+.close:hover,
+.close:focus {
+  color: #bbb;
+  text-decoration: none;
+  cursor: pointer;
+}
+
+/* 100% Image Width on Smaller Screens */
+@media only screen and (max-width: 700px){
+  .modal-content {
+    width: 100%;
   }
+}
+  
 </style>
 <?php
 @$db = new mysqli('localhost', 'root', '', 'moviesdb');
@@ -340,40 +262,69 @@ if (mysqli_connect_errno()) {
     <img src="../images/image8.jpg" width="350" height="200">
   </marquee>
 
-  <div>
+
+
+ <!-- <img id="myImg" src="../images/location/LC_!.png" alt="Snow" style="width:100%;max-width:300px"> -->
+ <div >
     <div class="moviemiddle1" ;>
-      <div class="moviebox1" style="width:85%">&nbsp; NOW IN THEATRES</div>
+      <div class="moviebox1" style="width:85%">&nbsp;&nbsp;CINEMA LOCATIONS</div>
     </div>
 
-    <div id="main" class="moviemiddle3" >
-      <!-- <div class="moviebox3">
-        <a href="moviesinformation.php">
-          <img src="../images/image1.jpg" width="350" height="200">
-        </a>
-      </div> -->
-      <?php
-      $qry = "select * from movies";
-      if ($result = $db->query($qry)) {
-        while ($row = $result->fetch_row()) {
-          echo '<div class="movie">
-        <img src="data:image/jpeg;base64,' . base64_encode($row[3]) . '" />
-        <div class="movie-info">
-          <h4>' . $row[1] . '</h4>
-        </div>
-        <div class="overview">
-          <h3>' . $row[1] . '</h3>
-          ' . $row[2] . '
-          <br />
-          <form action="./moviesinformation.php" method="post">
-          <button type="submit" name="booknow" class="booknow" id="booknow" value=' . $row[0] . '>Book Now</button>
-        </div>
-      </div>';
-        }
-      }
-      ?>
+    <div class="locationsbox">
+    <table class="locations" style="width:85%; padding-bottom: 30px;">
+<tr>
+<th><figcaption>Woodlands</figcaption><img id="myImg" alt="Woodlands" src="../images/location/LC_!.png" width="300" height="220">&nbsp;</th>
+<th><figcaption>Woodlands</figcaption><img id="myImg"src="../images/location/LC_!.png" width="300" height="220">&nbsp;</th>
+<th><figcaption>Woodlands</figcaption><img id="myImg"src="../images/location/LC_!.png" width="300" height="220">&nbsp;</th>
+<th><figcaption>Woodlands</figcaption><img id="myImg"src="../images/location/LC_!.png" width="300" height="220">&nbsp;</th>
+<th><figcaption>Woodlands</figcaption><img id="myImg"src="../images/location/LC_!.png" width="300" height="220">&nbsp;</th>
 
-    </div>
-  </div>
+</tr> 
+
+
+<br><br>
+
+<tr>
+<th><figcaption>Woodlands</figcaption><img id="myImg"src="../images/location/LC_!.png" width="300" height="220">&nbsp;</th>
+<th><figcaption>Woodlands</figcaption><img id="myImg"src="../images/location/LC_!.png" width="300" height="220">&nbsp;</th>
+<th><figcaption>Woodlands</figcaption><img id="myImg"src="../images/location/LC_!.png" width="300" height="220">&nbsp;</th>
+<th><figcaption>Woodlands</figcaption><img id="myImg"src="../images/location/LC_!.png" width="300" height="220">&nbsp;</th>
+<th><figcaption>Woodlands</figcaption><img id="myImg"src="../images/location/LC_!.png" width="300" height="220">&nbsp;</th>
+
+</tr>
+ 
+</table>
+ </div>
+<!-- The Modal -->
+<div id="myModal" class="modal">
+  <span class="close">&times;</span>
+  <img class="modal-content" id="img01">
+  <div id="caption"></div>
+</div>
+
+<script>
+// Get the modal
+var modal = document.getElementById("myModal");
+
+// Get the image and insert it inside the modal - use its "alt" text as a caption
+var img = document.getElementById("myImg");
+var modalImg = document.getElementById("img01");
+var captionText = document.getElementById("caption");
+img.onclick = function(){
+  modal.style.display = "block";
+  modalImg.src = this.src;
+  captionText.innerHTML = this.alt;
+}
+
+// Get the <span> element that closes the modal
+var span = document.getElementsByClassName("close")[0];
+
+// When the user clicks on <span> (x), close the modal
+span.onclick = function() { 
+  modal.style.display = "none";
+}
+</script>
+
 
 
   <footer style="padding-top: 60px;">

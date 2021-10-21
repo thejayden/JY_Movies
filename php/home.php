@@ -45,10 +45,7 @@ if (mysqli_connect_errno()) {
     min-height: 100%;
   } */
 
-  .w3-bar .w3-button {
-    padding: 16px;
-  }
-
+  
   div.gallery_wrap {
     float: left;
   }
@@ -199,14 +196,18 @@ if (mysqli_connect_errno()) {
     <img src="../images/image8.jpg" width="350" height="200">
   </marquee>
 
-  <div>
-    <div style="text-align: center; padding-top: 30px;">
-      <a href="moviesinformation.php">
-        <img border="0" src="../images/others/shangchigif.gif" width="400px" height="220">
-        <div style="color: rgba(104, 237, 255, 0.993); font-family: sans-serif"><strong>CLICK HERE TO GET YOUR TICKET(S) TODAY!</strong></div>
-      </a>
-    </div>
-  </div>
+  <?php
+
+$qry = "select * from movies where movie_id = 2";
+
+    echo '<div style="text-align: center; padding-top: 30px;">
+    <a href="$qry">
+    <img border="0" src="../images/shangchigif.gif" width="400px" height="220">
+    <div style="color: rgba(104, 237, 255, 0.993); font-family: sans-serif"><strong>CLICK HERE TO GET YOUR TICKET(S) TODAY!</strong></div>
+  </a>
+  </div>'
+
+   ?>
 
   <!-- Header with full-height image -->
   <div id="home" style="padding: 50px 50px 0px 10px;">

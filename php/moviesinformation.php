@@ -151,7 +151,6 @@ $row2 = $result2->fetch_assoc();
     align-items: center;
     justify-content: center;
     margin: 0 auto;
-    padding: 100px 0 0 0;
   }
 
   .moviemiddle2 {
@@ -227,7 +226,7 @@ $row2 = $result2->fetch_assoc();
     </div>
   </div>
   <div>
-    <div class="moviemiddle1">
+    <div class="moviemiddle1" style="padding: 100px 0 0 0;">
       <div class="moviebox1">&nbsp; <?php echo $row1[1]; ?> </div>
     </div>
 
