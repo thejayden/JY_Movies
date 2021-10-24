@@ -8,7 +8,7 @@ if (mysqli_connect_errno()) {
   exit;
 }
 
-$id = $_POST['booknow'];
+$id = $_POST['quickbook'];
 echo $id;
 ?>
 <?php
@@ -255,10 +255,6 @@ $row2 = $result2->fetch_assoc();
       <div class="moviebox2">
         <div class="movieimage">
           <?php echo '<img src="data:image/jpeg;base64,' . base64_encode($row1[3]) . '" width="315" height="auto" />' ?>
-          <!-- <img src="../images/movieshangchi.jpg" width="315" height="315"> -->
-          <p><iframe width="315" height="200" frameBorder="0" allow="fullscreen;" src=<?php echo '"' . $row2["video"] . '">' ?> </iframe>
-              <!-- Your browser does not support the video tag. -->
-          </p>
         </div>
         <div class="movieright" style="height:100%; display: flex; flex-direction: column;">
           <div style="flex-wrap: wrap; display: flex;">
@@ -294,9 +290,7 @@ $row2 = $result2->fetch_assoc();
           </div>
 
           <div style="margin-top: 30%; text-align:center">
-            <form action="./quickbooking.php" method="post">
-              <button type="submit" name="quickbook" class="quickbook" id="quickbook" value="<?php echo $row1[0]; ?>">Quick Booking</button>
-            </form>
+            <button type="submit" name="quickbook" class="quickbook" id="quickbook" value=' . $row1[0] . '>Quick Booking</button>
             <br>
             <a href="./movies.php">Back to Movies</a>
           </div>

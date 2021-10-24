@@ -366,6 +366,7 @@ if (mysqli_connect_errno()) {
           <br />
           <form action="./moviesinformation.php" method="post">
           <button type="submit" name="booknow" class="booknow" id="booknow" value=' . $row[0] . '>Book Now</button>
+          </form>
         </div>
       </div>';
         }
