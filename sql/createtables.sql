@@ -21,3 +21,20 @@ create table if not exists movieinfo
   image2 longblob not null,
   image3 longblob not null
 );
+
+create table if not exists bookings
+( booking_id int unsigned not null auto_increment primary key,
+  movie_id int unsigned not null,
+  cinema_id int not null,
+  seats varchar(255) not null,
+  name varchar(255) not null,
+  email varchar(255) not null,
+  phone varchar(255) not null,
+  date date not null
+);
+
+create table if not exists bookings_test
+( booking_id int unsigned not null auto_increment primary key,
+  movie_id int unsigned not null,
+  seats varchar(255) not null
+);

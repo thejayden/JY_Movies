@@ -49,100 +49,8 @@ $row2 = $result2->fetch_assoc();
     background-image: url("../images/others/bluegradient1.jpg");
   }
 
-  /* Full height image header */
-  .bgimg-1 {
-    background-position: center;
-    background-size: cover;
-    background-image: url("/w3images/mac.jpg");
-    min-height: 100%;
-  }
-
   .w3-bar .w3-button {
     padding: 16px;
-  }
-
-  div.gallery_wrap {
-    float: left;
-  }
-
-  div.gallery {
-    margin: 5px;
-    border: 1px solid #ccc;
-    /* float: left; */
-    /* width: 180px; */
-    width: 150px;
-    transition: ease 0.3s all;
-    /* z-index: 999; */
-    display: inline-block;
-    /* z-index: -1; */
-  }
-
-  div.gallery_wrap:hover {
-    /* border: 1px solid #777; */
-    transform: scale(1.2);
-    box-shadow: 0 1em 2em rgba(0, 0, 0, 0.2);
-    transition: ease 0.3s all;
-    background-color: black;
-    z-index: 999;
-    position: relative;
-  }
-
-  .gallery_wrap:hover .gallery {
-    border: none;
-  }
-
-  .gallery_wrap:hover .desc {
-    display: inline-block;
-    /* z-index: 999;
-    position: relative; */
-    /* float: right; */
-  }
-
-  div.gallery img {
-    width: 100%;
-    height: auto;
-    filter: grayscale(50%);
-    /* z-index: -1; */
-    /* width: 40%;
-    height: auto; */
-  }
-
-  div.desc {
-    /* padding: 5px; */
-    display: none;
-    text-align: left;
-    vertical-align: top;
-    width: auto;
-    max-width: 110px;
-    /* background-color: black; */
-    color: #F6C90E;
-    font-size: smaller;
-    z-index: 999;
-    padding: 5px 10px 0 5px;
-  }
-
-  div.nowshowing {
-    /* padding: 15px; */
-    text-align: center;
-    background-color: #F6C90E;
-    /* filter: none; */
-  }
-
-  p.movie_title {
-    font-size: larger;
-    margin: 0;
-    padding: 0 0 5px 0;
-    line-height: 20px;
-    font-weight: bold;
-  }
-
-  p.movie_info {
-    font-size: x-small;
-    margin: 0;
-    padding: 0px 0 0px 0;
-    line-height: 15px;
-    font-weight: lighter;
-    color: #C39F0B;
   }
 
   .moviemiddle1 {
@@ -226,6 +134,158 @@ $row2 = $result2->fetch_assoc();
     transform: scale(1.1);
     font-weight: 900;
   }
+
+  /* body {
+    background-color: #242333;
+    display: flex;
+    flex-direction: column;
+    color: white;
+    align-items: center;
+    justify-content: center;
+    height: 100vh;
+    font-family: 'Lato', 'sans-serif';
+  } */
+
+  .movie-container {
+    margin: 20px 0;
+  }
+
+  .movie-container select {
+    background-color: #fff;
+    border: 0;
+    border-radius: 5px;
+    font-size: 14px;
+    margin-left: 10px;
+    padding: 5px 15px 5px 15px;
+    -moz-appearance: none;
+    -webkit-appearance: none;
+    appearance: none;
+  }
+
+  .container {
+    perspective: 1000px;
+    margin-bottom: 30px;
+  }
+
+  .seat {
+    background-color: #444451;
+    height: 20px;
+    width: 21px;
+    margin: 3px;
+    border-radius: 5px;
+    /* border-top-left-radius: 5px;
+    border-top-right-radius: 5px; */
+  }
+
+  .ylabel {
+    /* background-color: #444451; */
+    height: 20px;
+    width: 21px;
+    margin: 3px;
+    border-radius: 5px;
+  }
+
+  .xlabel {
+    height: 20px;
+    width: 21px;
+    margin: 3px;
+    border-radius: 5px;
+    /* text-align: center; */
+  }
+
+  .xlabel:nth-of-type(1) {
+    margin-left: 35px;
+  }
+
+  .xlabel:nth-of-type(3) {
+    margin-left: 18px;
+  }
+
+  .xlabel:nth-last-of-type(2) {
+    margin-left: 18px;
+  }
+
+  .xlabel:nth-last-of-type(1) {
+    margin-left: -2px;
+  }
+
+  .seat.selected {
+    /* background-color: #6feaf6; */
+    background-color: #fcff43;
+    box-shadow: 0 0px 5px white;
+  }
+
+  .seat.unavail {
+    background-color: #000c33;
+    /* border: 1px solid white; */
+    box-shadow: 0 0px 3px #6feaf6;
+    /* background: repeating-linear-gradient(-45deg, #000c33, #000c33 5px, white 6px, white 7px); */
+  }
+
+  .seat:nth-of-type(3) {
+    margin-right: 18px;
+  }
+
+  .seat:nth-last-of-type(2) {
+    margin-left: 18px;
+  }
+
+  .seat:not(.unavail):hover {
+    cursor: pointer;
+    transform: scale(1.2);
+  }
+
+  .showcase .seat:not(.unavail):hover {
+    cursor: default;
+    transform: scale(1);
+  }
+
+  .showcase {
+    background-color: rgba(0, 0, 0, 0.1);
+    padding: 5px 10px;
+    border-radius: 5px;
+    color: #777;
+    list-style-type: none;
+    display: flex;
+    justify-content: space-between;
+  }
+
+  .showcase li {
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    margin: 0 10px;
+  }
+
+  .showcase li small {
+    margin-left: 10px;
+  }
+
+  .row {
+    display: flex;
+  }
+
+  .screen {
+    background-color: #F6C90E;
+    height: 80px;
+    width: 85%;
+    margin: 15px 0;
+    margin-left: auto;
+    margin-right: 25px;
+    transform: rotateX(-45deg);
+    box-shadow: 0 3px 10px #F6C90E;
+    text-align: center;
+    line-height: 5em;
+    color: #000000;
+  }
+
+  p.text {
+    margin: 5px 0;
+  }
+
+  p.text span {
+    color: #6feaf6;
+  }
 </style>
 
 <body>
@@ -241,64 +301,159 @@ $row2 = $result2->fetch_assoc();
         <a href="movies.php" class="w3-bar-item w3-button"></i> MOVIES</a>
         <a href="cinema.php" class="w3-bar-item w3-button"></i> CINEMA</a>
         <a href="quickbooking.php" class="w3-bar-item w3-button"></i> QUICK BOOKING</a>
-
       </div>
-
     </div>
   </div>
   <div>
     <div class="moviemiddle1" style="padding: 100px 0 0 0;">
       <div class="moviebox1">&nbsp; <?php echo $row1[1]; ?> </div>
     </div>
+    <form action="./confirmation.php" method="post">
+      <div class="moviemiddle2">
+        <div class="moviebox2">
+          <div class="movieimage">
+            <?php echo '<img src="data:image/jpeg;base64,' . base64_encode($row1[3]) . '" width="315" height="auto" />' ?>
+          </div>
+          <div class="movieright" style="height:100%; display: flex; flex-direction: column;">
+            <div style="flex-wrap: wrap; display: flex;">
+              <div>
+              </div>
+              <div>
+                <ul class="showcase">
+                  <li>
+                    <div class="seat"></div>
+                    <small>Available</small>
+                  </li>
 
-    <div class="moviemiddle2">
-      <div class="moviebox2">
-        <div class="movieimage">
-          <?php echo '<img src="data:image/jpeg;base64,' . base64_encode($row1[3]) . '" width="315" height="auto" />' ?>
-        </div>
-        <div class="movieright" style="height:100%; display: flex; flex-direction: column;">
-          <div style="flex-wrap: wrap; display: flex;">
-            <div>
-              <span class="movieboxtitle">PHOTOS: </span><br>
-              <img class="movieimagemini" src=<?php echo '"data:image/jpeg;base64,' . base64_encode($row2["image1"]) . '"'; ?> width="150" height="80">
-              <img class="movieimagemini" src=<?php echo '"data:image/jpeg;base64,' . base64_encode($row2["image2"]) . '"'; ?> width="150" height="80">
-              <img class="movieimagemini" src=<?php echo '"data:image/jpeg;base64,' . base64_encode($row2["image3"]) . '"'; ?> width="150" height="80">
-              <br><br><br><br>
+                  <li>
+                    <div class="seat selected"></div>
+                    <small>Selected</small>
+                  </li>
+
+                  <li>
+                    <div class="seat unavail"></div>
+                    <small>Unavailable</small>
+                  </li>
+                </ul>
+
+                <div class="container">
+                  <div class="screen">
+                    <span>SCREEN</span>
+                  </div>
+                  <div class="row">
+                    <div class="xlabel">1</div>
+                    <div class="xlabel">2</div>
+                    <div class="xlabel">3</div>
+                    <div class="xlabel">4</div>
+                    <div class="xlabel">5</div>
+                    <div class="xlabel">6</div>
+                    <div class="xlabel">7</div>
+                    <div class="xlabel">8</div>
+                    <div class="xlabel">9</div>
+                    <div class="xlabel">10</div>
+                  </div>
+                  <div class="row" id="rowA">
+                    <div class="ylabel">A</div>
+                    <div class="seat unavail" id="A1"></div>
+                    <div class="seat unavail" id="A2"></div>
+                    <div class="seat" id="A3"></div>
+                    <div class="seat" id="A4"></div>
+                    <div class="seat unavail" id="A5"></div>
+                    <div class="seat unavail" id="A6"></div>
+                    <div class="seat" id="A7"></div>
+                    <div class="seat" id="A8"></div>
+                    <div class="seat unavail" id="A9"></div>
+                    <div class="seat unavail" id="A10"></div>
+                  </div>
+                  <div class="row" id="rowB">
+                    <div class="ylabel">B</div>
+                    <div class="seat"></div>
+                    <div class="seat"></div>
+                    <div class="seat"></div>
+                    <div class="seat"></div>
+                    <div class="seat"></div>
+                    <div class="seat"></div>
+                    <div class="seat"></div>
+                    <div class="seat"></div>
+                    <div class="seat"></div>
+                    <div class="seat"></div>
+                  </div>
+
+                  <div class="row" id="rowC">
+                    <div class="ylabel">C</div>
+                    <div class="seat"></div>
+                    <div class="seat"></div>
+                    <div class="seat"></div>
+                    <div class="seat"></div>
+                    <div class="seat"></div>
+                    <div class="seat"></div>
+                    <div class="seat"></div>
+                    <div class="seat"></div>
+                    <div class="seat"></div>
+                    <div class="seat"></div>
+                  </div>
+
+                  <div class="row" id="rowD">
+                    <div class="ylabel">D</div>
+                    <div class="seat"></div>
+                    <div class="seat"></div>
+                    <div class="seat"></div>
+                    <div class="seat"></div>
+                    <div class="seat"></div>
+                    <div class="seat"></div>
+                    <div class="seat"></div>
+                    <div class="seat"></div>
+                    <div class="seat"></div>
+                    <div class="seat"></div>
+                  </div>
+
+                  <div class="row" id="rowE">
+                    <div class="ylabel">E</div>
+                    <div class="seat"></div>
+                    <div class="seat"></div>
+                    <div class="seat"></div>
+                    <div class="seat"></div>
+                    <div class="seat"></div>
+                    <div class="seat"></div>
+                    <div class="seat"></div>
+                    <div class="seat"></div>
+                    <div class="seat"></div>
+                    <div class="seat"></div>
+                  </div>
+
+                  <div class="row" id="rowF">
+                    <div class="ylabel">F</div>
+                    <div class="seat"></div>
+                    <div class="seat"></div>
+                    <div class="seat"></div>
+                    <div class="seat"></div>
+                    <div class="seat"></div>
+                    <div class="seat"></div>
+                    <div class="seat"></div>
+                    <div class="seat"></div>
+                    <div class="seat"></div>
+                    <div class="seat"></div>
+                  </div>
+                </div>
+
+                <p class="text">
+                  You have selected <span id="count">0</span> seats for a price of $<span id="total">0</span>
+                </p>
+                
+              </div>
             </div>
-            <div>
-              <span class="movieboxtitle">DETAILS:</span><br>
-              <table>
-                <tr>
-                  <td>Casts: <span class='name'> <?php echo $row2["casts"]; ?><span></td>
-                  <td>Produced by: <span class='name'> <?php echo $row2["producers"]; ?><span></td>
-                </tr>
-                <tr>
-                  <td>Director: <span class='name'> <?php echo $row2["director"]; ?> &nbsp;<span></td>
-                  <td>Production Company: <span class='name'> <?php echo $row2["company"]; ?><span></td>
-                </tr>
-                <tr>
-                  <td>Release Date: <span class='name'> <?php echo $row2["released"]; ?><span></td>
-                  <td>Running Time: <span class='name'> <?php echo $row1[5]; ?> minutes <span></td>
-                </tr>
-              </table><br>
-              <span class="movieboxtitle">SYPNOSIS:</span><br>
-              <!-- <span class='name'> Martial-arts master Shang-Chi confronts
-            <br>the past he thought he left behind when he's drawn
-            <br> into the web of the mysterious Ten Rings organization.<span> -->
-              <span class='name'><?php echo $row2["summary"]; ?></span>
+            <div style="margin-top: 30%; text-align:center">
+              <input type="hidden" name="seats" id="seats" value="test" />
+              <button type="submit" name="confirmbook" class="quickbook" id="confirmbook" value=<?php echo $row1[0] ?>>Book Tickets</button>
+              <br>
+              <a href="./movies.php">Back to Movies</a>
             </div>
           </div>
 
-          <div style="margin-top: 30%; text-align:center">
-            <button type="submit" name="quickbook" class="quickbook" id="quickbook" value=' . $row1[0] . '>Quick Booking</button>
-            <br>
-            <a href="./movies.php">Back to Movies</a>
-          </div>
         </div>
-
       </div>
-    </div>
-
+    </form>
+    <script src="../js/seat.js"></script>
 
   </div>
 
