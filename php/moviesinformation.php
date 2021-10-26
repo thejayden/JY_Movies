@@ -240,7 +240,7 @@ $row2 = $result2->fetch_assoc();
         <a href="home.php" class="w3-bar-item w3-button">HOME</a>
         <a href="movies.php" class="w3-bar-item w3-button"></i> MOVIES</a>
         <a href="cinema.php" class="w3-bar-item w3-button"></i> CINEMA</a>
-        <a href="quickbooking.php" class="w3-bar-item w3-button"></i> QUICK BOOKING</a>
+        <a href="checkbooking.php" class="w3-bar-item w3-button"></i> CHECK BOOKING</a>
 
       </div>
 
