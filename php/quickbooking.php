@@ -150,6 +150,7 @@ $row2 = $result2->fetch_assoc();
     margin: 20px 0;
   }
 
+  /* 
   .movie-container select {
     background-color: #fff;
     border: 0;
@@ -160,7 +161,7 @@ $row2 = $result2->fetch_assoc();
     -moz-appearance: none;
     -webkit-appearance: none;
     appearance: none;
-  }
+  } */
 
   .container {
     perspective: 1000px;
@@ -286,6 +287,34 @@ $row2 = $result2->fetch_assoc();
   p.text span {
     color: #6feaf6;
   }
+
+  .topform {
+    /* padding: 0 0 0px 10px; */
+    margin: auto;
+    /* padding-right: 50px; */
+    text-align: center;
+    padding: 20px;
+  }
+
+  select {
+    height: 32.5px;
+    line-height: 15px;
+  }
+
+  .contact label{
+    float: left;
+    clear: left;
+    display: block;
+    width: 100px;
+    text-align: right;
+    padding-right: 30px;
+    /* margin-top: 1px; */
+  }
+
+  .contact input{
+    /* margin-top:1px; */
+    display: block;
+  }
 </style>
 
 <body>
@@ -315,134 +344,226 @@ $row2 = $result2->fetch_assoc();
             <?php echo '<img src="data:image/jpeg;base64,' . base64_encode($row1[3]) . '" width="315" height="auto" />' ?>
           </div>
           <div class="movieright" style="height:100%; display: flex; flex-direction: column;">
-            <div style="flex-wrap: wrap; display: flex;">
-              <div>
+            <!-- <div style="flex-wrap: wrap; display: flex;"> -->
+            <!-- <div class="topform">
+              <div class="column left">
+                <label for="cinema">Cinema:</label>
+                <select id="movie" form="bookingform" name="cinema" id="cinema">
+                  <option value="1">Woodlands</option>
+                  <option value="2">Yishun</option>
+                  <option value="3">Jurong</option>
+                  <option value="4">Serangoon</option>
+                  <option value="5">Pasir Ris</option>
+                  <option value="6">Sengkang</option>
+                  <option value="7">Orchard</option>
+                  <option value="8">Boon Keng</option>
+                  <option value="9">Lavender</option>
+                  <option value="10">Farrer Park</option>
+                </select>
               </div>
-              <div>
-                <ul class="showcase">
-                  <li>
-                    <div class="seat"></div>
-                    <small>Available</small>
-                  </li>
-
-                  <li>
-                    <div class="seat selected"></div>
-                    <small>Selected</small>
-                  </li>
-
-                  <li>
-                    <div class="seat unavail"></div>
-                    <small>Unavailable</small>
-                  </li>
-                </ul>
-
-                <div class="container">
-                  <div class="screen">
-                    <span>SCREEN</span>
-                  </div>
-                  <div class="row">
-                    <div class="xlabel">1</div>
-                    <div class="xlabel">2</div>
-                    <div class="xlabel">3</div>
-                    <div class="xlabel">4</div>
-                    <div class="xlabel">5</div>
-                    <div class="xlabel">6</div>
-                    <div class="xlabel">7</div>
-                    <div class="xlabel">8</div>
-                    <div class="xlabel">9</div>
-                    <div class="xlabel">10</div>
-                  </div>
-                  <div class="row" id="rowA">
-                    <div class="ylabel">A</div>
-                    <div class="seat unavail" id="A1"></div>
-                    <div class="seat unavail" id="A2"></div>
-                    <div class="seat" id="A3"></div>
-                    <div class="seat" id="A4"></div>
-                    <div class="seat unavail" id="A5"></div>
-                    <div class="seat unavail" id="A6"></div>
-                    <div class="seat" id="A7"></div>
-                    <div class="seat" id="A8"></div>
-                    <div class="seat unavail" id="A9"></div>
-                    <div class="seat unavail" id="A10"></div>
-                  </div>
-                  <div class="row" id="rowB">
-                    <div class="ylabel">B</div>
-                    <div class="seat"></div>
-                    <div class="seat"></div>
-                    <div class="seat"></div>
-                    <div class="seat"></div>
-                    <div class="seat"></div>
-                    <div class="seat"></div>
-                    <div class="seat"></div>
-                    <div class="seat"></div>
-                    <div class="seat"></div>
-                    <div class="seat"></div>
-                  </div>
-
-                  <div class="row" id="rowC">
-                    <div class="ylabel">C</div>
-                    <div class="seat"></div>
-                    <div class="seat"></div>
-                    <div class="seat"></div>
-                    <div class="seat"></div>
-                    <div class="seat"></div>
-                    <div class="seat"></div>
-                    <div class="seat"></div>
-                    <div class="seat"></div>
-                    <div class="seat"></div>
-                    <div class="seat"></div>
-                  </div>
-
-                  <div class="row" id="rowD">
-                    <div class="ylabel">D</div>
-                    <div class="seat"></div>
-                    <div class="seat"></div>
-                    <div class="seat"></div>
-                    <div class="seat"></div>
-                    <div class="seat"></div>
-                    <div class="seat"></div>
-                    <div class="seat"></div>
-                    <div class="seat"></div>
-                    <div class="seat"></div>
-                    <div class="seat"></div>
-                  </div>
-
-                  <div class="row" id="rowE">
-                    <div class="ylabel">E</div>
-                    <div class="seat"></div>
-                    <div class="seat"></div>
-                    <div class="seat"></div>
-                    <div class="seat"></div>
-                    <div class="seat"></div>
-                    <div class="seat"></div>
-                    <div class="seat"></div>
-                    <div class="seat"></div>
-                    <div class="seat"></div>
-                    <div class="seat"></div>
-                  </div>
-
-                  <div class="row" id="rowF">
-                    <div class="ylabel">F</div>
-                    <div class="seat"></div>
-                    <div class="seat"></div>
-                    <div class="seat"></div>
-                    <div class="seat"></div>
-                    <div class="seat"></div>
-                    <div class="seat"></div>
-                    <div class="seat"></div>
-                    <div class="seat"></div>
-                    <div class="seat"></div>
-                    <div class="seat"></div>
-                  </div>
+              <form>
+                <div class="column middle">
+                  <input type="date" id="date" name="date">
                 </div>
-
-                <p class="text">
-                  You have selected <span id="count">0</span> seats for a price of $<span id="total">0</span>
-                </p>
-                
+                <div class="column right">
+                  <input type="time" id="time" name="time">
+                </div>
+              </form>
+            </div> -->
+            <div class="topform">
+              <label for="cinema">Cinema:</label>
+              <select form="bookingform" name="cinema" id="cinema" required>
+                <option value="" disabled selected hidden>Choose A Cinema</option>
+                <option value="1">Woodlands</option>
+                <option value="2">Yishun</option>
+                <option value="3">Jurong</option>
+                <option value="4">Serangoon</option>
+                <option value="5">Pasir Ris</option>
+                <option value="6">Sengkang</option>
+                <option value="7">Orchard</option>
+                <option value="8">Boon Keng</option>
+                <option value="9">Lavender</option>
+                <option value="10">Farrer Park</option>
+              </select>
+              <!-- <label for="date">Date:</label> -->
+              <input type="date" id="date" name="date">
+              <div style="text-align:center; padding:10px 0 0 0">
+                <label for="timeslot">Timeslot:</label>
+                <select form="bookingform" name="timeslot" id="timeslot" required>
+                  <option value="" disabled selected hidden>Choose A Timeslot</option>
+                  <option value="0000">12AM</option>
+                  <option value="1000">10AM</option>
+                  <option value="1300">1PM</option>
+                  <option value="1600">4PM</option>
+                  <option value="1900">7PM</option>
+                  <option value="2100">9PM</option>
+                </select>
               </div>
             </div>
-            <div style="margin-top: 30%; text-align:center">
+            <div style="margin:auto; text-align:center">
+              <ul class="showcase">
+                <li>
+                  <div class="seat"></div>
+                  <small>Available</small>
+                </li>
+
+                <li>
+                  <div class="seat selected"></div>
+                  <small>Selected</small>
+                </li>
+
+                <li>
+                  <div class="seat unavail"></div>
+                  <small>Unavailable</small>
+                </li>
+              </ul>
+
+              <div class="container">
+                <div class="screen">
+                  <span>SCREEN</span>
+                </div>
+                <div class="row">
+                  <div class="xlabel">1</div>
+                  <div class="xlabel">2</div>
+                  <div class="xlabel">3</div>
+                  <div class="xlabel">4</div>
+                  <div class="xlabel">5</div>
+                  <div class="xlabel">6</div>
+                  <div class="xlabel">7</div>
+                  <div class="xlabel">8</div>
+                  <div class="xlabel">9</div>
+                  <div class="xlabel">10</div>
+                </div>
+                <div class="row" id="rowA">
+                  <div class="ylabel">A</div>
+                  <div class="seat unavail" id="A1"></div>
+                  <div class="seat unavail" id="A2"></div>
+                  <div class="seat" id="A3"></div>
+                  <div class="seat" id="A4"></div>
+                  <div class="seat unavail" id="A5"></div>
+                  <div class="seat unavail" id="A6"></div>
+                  <div class="seat" id="A7"></div>
+                  <div class="seat" id="A8"></div>
+                  <div class="seat unavail" id="A9"></div>
+                  <div class="seat unavail" id="A10"></div>
+                </div>
+                <div class="row" id="rowB">
+                  <div class="ylabel">B</div>
+                  <div class="seat"></div>
+                  <div class="seat"></div>
+                  <div class="seat unavail"></div>
+                  <div class="seat unavail"></div>
+                  <div class="seat"></div>
+                  <div class="seat"></div>
+                  <div class="seat unavail"></div>
+                  <div class="seat unavail"></div>
+                  <div class="seat"></div>
+                  <div class="seat"></div>
+                </div>
+
+                <div class="row" id="rowC">
+                  <div class="ylabel">C</div>
+                  <div class="seat"></div>
+                  <div class="seat"></div>
+                  <div class="seat"></div>
+                  <div class="seat"></div>
+                  <div class="seat"></div>
+                  <div class="seat"></div>
+                  <div class="seat"></div>
+                  <div class="seat"></div>
+                  <div class="seat"></div>
+                  <div class="seat"></div>
+                </div>
+
+                <div class="row" id="rowD">
+                  <div class="ylabel">D</div>
+                  <div class="seat"></div>
+                  <div class="seat"></div>
+                  <div class="seat"></div>
+                  <div class="seat"></div>
+                  <div class="seat"></div>
+                  <div class="seat"></div>
+                  <div class="seat"></div>
+                  <div class="seat"></div>
+                  <div class="seat"></div>
+                  <div class="seat"></div>
+                </div>
+
+                <div class="row" id="rowE">
+                  <div class="ylabel">E</div>
+                  <div class="seat"></div>
+                  <div class="seat"></div>
+                  <div class="seat"></div>
+                  <div class="seat"></div>
+                  <div class="seat"></div>
+                  <div class="seat"></div>
+                  <div class="seat"></div>
+                  <div class="seat"></div>
+                  <div class="seat"></div>
+                  <div class="seat"></div>
+                </div>
+
+                <div class="row" id="rowF">
+                  <div class="ylabel">F</div>
+                  <div class="seat"></div>
+                  <div class="seat"></div>
+                  <div class="seat"></div>
+                  <div class="seat"></div>
+                  <div class="seat"></div>
+                  <div class="seat"></div>
+                  <div class="seat"></div>
+                  <div class="seat"></div>
+                  <div class="seat"></div>
+                  <div class="seat"></div>
+                </div>
+              </div>
+              <?php
+              $qry = "select * from tickets";
+              $tic_prices = array();
+              if ($result = $db->query($qry)) {
+                while ($row = $result->fetch_assoc()) {
+                  array_push($tic_prices, $row["tic_price"]);
+                }
+              }
+              ?>
+              <div style="margin:auto; min-width:300px; text-align:center">
+                <label for="ticketprice">Ticket Type:</label>
+                <select form="bookingform" name="tickettype" id="tickettype" required>
+                  <option value="" disabled selected hidden>Select ticket type</option>
+                  <option value=<?php echo $tic_prices[0]; ?>>Standard</option>
+                  <option value=<?php echo $tic_prices[1]; ?>>Platinum</option>
+                  <option value=<?php echo $tic_prices[2]; ?>>Gold</option>
+                </select>
+              </div>
+              <!-- <p class="text">
+                You have selected <span id="count">0</span> seats for a price of $<span id="total">0</span>
+              </p> -->
+            </div>
+            <!-- <div> -->
+            <table>
+              <tr>
+                <th>Ticket Type</th>
+                <th>Quantity</th>
+                <th>Price</th>
+                <th>Sub Total</th>
+              </tr>
+              <tr>
+                <td id="ticket_type"></td>
+                <td id="ticket_qty"></td>
+                <td id="ticket_price"></td>
+                <td id="ticket_subtot"></td>
+              </tr>
+            </table>
+            <!-- </div> -->
+            <div class="contact" style="margin: auto; margin-right:10px; padding-top:20px">
+              <label for="name">*Name:</label>
+              <input type="text" name="name" id="name" required placeholder="Enter your name here"><br>
+              <label  for="email">*E-mail:</label>
+              <input type="email" name="email" id="email" required placeholder="Enter your Email-ID here">
+            </div>
+
+            <!-- </div> -->
+            <div style="margin-top: 5%; text-align:center">
               <input type="hidden" name="seats" id="seats" value="test" />
               <button type="submit" name="confirmbook" class="quickbook" id="confirmbook" value=<?php echo $row1[0] ?>>Book Tickets</button>
               <br>
@@ -453,7 +574,7 @@ $row2 = $result2->fetch_assoc();
         </div>
       </div>
     </form>
-    <script src="../js/seat.js"></script>
+    <script src="../js/quickbooking.js"></script>
 
   </div>
 
