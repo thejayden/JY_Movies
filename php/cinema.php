@@ -216,14 +216,7 @@ padding-top: 30px;
 }
   
 </style>
-<?php
-@$db = new mysqli('localhost', 'root', '', 'moviesdb');
 
-if (mysqli_connect_errno()) {
-  echo "Error: Could not connect to database.  Please try again later.";
-  exit;
-}
-?>
 
 <body>
 
@@ -237,7 +230,7 @@ if (mysqli_connect_errno()) {
         <a href="home.php" class="w3-bar-item w3-button">HOME</a>
         <a href="movies.php" class="w3-bar-item w3-button"></i> MOVIES</a>
         <a href="cinema.php" class="w3-bar-item w3-button"></i> CINEMA</a>
-        <a href="quickbooking.php" class="w3-bar-item w3-button"></i> QUICK BOOKING</a>
+        <a href="checkbooking.php" class="w3-bar-item w3-button"></i> CHECK BOOKING</a>
 
       </div>
     </div>

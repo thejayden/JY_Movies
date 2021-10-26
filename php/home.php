@@ -38,14 +38,17 @@ if (mysqli_connect_errno()) {
   }
 
   /* Full height image header */
-  /* .bgimg-1 {
+  .bgimg-1 {
     background-position: center;
     background-size: cover;
     background-image: url("/w3images/mac.jpg");
     min-height: 100%;
-  } */
+  }
 
-  
+  .w3-bar .w3-button {
+    padding: 16px;
+  }
+
   div.gallery_wrap {
     float: left;
   }
@@ -68,7 +71,7 @@ if (mysqli_connect_errno()) {
     box-shadow: 0 1em 2em rgba(0, 0, 0, 0.2);
     transition: ease 0.3s all;
     background-color: black;
-    z-index: 2;
+    z-index: 999;
     position: relative;
   }
 
@@ -102,7 +105,7 @@ if (mysqli_connect_errno()) {
     /* background-color: black; */
     color: #F6C90E;
     font-size: smaller;
-    z-index: 2;
+    z-index: 999;
     padding: 5px 10px 0 5px;
   }
 
@@ -128,17 +131,6 @@ if (mysqli_connect_errno()) {
     line-height: 15px;
     font-weight: lighter;
     color: #C39F0B;
-  }
-
-  .footer {
-    font-family: 'Arial Narrow', Arial, sans-serif;
-    font-size: medium;
-    padding: 30px 0 60px 0;
-    color: whitesmoke;
-    /* background-color: #131313; */
-    background-color: black;
-    /* height: 200px; */
-
   }
 
   /* .dropdown {
@@ -172,10 +164,12 @@ if (mysqli_connect_errno()) {
         <a href="home.php" class="w3-bar-item w3-button">HOME</a>
         <a href="movies.php" class="w3-bar-item w3-button"></i> MOVIES</a>
         <a href="cinema.php" class="w3-bar-item w3-button"></i> CINEMA</a>
-        <a href="quickbooking.php" class="w3-bar-item w3-button"></i> QUICK BOOKING</a>
+        <a href="checkbooking.php" class="w3-bar-item w3-button"></i> CHECK BOOKING</a>
+
       </div>
     </div>
   </div>
+
 
   <marquee behavior="alternate" direction="left" style="padding-top: 90px">
     <img src="../images/image1.jpg" width="350" height="200">
