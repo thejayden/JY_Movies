@@ -42,9 +42,9 @@ create table if not exists movieinfo
 -- --   seats varchar(255) not null
 -- -- );
 
--- create table if not exists tickets
--- ( tic_id int unsigned not null auto_increment primary key,
---   tic_type varchar(255) not null,
---   tic_price float not null
--- );
+create table if not exists tickets
+( tic_id int unsigned not null auto_increment primary key,
+  tic_type varchar(255) not null,
+  tic_price float not null
+);
 
