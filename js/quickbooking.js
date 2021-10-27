@@ -37,35 +37,8 @@ function updateSelectedCount() {
 
     localStorage.setItem('selectedSeatss', JSON.stringify(seatsIndex));
 
-    //copy selected seats into arr
-    // map through array
-    //return new array of indexes
-
-    // const selectedSeatsCount = selectedSeats.length;
     selectedSeatsCount = selectedSeats.length;
-
-    // count.innerText = selectedSeatsCount;
-    // total.innerText = selectedSeatsCount * ticketPrice;
 }
-
-// get data from localstorage and populate ui
-// function populateUI() {
-//     const selectedSeats = JSON.parse(localStorage.getItem('selectedSeatss'));
-//     console.log(selectedSeats);
-//     if (selectedSeats !== null && selectedSeats.length > 0) {
-//         seats.forEach((seat, index) => {
-//             if (selectedSeats.indexOf(index) > -1) {
-//                 seat.classList.add('selected');
-//             }
-//         });
-//     }
-
-//     // const selectedMovieIndex = localStorage.getItem('selectedMovieIndex');
-
-//     // if (selectedMovieIndex !== null) {
-//     //     movieSelect.selectedIndex = selectedMovieIndex;
-//     // }
-// }
 
 // // Movie select event
 ticketType.addEventListener('change', (e) => {
@@ -76,9 +49,6 @@ ticketType.addEventListener('change', (e) => {
     if (selectedSeatsCount > 0) {
         displayTicketInfo();
     }
-    // setMovieData(e.target.selectedIndex, e.target.value);
-    // updateSelectedCount();
-
 });
 
 // Seat click event
@@ -111,3 +81,41 @@ function clear() {
     print_ticprice.innerHTML = "";
     print_ticsubtot.innerHTML = "";
 }
+
+let id = (id) => document.getElementById(id);
+
+let classes = (classes) => document.getElementsByClassName(classes);
+
+let namewa = id("name"),
+    email = id("email"),
+    password = id("phone"),
+    form = id("bookingform"),
+    errorMsg = classes("error"),
+    successIcon = classes("success-icon"),
+    failureIcon = classes("failure-icon");
+
+form.addEventListener("submit", (e) => {
+    e.preventDefault();
+
+    engine(namewa, 0, "Name cannot be blank");
+    engine(phone, 1, "Phone cannot be blank");
+    engine(email, 2, "Email cannot be blank");
+});
+
+let engine = (id, serial, message) => {
+    if (id.value.trim() === "") {
+        errorMsg[serial].innerHTML = message;
+        id.style.border = "2px solid red";
+
+        // icons
+        failureIcon[serial].style.opacity = "1";
+        successIcon[serial].style.opacity = "0";
+    } else {
+        errorMsg[serial].innerHTML = "";
+        id.style.border = "2px solid green";
+
+        // icons
+        failureIcon[serial].style.opacity = "0";
+        successIcon[serial].style.opacity = "1";
+    }
+};
