@@ -1,6 +1,6 @@
 <!DOCTYPE html>
 <html>
-<title>Movies</title>
+<title>movie</title>
 <meta charset="UTF-8">
 <meta name="viewport" content="width=device-width, initial-scale=1">
 <link rel="stylesheet" href="../css/main.css">
@@ -84,7 +84,7 @@
         color: whitesmoke;
         text-align: left;
         padding: 20px 0 20px 20px;
-       }
+    }
 
     .moviebox3 {
         width: 1000px;
@@ -96,11 +96,7 @@
         text-align: left;
     }
 
-.bookingconfirmation{
-    font-family: 'Arial Narrow', Arial, sans-serif;
-    letter-spacing: 2.3px;
-    font-size: 25px;
-}
+
 
     .footer {
         font-family: 'Arial Narrow', Arial, sans-serif;
@@ -110,6 +106,47 @@
         background-color: black;
         height: 200px;
 
+    }
+
+    .checkbook {
+        background-color: #F6C90E;
+        color: black;
+        font-size: 16px;
+        font-weight: bold;
+        border: 0;
+        border-radius: 50px;
+        padding: 10px 20px;
+        margin-top: 5px;
+        cursor: pointer;
+        justify-content: center;
+        transition: ease 0.9s all;
+    }
+
+    .checkbook:hover {
+        transition: ease 0.3s all;
+        transform: scale(1.1);
+        font-weight: 900;
+    }
+
+
+    .newsletterbox {
+        text-align: left;
+        color: #c9c9c9;
+        font-size: 22px;
+        font-family: 'Franklin Gothic Medium', 'Arial Narrow', Arial, sans-serif;
+        letter-spacing: 2.4px;
+    }
+
+    input {
+        border-top-style: hidden;
+        border-right-style: hidden;
+        border-left-style: hidden;
+        border-bottom-style: hidden;
+        background-color: transparent;
+        outline: none;
+        color: white;
+        font-family: 'Arial Narrow';
+        letter-spacing: 2.3px;
     }
 </style>
 <?php
@@ -162,35 +199,19 @@ if (mysqli_connect_errno()) {
         <div class="moviemiddle1" ;>
             <div class="moviebox1" style="width:85%">&nbsp;&nbsp;CHECK BOOKING</div>
         </div>
-        <div class="moviemiddle2">
+        <div class="moviemiddle2" style="padding-top: 10px;">
             <div class="moviebox2" style="width:85%">
-                <table class="bookingconfirmation">
-                    <tr>
-                        <th>Booking ID:</th>
-                    </tr>
-                    <tr>
-                        <th>Movie:</th>
-                    </tr>
-                    <tr>
-                        <th>Cinema:</th>
-                    </tr>
-                    <tr>
-                        <th>Date:</th>
-                    </tr>
-                    <tr>
-                        <th>Time:</th>
-                    </tr>
-                    <tr>
-                        <th> Seat Number(s):</th>
-                    </tr>
-                    <tr>
-                        <th>Email:</th>
-                    </tr>
-                    <tr>
-                        <th> Phone Number:</th>
-                    </tr>
-
-                </table>
+                <div class="newsletterbox">
+                    <form method="GET">
+                        <label for="fname">NAME:</label>
+                        <input type="text" id="fname" size="40px" placeholder="Enter name here" required><br><br>
+                        <label for="fname">EMAIL:</label>
+                        <input type="email" id="fname" size="40px" placeholder="Enter email here" required><br><br>
+                        <label for="fname">BOOKING ID:</label>
+                        <input type="text" id="fname" size="40px" placeholder="Enter booking ID here" required><br><br>
+                </div>
+                <button type="submit" name="checkbook" class="checkbook" id="checkbook" value="<?php echo $row1[0]; ?>">Check Booking</button>
+                </form>
             </div>
 
         </div>
@@ -202,8 +223,6 @@ if (mysqli_connect_errno()) {
 
 
     <footer style="padding-top: 60px;">
-
-
         <div class="footer">
             <table width="100%">
                 <tr>

@@ -400,8 +400,17 @@ $row2 = $result2->fetch_assoc();
 
     .fa-user,
     .fa-phone,
-    .fa-envelope{
-      color:#CFA90B;
+    .fa-envelope {
+      color: #CFA90B;
+    }
+
+    .footer {
+      font-family: 'Arial Narrow', Arial, sans-serif;
+      font-size: medium;
+      padding-top: 50px;
+      color: whitesmoke;
+      background-color: black;
+      height: 200px;
     }
   </style>
 </head>
@@ -687,9 +696,27 @@ $row2 = $result2->fetch_assoc();
 
   </div>
 
-  <footer style="color: antiquewhite; background-color:aqua;">
-    <p>Author: Hege Refsnes</p>
-    <p><a href="mailto:hege@example.com">hege@example.com</a></p>
+  <footer style="padding-top: 60px;">
+    <div class="footer">
+      <table width="100%">
+        <tr>
+          <th>Follow Us:</th>
+          <th>Download Our Mobile App:</th>
+          <th>Contact us:</th>
+        </tr>
+        <tr>
+          <th><img src="../images/others/twitter.png" width="30" height="30">&nbsp;
+            <img src="../images/others/instagram.png" width="30" height="30"> &nbsp;
+            <img src="../images/others/facebook.png" width="30" height="30">
+          </th>
+          <th>
+            <img src="../images/others/appstore.png" width="90" height="30"> &nbsp;
+            <img src="../images/others/appstore2.png" width="30" height="30">
+          </th>
+          <th>90807053</th>
+        </tr>
+      </table>
+    </div>
   </footer>
 
   <script type="text/javascript" src="../js/carousel.js">

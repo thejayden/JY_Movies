@@ -289,6 +289,23 @@ $result1 = $db->query($qry);
   p.text span {
     color: #6feaf6;
   }
+
+  .bookingconfirmation{
+    font-family: 'Arial Narrow', Arial, sans-serif;
+    letter-spacing: 2.3px;
+    font-size: 25px;
+    color: whitesmoke;
+}
+
+.footer {
+        font-family: 'Arial Narrow', Arial, sans-serif;
+        font-size: medium;
+        padding-top: 50px;
+        color: whitesmoke;
+        background-color: black;
+        height: 200px;
+
+    }
 </style>
 
 <body>
@@ -310,7 +327,7 @@ $result1 = $db->query($qry);
   <div>
     <div class="moviemiddle1" style="padding: 100px 0 0 0;">
       <div class="moviebox1">&nbsp;<?php echo $movie_id;
-echo $seats; ?></div>
+echo $seats; ?>BOOKING CONFIRMATION</div>
     </div>
 
     <div class="moviemiddle2">
@@ -320,6 +337,33 @@ echo $seats; ?></div>
         <div class="movieright" style="height:100%; display: flex; flex-direction: column;">
           <div style="flex-wrap: wrap; display: flex;">
             <div>
+            <table class="bookingconfirmation">
+                    <tr>
+                        <th>Booking ID:</th>
+                    </tr>
+                    <tr>
+                        <th>Movie:</th>
+                    </tr>
+                    <tr>
+                        <th>Cinema:</th>
+                    </tr>
+                    <tr>
+                        <th>Date:</th>
+                    </tr>
+                    <tr>
+                        <th>Time:</th>
+                    </tr>
+                    <tr>
+                        <th> Seat Number(s):</th>
+                    </tr>
+                    <tr>
+                        <th>Email:</th>
+                    </tr>
+                    <tr>
+                        <th> Phone Number:</th>
+                    </tr>
+
+                </table>
             </div>
             <div>
             </div>
@@ -337,10 +381,28 @@ echo $seats; ?></div>
 
   </div>
 
-  <footer style="color: antiquewhite; background-color:aqua;">
-    <p>Author: Hege Refsnes</p>
-    <p><a href="mailto:hege@example.com">hege@example.com</a></p>
-  </footer>
+  <footer style="padding-top: 60px;">
+        <div class="footer">
+            <table width="100%">
+                <tr>
+                    <th>Follow Us:</th>
+                    <th>Download Our Mobile App:</th>
+                    <th>Contact us:</th>
+                </tr>
+                <tr>
+                    <th><img src="../images/others/twitter.png" width="30" height="30">&nbsp;
+                        <img src="../images/others/instagram.png" width="30" height="30"> &nbsp;
+                        <img src="../images/others/facebook.png" width="30" height="30">
+                    </th>
+                    <th>
+                        <img src="../images/others/appstore.png" width="90" height="30"> &nbsp;
+                        <img src="../images/others/appstore2.png" width="30" height="30">
+                    </th>
+                    <th>90807053</th>
+                </tr>
+            </table>
+        </div>
+    </footer>
 
   <script type="text/javascript" src="../js/carousel.js">
   </script>

@@ -150,6 +150,16 @@ if (mysqli_connect_errno()) {
 .dropdown:hover .dropdown-content {
   display: block;
 } */
+
+.footer {
+    font-family: 'Arial Narrow', Arial, sans-serif;
+    font-size: medium;
+    padding-top: 50px;
+    color: whitesmoke;
+    background-color: black;
+    height: 200px;
+
+  }
 </style>
 
 <body>
@@ -190,18 +200,12 @@ if (mysqli_connect_errno()) {
     <img src="../images/image8.jpg" width="350" height="200">
   </marquee>
 
-  <?php
-
-$qry = "select * from movies where movie_id = 2";
-
-    echo '<div style="text-align: center; padding-top: 30px;">
-    <a href="$qry">
-    <img border="0" src="../images/shangchigif.gif" width="400px" height="220">
+  <div style="text-align: center; padding-top: 30px;">
+    <a href="movies.php">
+    <img border="0" src="../images/others/shangchigif.gif" width="400px" height="220">
     <div style="color: rgba(104, 237, 255, 0.993); font-family: sans-serif"><strong>CLICK HERE TO GET YOUR TICKET(S) TODAY!</strong></div>
   </a>
-  </div>'
-
-   ?>
+  </div>
 
   <!-- Header with full-height image -->
   <div id="home" style="padding: 50px 50px 0px 10px;">

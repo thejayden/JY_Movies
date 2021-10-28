@@ -128,13 +128,22 @@
 .locations{
     width: 1000px;
     height: 49px;
-       
+      font-size: 20px;
 }
 figcaption{
     color: whitesmoke;
     font-family:  Arial, sans-serif;
     padding: 20px 0 10px 0;
-}#myImg:hover {opacity: 0.7;}
+}
+#imga:hover {opacity: 0.7;}
+#imgb:hover {opacity: 0.7;}
+#imgc:hover {opacity: 0.7;}
+#imgd:hover {opacity: 0.7;}
+#imge:hover {opacity: 0.7;}
+#imgf:hover {opacity: 0.7;}
+#imgg:hover {opacity: 0.7;}
+#imgh:hover {opacity: 0.7;}
+
 
 /* The Modal (background) */
 .modal {
@@ -257,7 +266,6 @@ padding-top: 30px;
 
 
 
- <!-- <img id="myImg" src="../images/location/LC_!.png" alt="Snow" style="width:100%;max-width:300px"> -->
  <div >
     <div class="moviemiddle1" ;>
       <div class="moviebox1" style="width:85%">&nbsp;&nbsp;CINEMA LOCATIONS</div>
@@ -266,11 +274,10 @@ padding-top: 30px;
     <div class="locationsbox">
     <table class="locations" style="width:85%; padding-bottom: 30px;">
 <tr>
-<th><figcaption>Woodlands</figcaption><img id="myImg" alt="Woodlands" src="../images/location/LC_!.png" width="300" height="220">&nbsp;</th>
-<th><figcaption>Woodlands</figcaption><img id="myImg"src="../images/location/LC_!.png" width="300" height="220">&nbsp;</th>
-<th><figcaption>Woodlands</figcaption><img id="myImg"src="../images/location/LC_!.png" width="300" height="220">&nbsp;</th>
-<th><figcaption>Woodlands</figcaption><img id="myImg"src="../images/location/LC_!.png" width="300" height="220">&nbsp;</th>
-<th><figcaption>Woodlands</figcaption><img id="myImg"src="../images/location/LC_!.png" width="300" height="220">&nbsp;</th>
+<th><figcaption>Woodlands</figcaption><img id="imga" alt="Woodlands" src="../images/location/LC_1.png" width="300" height="220">&nbsp;</th>
+<th><figcaption>Farrer Park</figcaption><img id="imgb" alt="Farrer Park" src="../images/location/LC_fp.png" width="300" height="220">&nbsp;</th>
+<th><figcaption>Lavendar</figcaption><img id="imgc" alt="Lavendar" src="../images/location/LC_ld.png" width="300" height="220">&nbsp;</th>
+<th><figcaption>Serangoon</figcaption><img id="imgd" alt="Serangoon" src="../images/location/LC_srg.png" width="300" height="220">&nbsp;</th>
 
 </tr> 
 
@@ -278,11 +285,10 @@ padding-top: 30px;
 <br><br>
 
 <tr>
-<th><figcaption>Woodlands</figcaption><img id="myImg"src="../images/location/LC_!.png" width="300" height="220">&nbsp;</th>
-<th><figcaption>Woodlands</figcaption><img id="myImg"src="../images/location/LC_!.png" width="300" height="220">&nbsp;</th>
-<th><figcaption>Woodlands</figcaption><img id="myImg"src="../images/location/LC_!.png" width="300" height="220">&nbsp;</th>
-<th><figcaption>Woodlands</figcaption><img id="myImg"src="../images/location/LC_!.png" width="300" height="220">&nbsp;</th>
-<th><figcaption>Woodlands</figcaption><img id="myImg"src="../images/location/LC_!.png" width="300" height="220">&nbsp;</th>
+<th><figcaption>Pasir Ris</figcaption><img id="imge"alt="Pasir Ris"src="../images/location/LC_pr.png" width="300" height="220">&nbsp;</th>
+<th><figcaption>Sengkang</figcaption><img id="imgf"alt="Sengkang"src="../images/location/LC_sk.png" width="300" height="220">&nbsp;</th>
+<th><figcaption>Orchard</figcaption><img id="imgg"alt="Orchard"src="../images/location/LC_orc.png" width="300" height="220">&nbsp;</th>
+<th><figcaption>Boon Keng</figcaption><img id="imgh"alt="Boon Keng"src="../images/location/LC_bk.png" width="300" height="220">&nbsp;</th>
 
 </tr>
  
@@ -294,31 +300,6 @@ padding-top: 30px;
   <img class="modal-content" id="img01">
   <div id="caption"></div>
 </div>
-
-<script>
-// Get the modal
-var modal = document.getElementById("myModal");
-
-// Get the image and insert it inside the modal - use its "alt" text as a caption
-var img = document.getElementById("myImg");
-var modalImg = document.getElementById("img01");
-var captionText = document.getElementById("caption");
-img.onclick = function(){
-  modal.style.display = "block";
-  modalImg.src = this.src;
-  captionText.innerHTML = this.alt;
-}
-
-// Get the <span> element that closes the modal
-var span = document.getElementsByClassName("close")[0];
-
-// When the user clicks on <span> (x), close the modal
-span.onclick = function() { 
-  modal.style.display = "none";
-}
-</script>
-
-
 
   <footer style="padding-top: 60px;">
 
@@ -344,7 +325,8 @@ span.onclick = function() {
       </table>
     </div>
   </footer>
-
+  <script type="text/javascript" src="../js/cinemapop.js">
+  </script>
   <script type="text/javascript" src="../js/carousel.js">
   </script>
 </body>
