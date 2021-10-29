@@ -1,28 +1,5 @@
 <!DOCTYPE html>
 <html>
-<?php
-@$db = new mysqli('localhost', 'root', '', 'moviesdb');
-
-if (mysqli_connect_errno()) {
-  echo "Error: Could not connect to database.  Please try again later.";
-  exit;
-}
-
-$movie_id = $_POST['confirmbook'];
-$seats = $_POST['seats'];
-echo $movie_id;
-echo $seats;
-?>
-<?php
-$qry = "insert into bookings_test (movie_id, seats) values ('".$movie_id."', '".$seats."');";
-$result1 = $db->query($qry);
-// echo  $db->affected_rows;
-// $row1 = $result1->fetch_row();
-
-// $qry2 = "select * from movieinfo where movie_id = $id";
-// $result2 = $db->query($qry2);
-// $row2 = $result2->fetch_assoc();
-?>
 <title>Booking Confirmation - <?php echo $row1[1]; ?></title>
 <meta charset="UTF-8">
 <meta name="viewport" content="width=device-width, initial-scale=1">
@@ -290,22 +267,22 @@ $result1 = $db->query($qry);
     color: #6feaf6;
   }
 
-  .bookingconfirmation{
+  .bookingconfirmation {
     font-family: 'Arial Narrow', Arial, sans-serif;
     letter-spacing: 2.3px;
     font-size: 25px;
     color: whitesmoke;
-}
+  }
 
-.footer {
-        font-family: 'Arial Narrow', Arial, sans-serif;
-        font-size: medium;
-        padding-top: 50px;
-        color: whitesmoke;
-        background-color: black;
-        height: 200px;
+  .footer {
+    font-family: 'Arial Narrow', Arial, sans-serif;
+    font-size: medium;
+    padding-top: 50px;
+    color: whitesmoke;
+    background-color: black;
+    height: 200px;
 
-    }
+  }
 </style>
 
 <body>
@@ -326,9 +303,48 @@ $result1 = $db->query($qry);
   </div>
   <div>
     <div class="moviemiddle1" style="padding: 100px 0 0 0;">
-      <div class="moviebox1">&nbsp;<?php echo $movie_id;
-echo $seats; ?>BOOKING CONFIRMATION</div>
+      <div class="moviebox1">&nbsp;BOOKING CONFIRMATION</div>
     </div>
+    <?php
+    @$db = new mysqli('localhost', 'root', '', 'moviesdb');
+
+    if (mysqli_connect_errno()) {
+      echo "Error: Could not connect to database.  Please try again later.";
+      exit;
+    }
+
+    $name = $_POST['name'];
+    $movie_id = $_POST['confirmbook'];
+    $cinema = $_POST['cinema'];
+    $date = $_POST['date'];
+    $time = $_POST['timeslot'];
+    $ticket = $_POST['tickettype'];
+    $seats = $_POST['seats'];
+    $phone = $_POST['phone'];
+    $email = $_POST['email'];
+    ?>
+    <?php
+    $qry = "insert into bookings (movie_id, cinema_id, seats, name, email, phone, date, timeslot, ticket_type) values 
+    ('" . $movie_id . "', 
+    '" . $cinema . "', 
+    '" . $seats . "', 
+    '" . $name . "', 
+    '" . $email . "', 
+    '" . $phone . "', 
+    '" . $date . "', 
+    '" . $time . "', 
+    '" . $ticket . "'
+  );";
+    if ($insert = $db->query($qry)){
+      $cur_bookingId = $insert->insert_id;
+    }
+    // echo  $db->affected_rows;
+    // $row1 = $result1->fetch_row();
+
+    // $qry2 = "select * from movieinfo where movie_id = $id";
+    // $result2 = $db->query($qry2);
+    // $row2 = $result2->fetch_assoc();
+    ?>
 
     <div class="moviemiddle2">
       <div class="moviebox2">
@@ -337,33 +353,49 @@ echo $seats; ?>BOOKING CONFIRMATION</div>
         <div class="movieright" style="height:100%; display: flex; flex-direction: column;">
           <div style="flex-wrap: wrap; display: flex;">
             <div>
-            <table class="bookingconfirmation">
-                    <tr>
-                        <th>Booking ID:</th>
-                    </tr>
-                    <tr>
-                        <th>Movie:</th>
-                    </tr>
-                    <tr>
-                        <th>Cinema:</th>
-                    </tr>
-                    <tr>
-                        <th>Date:</th>
-                    </tr>
-                    <tr>
-                        <th>Time:</th>
-                    </tr>
-                    <tr>
-                        <th> Seat Number(s):</th>
-                    </tr>
-                    <tr>
-                        <th>Email:</th>
-                    </tr>
-                    <tr>
-                        <th> Phone Number:</th>
-                    </tr>
+              <table class="bookingconfirmation">
+                <tr>
+                  <th>Booking ID:</th>
+                  <td></td>
+                </tr>
+                <tr>
+                  <th>Name:</th>
+                  <td></td>
+                </tr>
+                <tr>
+                  <th>Movie:</th>
+                  <td></td>
+                </tr>
+                <tr>
+                  <th>Cinema:</th>
+                  <td></td>
+                </tr>
+                <tr>
+                  <th>Date:</th>
+                  <td></td>
+                </tr>
+                <tr>
+                  <th>Time:</th>
+                  <td></td>
+                </tr>
+                <!-- <tr>
+                        <th>Ticket Type:</th>
+                        <td></td>
+                    </tr> -->
+                <tr>
+                  <th>Seat Number(s):</th>
+                  <td></td>
+                </tr>
+                <tr>
+                  <th>Email:</th>
+                  <td></td>
+                </tr>
+                <tr>
+                  <th> Phone Number:</th>
+                  <td></td>
+                </tr>
 
-                </table>
+              </table>
             </div>
             <div>
             </div>
@@ -382,27 +414,27 @@ echo $seats; ?>BOOKING CONFIRMATION</div>
   </div>
 
   <footer style="padding-top: 60px;">
-        <div class="footer">
-            <table width="100%">
-                <tr>
-                    <th>Follow Us:</th>
-                    <th>Download Our Mobile App:</th>
-                    <th>Contact us:</th>
-                </tr>
-                <tr>
-                    <th><img src="../images/others/twitter.png" width="30" height="30">&nbsp;
-                        <img src="../images/others/instagram.png" width="30" height="30"> &nbsp;
-                        <img src="../images/others/facebook.png" width="30" height="30">
-                    </th>
-                    <th>
-                        <img src="../images/others/appstore.png" width="90" height="30"> &nbsp;
-                        <img src="../images/others/appstore2.png" width="30" height="30">
-                    </th>
-                    <th>90807053</th>
-                </tr>
-            </table>
-        </div>
-    </footer>
+    <div class="footer">
+      <table width="100%">
+        <tr>
+          <th>Follow Us:</th>
+          <th>Download Our Mobile App:</th>
+          <th>Contact us:</th>
+        </tr>
+        <tr>
+          <th><img src="../images/others/twitter.png" width="30" height="30">&nbsp;
+            <img src="../images/others/instagram.png" width="30" height="30"> &nbsp;
+            <img src="../images/others/facebook.png" width="30" height="30">
+          </th>
+          <th>
+            <img src="../images/others/appstore.png" width="90" height="30"> &nbsp;
+            <img src="../images/others/appstore2.png" width="30" height="30">
+          </th>
+          <th>90807053</th>
+        </tr>
+      </table>
+    </div>
+  </footer>
 
   <script type="text/javascript" src="../js/carousel.js">
   </script>

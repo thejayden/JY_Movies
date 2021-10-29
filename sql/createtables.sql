@@ -22,19 +22,20 @@ create table if not exists movieinfo
   image3 longblob not null
 );
 
--- create table if not exists bookings
--- ( booking_id int unsigned not null auto_increment primary key,
---   movie_id int unsigned not null,
---   cinema_id int not null,
---   seats varchar(255) not null,
---   name varchar(255) not null,
---   email varchar(255) not null,
---   phone varchar(255) not null,
---   date date not null,
---   timeslot varchar(255) not null,
---   ticket_type varchar(255),
-
--- );
+create table if not exists bookings
+( 
+--   booking_id int unsigned not null auto_increment primary key,
+  booking_id int(3) unsigned zerofill not null auto_increment primary key,
+  movie_id int unsigned not null,
+  cinema_id varchar(255) not null,
+  seats varchar(255) not null,
+  name varchar(255) not null,
+  email varchar(255) not null,
+  phone varchar(255) not null,
+  date date not null,
+  timeslot varchar(255) not null,
+  ticket_type varchar(255) not null
+);
 
 -- -- create table if not exists bookings_test
 -- -- ( booking_id int unsigned not null auto_increment primary key,
@@ -42,9 +43,15 @@ create table if not exists movieinfo
 -- --   seats varchar(255) not null
 -- -- );
 
+-- create table if not exists tickets
+-- ( tic_id int unsigned not null auto_increment primary key,
+--   tic_type varchar(255) not null,
+--   tic_price float not null
+-- );
+
 create table if not exists tickets
-( tic_id int unsigned not null auto_increment primary key,
-  tic_type varchar(255) not null,
+( 
+  tic_type varchar(255) not null primary key,
   tic_price float not null
 );
 

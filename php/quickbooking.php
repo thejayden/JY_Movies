@@ -394,8 +394,9 @@ $row2 = $result2->fetch_assoc();
     .error {
       font-size: 14.5px;
       margin-top: 5px;
-      margin-right: 80px;
+      /* margin-right: 80px; */
       text-align: right;
+      /* margin-left: 90px; */
     }
 
     .fa-user,
@@ -411,6 +412,14 @@ $row2 = $result2->fetch_assoc();
       color: whitesmoke;
       background-color: black;
       height: 200px;
+    }
+
+    table{
+      margin-top: 20px;
+      padding-left: 20px;
+      background-color: rgb(255, 255, 255, 0.1);
+      /* border: 2px solid #c4c4c4; */
+      border-radius: 8px;
     }
   </style>
 </head>
@@ -472,19 +481,19 @@ $row2 = $result2->fetch_assoc();
               <label for="cinema">Cinema:</label>
               <select form="bookingform" name="cinema" id="cinema" required>
                 <option value="" disabled selected hidden>Choose A Cinema</option>
-                <option value="1">Woodlands</option>
-                <option value="2">Yishun</option>
-                <option value="3">Jurong</option>
-                <option value="4">Serangoon</option>
-                <option value="5">Pasir Ris</option>
-                <option value="6">Sengkang</option>
-                <option value="7">Orchard</option>
-                <option value="8">Boon Keng</option>
-                <option value="9">Lavender</option>
-                <option value="10">Farrer Park</option>
+                <option value="JY1">JY Woodlands</option>
+                <option value="JY2">JY Yishun</option>
+                <option value="JY3">JY Jurong</option>
+                <option value="JY4">JY Serangoon</option>
+                <option value="JY5">JY Pasir Ris</option>
+                <option value="JY6">JY Sengkang</option>
+                <option value="JY7">JY Orchard</option>
+                <option value="JY8">JY Boon Keng</option>
+                <option value="JY9">JY Lavender</option>
+                <option value="JY10">JY Farrer Park</option>
               </select>
               <!-- <label for="date">Date:</label> -->
-              <input type="date" id="date" name="date">
+              <input type="date" id="date" name="date" required>
               <div style="text-align:center; padding:10px 0 0 0">
                 <label for="timeslot">Timeslot:</label>
                 <select form="bookingform" name="timeslot" id="timeslot" required>
@@ -547,72 +556,72 @@ $row2 = $result2->fetch_assoc();
                 </div>
                 <div class="row" id="rowB">
                   <div class="ylabel">B</div>
-                  <div class="seat"></div>
-                  <div class="seat"></div>
-                  <div class="seat unavail"></div>
-                  <div class="seat unavail"></div>
-                  <div class="seat"></div>
-                  <div class="seat"></div>
-                  <div class="seat unavail"></div>
-                  <div class="seat unavail"></div>
-                  <div class="seat"></div>
-                  <div class="seat"></div>
+                  <div class="seat" id="B1"></div>
+                  <div class="seat" id="B2"></div>
+                  <div class="seat unavail" id="B3"></div>
+                  <div class="seat unavail" id="B4"></div>
+                  <div class="seat" id="B5"></div>
+                  <div class="seat" id="B6"></div>
+                  <div class="seat unavail" id="B7"></div>
+                  <div class="seat unavail" id="B8"></div>
+                  <div class="seat" id="B9"></div>
+                  <div class="seat" id="B10"></div>
                 </div>
 
                 <div class="row" id="rowC">
                   <div class="ylabel">C</div>
-                  <div class="seat"></div>
-                  <div class="seat"></div>
-                  <div class="seat"></div>
-                  <div class="seat"></div>
-                  <div class="seat"></div>
-                  <div class="seat"></div>
-                  <div class="seat"></div>
-                  <div class="seat"></div>
-                  <div class="seat"></div>
-                  <div class="seat"></div>
+                  <div class="seat unavail" id="C1"></div>
+                  <div class="seat unavail" id="C2"></div>
+                  <div class="seat" id="C3"></div>
+                  <div class="seat" id="C4"></div>
+                  <div class="seat unavail" id="C5"></div>
+                  <div class="seat unavail" id="C6"></div>
+                  <div class="seat" id="C7"></div>
+                  <div class="seat" id="C8"></div>
+                  <div class="seat unavail" id="C9"></div>
+                  <div class="seat unavail" id="C10"></div>
                 </div>
 
                 <div class="row" id="rowD">
                   <div class="ylabel">D</div>
-                  <div class="seat"></div>
-                  <div class="seat"></div>
-                  <div class="seat"></div>
-                  <div class="seat"></div>
-                  <div class="seat"></div>
-                  <div class="seat"></div>
-                  <div class="seat"></div>
-                  <div class="seat"></div>
-                  <div class="seat"></div>
-                  <div class="seat"></div>
+                  <div class="seat" id="D1"></div>
+                  <div class="seat" id="D2"></div>
+                  <div class="seat unavail" id="D3"></div>
+                  <div class="seat unavail" id="D4"></div>
+                  <div class="seat" id="D5"></div>
+                  <div class="seat" id="D6"></div>
+                  <div class="seat unavail" id="D7"></div>
+                  <div class="seat unavail" id="D8"></div>
+                  <div class="seat" id="D9"></div>
+                  <div class="seat" id="D10"></div>
                 </div>
 
                 <div class="row" id="rowE">
                   <div class="ylabel">E</div>
-                  <div class="seat"></div>
-                  <div class="seat"></div>
-                  <div class="seat"></div>
-                  <div class="seat"></div>
-                  <div class="seat"></div>
-                  <div class="seat"></div>
-                  <div class="seat"></div>
-                  <div class="seat"></div>
-                  <div class="seat"></div>
-                  <div class="seat"></div>
+                  <div class="seat unavail" id="E1"></div>
+                  <div class="seat unavail" id="E2"></div>
+                  <div class="seat" id="E3"></div>
+                  <div class="seat" id="E4"></div>
+                  <div class="seat unavail" id="E5"></div>
+                  <div class="seat unavail" id="E6"></div>
+                  <div class="seat" id="E7"></div>
+                  <div class="seat" id="E8"></div>
+                  <div class="seat unavail" id="E9"></div>
+                  <div class="seat unavail" id="E10"></div>
                 </div>
 
                 <div class="row" id="rowF">
                   <div class="ylabel">F</div>
-                  <div class="seat"></div>
-                  <div class="seat"></div>
-                  <div class="seat"></div>
-                  <div class="seat"></div>
-                  <div class="seat"></div>
-                  <div class="seat"></div>
-                  <div class="seat"></div>
-                  <div class="seat"></div>
-                  <div class="seat"></div>
-                  <div class="seat"></div>
+                  <div class="seat" id="F1"></div>
+                  <div class="seat" id="F2"></div>
+                  <div class="seat unavail" id="F3"></div>
+                  <div class="seat unavail" id="F4"></div>
+                  <div class="seat" id="F5"></div>
+                  <div class="seat" id="F6"></div>
+                  <div class="seat unavail" id="F7"></div>
+                  <div class="seat unavail" id="F8"></div>
+                  <div class="seat" id="F9"></div>
+                  <div class="seat" id="F10"></div>
                 </div>
               </div>
               <?php
@@ -652,6 +661,7 @@ $row2 = $result2->fetch_assoc();
                 <td id="ticket_subtot"></td>
               </tr>
             </table>
+            <p id="seat_msg" class="seat_msg" style="text-align:center; color:red" ></p>
             <!-- </div> -->
             <div class="contact" style="margin: auto; margin-right:10px; padding-top:20px; min-width:fit-content">
               <div>
