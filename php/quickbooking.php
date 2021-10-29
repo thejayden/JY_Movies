@@ -637,9 +637,9 @@ $row2 = $result2->fetch_assoc();
                 <label for="ticketprice">Ticket Type:</label>
                 <select form="bookingform" name="tickettype" id="tickettype" required>
                   <option value="" disabled selected hidden>Select ticket type</option>
-                  <option value=<?php echo $tic_prices[0]; ?>>Standard</option>
+                  <option value=<?php echo $tic_prices[2]; ?>>Standard</option>
                   <option value=<?php echo $tic_prices[1]; ?>>Platinum</option>
-                  <option value=<?php echo $tic_prices[2]; ?>>Gold</option>
+                  <option value=<?php echo $tic_prices[0]; ?>>Gold</option>
                 </select>
               </div>
               <!-- <p class="text">

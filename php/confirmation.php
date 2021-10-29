@@ -335,7 +335,7 @@
     '" . $time . "', 
     '" . $ticket . "'
   );";
-    if ($insert = $db->query($qry)){
+    if ($insert = $db->query($qry)) {
       $cur_bookingId = $insert->insert_id;
     }
     // echo  $db->affected_rows;
@@ -356,27 +356,35 @@
               <table class="bookingconfirmation">
                 <tr>
                   <th>Booking ID:</th>
-                  <td></td>
+                  <td><?php echo $cur_bookingId ?></td>
                 </tr>
                 <tr>
                   <th>Name:</th>
-                  <td></td>
+                  <td><?php echo $name ?></td>
                 </tr>
                 <tr>
                   <th>Movie:</th>
-                  <td></td>
+                  <td><?php
+                      $qry = "select title from movies where movie_id = $movie_id";
+                      $result = $db->query($qry);
+                      $row = $result->fetch_assoc();
+                      echo $row['title'] ?></td>
                 </tr>
                 <tr>
                   <th>Cinema:</th>
-                  <td></td>
+                  <td><?php
+                      $qry = "select cinema_name from cinemas where cinema_id = '". $cinema ."';";
+                      $result = $db->query($qry);
+                      $row = $result->fetch_assoc();
+                      echo $row['cinema_name'] ?></td>
                 </tr>
                 <tr>
                   <th>Date:</th>
-                  <td></td>
+                  <td><?php echo $date ?></td>
                 </tr>
                 <tr>
                   <th>Time:</th>
-                  <td></td>
+                  <td><?php echo $time. ' Hours' ?></td>
                 </tr>
                 <!-- <tr>
                         <th>Ticket Type:</th>
@@ -384,15 +392,15 @@
                     </tr> -->
                 <tr>
                   <th>Seat Number(s):</th>
-                  <td></td>
+                  <td><?php echo $seats ?></td>
                 </tr>
                 <tr>
                   <th>Email:</th>
-                  <td></td>
+                  <td><?php echo $email ?></td>
                 </tr>
                 <tr>
                   <th> Phone Number:</th>
-                  <td></td>
+                  <td><?php echo $phone ?></td>
                 </tr>
 
               </table>

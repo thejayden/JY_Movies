@@ -55,3 +55,10 @@ create table if not exists tickets
   tic_price float not null
 );
 
+create table if not exists cinemas
+( 
+  cinema_id varchar(255) not null primary key,
+  cinema_name varchar(255) not null
+);
+
+
