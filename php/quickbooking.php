@@ -488,8 +488,8 @@ $row2 = $result2->fetch_assoc();
               <select form="bookingform" name="cinema" id="cinema" required>
                 <option value="" disabled selected hidden>Choose A Cinema</option>
                 <option value="JY1">JY Woodlands</option>
-                <option value="JY2">JY Yishun</option>
-                <option value="JY3">JY Jurong</option>
+                <!-- <option value="JY2">JY Yishun</option>
+                <option value="JY3">JY Jurong</option> -->
                 <option value="JY4">JY Serangoon</option>
                 <option value="JY5">JY Pasir Ris</option>
                 <option value="JY6">JY Sengkang</option>
@@ -702,7 +702,7 @@ $row2 = $result2->fetch_assoc();
               <input type="hidden" name="seats" id="seats" value="test" />
               <button type="submit" name="confirmbook" class="quickbook" id="confirmbook" value=<?php echo $row1[0] ?>>Book Tickets</button>
               <br>
-              <a href="./movies.php">Back to Movies</a>
+              <a style="text-decoration:none" href="./movies.php">Back to Movies</a>
             </div>
           </div>
 

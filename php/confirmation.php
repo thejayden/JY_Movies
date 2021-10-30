@@ -432,9 +432,8 @@
             </div>
           </div>
           <div style="margin-top: 30%; text-align:center">
-            <button type="submit" name="confirmbook" class="quickbook" id="confirmbook" value=' . $row1[0] . '>BOOK</button>
-            <br>
-            <a href="./movies.php">Back to Movies</a>
+          <a class="quickbook" style="text-decoration:none" href="./movies.php">Back to Movies</a>
+
           </div>
         </div>
 

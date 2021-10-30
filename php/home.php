@@ -172,7 +172,7 @@ if (mysqli_connect_errno()) {
       <!-- Right-sided navbar links -->
       <div class="w3-right w3-hide-small">
         <a href="home.php" class="w3-bar-item w3-button">HOME</a>
-        <a href="movies.php" class="w3-bar-item w3-button"></i> MOVIES</a>
+        <a href="movies.php" class="w3-bar-item w3-button"></i> MOVIES <img src="../images/others/bookhere.png" width="50" height="33"></a>
         <a href="cinema.php" class="w3-bar-item w3-button"></i> CINEMA</a>
         <a href="checkbooking.php" class="w3-bar-item w3-button"></i> CHECK BOOKING</a>
 
@@ -203,7 +203,7 @@ if (mysqli_connect_errno()) {
   <div style="text-align: center; padding-top: 30px;">
     <a href="movies.php">
     <img border="0" src="../images/others/shangchigif.gif" width="400px" height="220">
-    <div style="color: rgba(104, 237, 255, 0.993); font-family: sans-serif"><strong>CLICK HERE TO GET YOUR TICKET(S) TODAY!</strong></div>
+    <div style="text-decoration:none; color: rgba(104, 237, 255, 0.993); font-family: sans-serif"><strong>CLICK HERE TO GET YOUR TICKET(S) TODAY!</strong></div>
   </a>
   </div>
 
