@@ -109,7 +109,7 @@ $row2 = $result2->fetch_assoc();
             <?php
             // echo "<p style='color:white'> sesh id" . session_id() . "</p>";
             ?>
-            <div class="topform">
+            <div class="topform" style="padding-right:80px">
               <label for="cinema">Cinema:</label>
               <select form="bookingform" name="cinema" id="cinema" required>
                 <option value="" disabled selected hidden>Choose A Cinema</option>
@@ -140,7 +140,7 @@ $row2 = $result2->fetch_assoc();
                 <!-- <p style="text-align:center; color:red">TEst</p> -->
               </div>
             </div>
-            <div id="seatsdisplay" style="margin:auto; text-align:center">
+            <div id="seatsdisplay" style="margin:auto; text-align:center; display:none">
               <ul class="showcase">
                 <li>
                   <div class="seat"></div>
@@ -157,7 +157,6 @@ $row2 = $result2->fetch_assoc();
                   <small>Unavailable</small>
                 </li>
               </ul>
-
               <div class="container">
                 <div class="screen">
                   <span>SCREEN</span>
@@ -266,7 +265,7 @@ $row2 = $result2->fetch_assoc();
                 }
               }
               ?>
-              <div style="margin:auto; min-width:300px; text-align:center">
+              <div style="margin:auto; min-width:300px; text-align:center; padding-right:60px">
                 <label for="ticketprice">Ticket Type:</label>
                 <select form="bookingform" name="tickettype" id="tickettype" required>
                   <option value="" disabled selected hidden>Select ticket type</option>
@@ -275,9 +274,6 @@ $row2 = $result2->fetch_assoc();
                   <option value=<?php echo $tic_prices[0]; ?>>Gold</option>
                 </select>
               </div>
-              <!-- <p class="text">
-                You have selected <span id="count">0</span> seats for a price of $<span id="total">0</span>
-              </p> -->
             </div>
             <!-- <div> -->
             <table class="ticketbox">
