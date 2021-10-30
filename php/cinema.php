@@ -7,239 +7,20 @@
 <link rel="stylesheet" href="https://fonts.googleapis.com/css?family=Raleway">
 <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/4.7.0/css/font-awesome.min.css">
 <link rel="stylesheet" href="../css/carousel.css">
-
-<style>
-  body,
-  h1,
-  h2,
-  h3,
-  h4,
-  h5,
-  h6 {
-    font-family: "Raleway", sans-serif
-  }
-
-  body,
-  html {
-    height: 100%;
-    line-height: 1.8;
-  }
-
-  body {
-    background-image: url("../images/others/bluegradient1.jpg");
-  }
-
-  /* Full height image header */
-  .bgimg-1 {
-    background-position: center;
-    background-size: cover;
-    background-image: url("/w3images/mac.jpg");
-    min-height: 100%;
-  }
-
-  .w3-bar .w3-button {
-    padding: 16px;
-  }
-
-
-
-  .moviemiddle1 {
-    height: 150px;
-    display: flex;
-    align-items: center;
-    justify-content: center;
-    margin: 0 auto;
-    
-  }
-
-  .moviemiddle3 {
-    display: flex;
-    align-items: center;
-    flex-wrap: wrap;
-    justify-content: center;
-
-  }
-
-  .moviebox1 {
-    width: 1000px;
-    height: 49px;
-    background-color: rgba(7, 21, 78, 0.623);
-    color: whitesmoke;
-    letter-spacing: 2.3px;
-    font-size: 30px;
-    font-family: 'Franklin Gothic Medium', 'Arial Narrow', Arial, sans-serif;
-    text-align: left;
-  }
-
-  .moviebox3 {
-    width: 1000px;
-    height: 500px;
-    background-color: rgba(7, 21, 78, 0.623);
-    color: whitesmoke;
-    letter-spacing: 2.3px;
-    font-size: 30px;
-    text-align: left;
-  }
-
-  .newsletter {
-
-    background-color: whitesmoke;
-    justify-content: center;
-    display: flex;
-  }
-
-  .newsletterbox {
-    padding-top: 30px;
-    text-align: left;
-    color: black;
-    font-size: medium;
-    font-family: 'Franklin Gothic Medium', 'Arial Narrow', Arial, sans-serif;
-  }
-
-  input {
-    border-top-style: hidden;
-    border-right-style: hidden;
-    border-left-style: hidden;
-    border-bottom-style: groove;
-    background-color: whitesmoke;
-    outline: none;
-    color: black;
-    font-family: 'Arial Narrow';
-  }
-
-  .footer {
-    font-family: 'Arial Narrow', Arial, sans-serif;
-    font-size: medium;
-    padding-top: 50px;
-    color: whitesmoke;
-    background-color: black;
-    height: 200px;
-
-  }
-
-  /* the only thing changed here is below:*/
-
-  .locationsbox{
-    display: flex;
-    align-items: center;
-    justify-content: center;
-    margin: 0 auto;
-  }
-.locations{
-    width: 1000px;
-    height: 49px;
-      font-size: 20px;
-}
-figcaption{
-    color: whitesmoke;
-    font-family:  Arial, sans-serif;
-    padding: 20px 0 10px 0;
-}
-#imga:hover {opacity: 0.7;}
-#imgb:hover {opacity: 0.7;}
-#imgc:hover {opacity: 0.7;}
-#imgd:hover {opacity: 0.7;}
-#imge:hover {opacity: 0.7;}
-#imgf:hover {opacity: 0.7;}
-#imgg:hover {opacity: 0.7;}
-#imgh:hover {opacity: 0.7;}
-
-
-/* The Modal (background) */
-.modal {
-  display: none; /* Hidden by default */
-  position: fixed; /* Stay in place */
-  z-index: 1; /* Sit on top */
-  padding-top: 100px; /* Location of the box */
-  left: 0;
-  top: 0;
-  width: 100%; /* Full width */
-  height: 100%; /* Full height */
-  overflow: auto; /* Enable scroll if needed */
-  background-color: rgb(0,0,0); /* Fallback color */
-  background-color: rgba(0,0,0,0.9); /* Black w/ opacity */
-}
-
-/* Modal Content (image) */
-.modal-content {
-  margin: auto;
-  display: block;
-  width: 80%;
-  max-width: 700px;
-}
-
-/* Caption of Modal Image */
-#caption {
-  margin: auto;
-  display: block;
-  width: 80%;
-  max-width: 700px;
-  text-align: center;
-  color: whitesmoke;
-  padding: 10px 0;
-  height: 150px;
-}
-
-/* Add Animation */
-.modal-content, #caption {  
-  -webkit-animation-name: zoom;
-  -webkit-animation-duration: 0.6s;
-  animation-name: zoom;
-  animation-duration: 0.6s;
-}
-
-@-webkit-keyframes zoom {
-  from {-webkit-transform:scale(0)} 
-  to {-webkit-transform:scale(1)}
-}
-
-@keyframes zoom {
-  from {transform:scale(0)} 
-  to {transform:scale(1)}
-}
-
-/* The Close Button */
-.close {
-  position: absolute;
-  top: 15px;
-  right: 35px;
-  color: whitesmoke;
-  font-size: 60px;
-  font-weight: bold;
-padding-top: 30px;
-  transition: 0.3s;
-}
-
-.close:hover,
-.close:focus {
-  color: #bbb;
-  text-decoration: none;
-  cursor: pointer;
-}
-
-/* 100% Image Width on Smaller Screens */
-@media only screen and (max-width: 700px){
-  .modal-content {
-    width: 100%;
-  }
-}
-  
-</style>
-
+<link rel="stylesheet" href="../css/style.css">
 
 <body>
 
-  <!-- Navbar (sit on top) -->
-  <div class="w3-top">
-    <div class="w3-bar w3-white w3-card" id="myNavbar">
-      <a href="#Home" style="color: rgb(241, 212, 47); text-decoration: none; font-size: large; font-weight: bold;">
+<div class="top" >
+    <div class="bar white card" id="myNavbar">
+      <a href="home.php" style="color: rgb(241, 212, 47); text-decoration: none; font-size: large; font-weight: bold;">
         <img border="0" src="../images/others/pagelogo.jpg" width="75" height="60"> JY MOVIES</a>
       <!-- Right-sided navbar links -->
-      <div class="w3-right w3-hide-small">
-        <a href="home.php" class="w3-bar-item w3-button">HOME</a>
-        <a href="movies.php" class="w3-bar-item w3-button"></i> MOVIES</a>
-        <a href="cinema.php" class="w3-bar-item w3-button"></i> CINEMA</a>
-        <a href="checkbooking.php" class="w3-bar-item w3-button"></i> CHECK BOOKING</a>
+      <div class="right "style="padding-top:10px" >
+        <a href="home.php" class="bar-item button">HOME</a>
+        <a href="movies.php" class="bar-item button"></i> MOVIES <img src="../images/others/bookhere.png" width="50" height="33"></a>
+        <a href="cinema.php" class="bar-item button"></i> CINEMA</a>
+        <a href="checkbooking.php" class="bar-item button"></i> CHECK BOOKING</a>
 
       </div>
     </div>
@@ -301,26 +82,26 @@ padding-top: 30px;
   <div id="caption"></div>
 </div>
 
-  <footer style="padding-top: 60px;">
-
-
+<footer style="padding-top: 60px;">
     <div class="footer">
       <table width="100%">
         <tr>
-          <th>Follow Us:</th>
+          <th>Follow Us on Social Media:</th>
           <th>Download Our Mobile App:</th>
           <th>Contact us:</th>
         </tr>
         <tr>
-          <th><img src="../images/others/twitter.png" width="30" height="30">&nbsp;
-            <img src="../images/others/instagram.png" width="30" height="30"> &nbsp;
-            <img src="../images/others/facebook.png" width="30" height="30">
+          <th><a href="https://twitter.com"><img src="../images/others/twitter.png" width="30" height="30"></a>&nbsp;
+            <a href="https://instagram.com"><img src="../images/others/instagram.png" width="30" height="30"></a>&nbsp;
+            <a href="https://facebook.com"><img src="../images/others/facebook.png" width="30" height="30"></a>
           </th>
           <th>
-            <img src="../images/others/appstore.png" width="90" height="30"> &nbsp;
-            <img src="../images/others/appstore2.png" width="30" height="30">
+          <a href="https://play.google.com"><img src="../images/others/appstore.png" width="100" height="40"></a> &nbsp;
+          <a href="https://apps.apple.com"> <img src="../images/others/appstore2.png" width="40" height="40"></a>
           </th>
-          <th>90807053</th>
+          <th>jymovies@i.movies.com <br>
+            working hours: 9am-2am daily<br>
+            hotline: +65 8565 2541</th>
         </tr>
       </table>
     </div>

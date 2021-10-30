@@ -12,8 +12,8 @@ insert into tickets values
 
 insert into cinemas values
     ("JY1", "JY Woodlands"),
-    ("JY2", "JY Yishun"),
-    ("JY3", "JY Jurong"),
+    -- ("JY2", "JY Yishun"),
+    -- ("JY3", "JY Jurong"),
     ("JY4", "JY Serangoon"),
     ("JY5", "JY Pasir Ris"),
     ("JY6", "JY Sengkang"),

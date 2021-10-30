@@ -27,234 +27,27 @@ $row2 = $result2->fetch_assoc();
 <link rel="stylesheet" href="https://fonts.googleapis.com/css?family=Raleway">
 <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/4.7.0/css/font-awesome.min.css">
 <link rel="stylesheet" href="../css/carousel.css">
+<link rel="stylesheet" href="../css/style.css">
 
-<style>
-  body,
-  h1,
-  h2,
-  h3,
-  h4,
-  h5,
-  h6 {
-    font-family: "Raleway", sans-serif
-  }
-
-  body,
-  html {
-    height: 100%;
-    line-height: 1.8;
-  }
-
-  body {
-    background-image: url("../images/others/bluegradient1.jpg");
-  }
-
-  /* Full height image header */
-  .bgimg-1 {
-    background-position: center;
-    background-size: cover;
-    background-image: url("/w3images/mac.jpg");
-    min-height: 100%;
-  }
-
-  .w3-bar .w3-button {
-    padding: 16px;
-  }
-
-  div.gallery_wrap {
-    float: left;
-  }
-
-  div.gallery {
-    margin: 5px;
-    border: 1px solid #ccc;
-    /* float: left; */
-    /* width: 180px; */
-    width: 150px;
-    transition: ease 0.3s all;
-    /* z-index: 999; */
-    display: inline-block;
-    /* z-index: -1; */
-  }
-
-  div.gallery_wrap:hover {
-    /* border: 1px solid #777; */
-    transform: scale(1.2);
-    box-shadow: 0 1em 2em rgba(0, 0, 0, 0.2);
-    transition: ease 0.3s all;
-    background-color: black;
-    z-index: 999;
-    position: relative;
-  }
-
-  .gallery_wrap:hover .gallery {
-    border: none;
-  }
-
-  .gallery_wrap:hover .desc {
-    display: inline-block;
-    /* z-index: 999;
-    position: relative; */
-    /* float: right; */
-  }
-
-  div.gallery img {
-    width: 100%;
-    height: auto;
-    filter: grayscale(50%);
-    /* z-index: -1; */
-    /* width: 40%;
-    height: auto; */
-  }
-
-  div.desc {
-    /* padding: 5px; */
-    display: none;
-    text-align: left;
-    vertical-align: top;
-    width: auto;
-    max-width: 110px;
-    /* background-color: black; */
-    color: #F6C90E;
-    font-size: smaller;
-    z-index: 999;
-    padding: 5px 10px 0 5px;
-  }
-
-  div.nowshowing {
-    /* padding: 15px; */
-    text-align: center;
-    background-color: #F6C90E;
-    /* filter: none; */
-  }
-
-  p.movie_title {
-    font-size: larger;
-    margin: 0;
-    padding: 0 0 5px 0;
-    line-height: 20px;
-    font-weight: bold;
-  }
-
-  p.movie_info {
-    font-size: x-small;
-    margin: 0;
-    padding: 0px 0 0px 0;
-    line-height: 15px;
-    font-weight: lighter;
-    color: #C39F0B;
-  }
-
-  .moviemiddle1 {
-    height: 150px;
-    display: flex;
-    align-items: center;
-    justify-content: center;
-    margin: 0 auto;
-  }
-
-  .moviemiddle2 {
-    justify-content: center;
-    display: flex;
-    padding: 50px 0 20px 0;
-  }
-
-  .moviebox1 {
-    width: 1000px;
-    height: 49px;
-    background-color: rgba(7, 21, 78, 0.623);
-    color: whitesmoke;
-    letter-spacing: 2.3px;
-    font-size: 30px;
-    font-family: 'Franklin Gothic Medium', 'Arial Narrow', Arial, sans-serif;
-    text-align: left;
-  }
-
-  .moviebox2 {
-    width: 1000px;
-    height: auto;
-    background-color: rgba(7, 21, 78, 0.623);
-    color: whitesmoke;
-    text-align: left;
-    padding-bottom: 20px;
-    /* display: flexbox; */
-  }
-
-  .movieimage {
-    float: left;
-    padding: 20px 50px 0 20px;
-
-  }
-
-  .movieimagemini {
-    float: left;
-    padding: 10px 0 0 10px;
-
-  }
-
-  .movieright {
-    /* float: left; */
-    padding: 20px 20px 0 0px;
-    color: #b1b1b3;
-    position: relative;
-  }
-
-  .movieboxtitle {
-    color: #ccb543;
-  }
-
-  .name {
-    color: #e3e3e3;
-  }
-
-  .quickbook {
-    background-color: #F6C90E;
-    color: black;
-    font-size: 16px;
-    font-weight: bold;
-    border: 0;
-    border-radius: 50px;
-    padding: 10px 20px;
-    margin-top: 5px;
-    cursor: pointer;
-    justify-content: center;
-    transition: ease 0.9s all;
-  }
-
-  .quickbook:hover {
-    transition: ease 0.3s all;
-    transform: scale(1.1);
-    font-weight: 900;
-  }
-  .footer {
-        font-family: 'Arial Narrow', Arial, sans-serif;
-        font-size: medium;
-        padding-top: 50px;
-        color: whitesmoke;
-        background-color: black;
-        height: 200px;
-
-    }
-</style>
 
 <body>
 
-  <!-- Navbar (sit on top) -->
-  <div class="w3-top">
-    <div class="w3-bar w3-white w3-card" id="myNavbar">
-      <a href="#Home" style="color: rgb(241, 212, 47); text-decoration: none; font-size: large; font-weight: bold;">
+<div class="top" >
+    <div class="bar white card" id="myNavbar">
+      <a href="home.php" style="color: rgb(241, 212, 47); text-decoration: none; font-size: large; font-weight: bold;">
         <img border="0" src="../images/others/pagelogo.jpg" width="75" height="60"> JY MOVIES</a>
       <!-- Right-sided navbar links -->
-      <div class="w3-right w3-hide-small">
-        <a href="home.php" class="w3-bar-item w3-button">HOME</a>
-        <a href="movies.php" class="w3-bar-item w3-button"></i> MOVIES</a>
-        <a href="cinema.php" class="w3-bar-item w3-button"></i> CINEMA</a>
-        <a href="checkbooking.php" class="w3-bar-item w3-button"></i> CHECK BOOKING</a>
+      <div class="right "style="padding-top:10px" >
+        <a href="home.php" class="bar-item button">HOME</a>
+        <a href="movies.php" class="bar-item button"></i> MOVIES <img src="../images/others/bookhere.png" width="50" height="33"></a>
+        <a href="cinema.php" class="bar-item button"></i> CINEMA</a>
+        <a href="checkbooking.php" class="bar-item button"></i> CHECK BOOKING</a>
 
       </div>
-
     </div>
   </div>
+
+
   <div>
     <div class="moviemiddle1" style="padding: 100px 0 0 0;">
       <div class="moviebox1">&nbsp; <?php echo $row1[1]; ?> </div>
@@ -316,29 +109,31 @@ $row2 = $result2->fetch_assoc();
 
 
   </div>
-
   <footer style="padding-top: 60px;">
-        <div class="footer">
-            <table width="100%">
-                <tr>
-                    <th>Follow Us:</th>
-                    <th>Download Our Mobile App:</th>
-                    <th>Contact us:</th>
-                </tr>
-                <tr>
-                    <th><img src="../images/others/twitter.png" width="30" height="30">&nbsp;
-                        <img src="../images/others/instagram.png" width="30" height="30"> &nbsp;
-                        <img src="../images/others/facebook.png" width="30" height="30">
-                    </th>
-                    <th>
-                        <img src="../images/others/appstore.png" width="90" height="30"> &nbsp;
-                        <img src="../images/others/appstore2.png" width="30" height="30">
-                    </th>
-                    <th>90807053</th>
-                </tr>
-            </table>
-        </div>
-    </footer>
+    <div class="footer">
+      <table width="100%">
+        <tr>
+          <th>Follow Us on Social Media:</th>
+          <th>Download Our Mobile App:</th>
+          <th>Contact us:</th>
+        </tr>
+        <tr>
+          <th><a href="https://twitter.com"><img src="../images/others/twitter.png" width="30" height="30"></a>&nbsp;
+            <a href="https://instagram.com"><img src="../images/others/instagram.png" width="30" height="30"></a>&nbsp;
+            <a href="https://facebook.com"><img src="../images/others/facebook.png" width="30" height="30"></a>
+          </th>
+          <th>
+          <a href="https://play.google.com"><img src="../images/others/appstore.png" width="100" height="40"></a> &nbsp;
+          <a href="https://apps.apple.com"> <img src="../images/others/appstore2.png" width="40" height="40"></a>
+          </th>
+          <th>jymovies@i.movies.com <br>
+            working hours: 9am-2am daily<br>
+            hotline: +65 8565 2541</th>
+        </tr>
+      </table>
+    </div>
+  </footer>
+
 
   <script type="text/javascript" src="../js/carousel.js">
   </script>
