@@ -5,10 +5,12 @@ const count = document.getElementById('count');
 const total = document.getElementById('total');
 const bookbtn = document.getElementById('confirmbook');
 const hiddenfield = document.getElementById('seats');
+const seatsdisplay = document.getElementById('seatsdisplay');
 
 const ticketType = document.getElementById('tickettype');
 const timeslot = document.getElementById('timeslot');
 const date = document.getElementById('date');
+const cine = document.getElementById('cinema');
 
 const print_tictype = document.getElementById('ticket_type');
 const print_ticqty = document.getElementById('ticket_qty');
@@ -17,12 +19,17 @@ const print_ticsubtot = document.getElementById('ticket_subtot');
 
 var selectedSeatsCount = 0;
 var ticketPrice = 0;
-var time;
+
+var selected_time;
+var selected_date;
+var selected_cinema;
+var selected_movie = bookbtn.value;
 
 var tic_select_change = false;
 var date_select_change = false;
 var cine_select_change = false;
 var time_select_change = false;
+
 var errorname = true;
 var errorphone = true;
 var erroremail = true;
@@ -65,11 +72,30 @@ ticketType.addEventListener('change', (e) => {
 });
 
 date.addEventListener('change', (e) => {
-
+    date_select_change = true;
+    selected_date = e.target.value;
+    // document.cookie = "date=WsHAT";
+    if (showseats()) {
+        getSeats(selected_movie, selected_date, selected_time, selected_cinema);
+    }
 });
 
 timeslot.addEventListener('change', (e) => {
+    time_select_change = true;
+    selected_time = e.target.value;
+    // document.cookie = "time=" + e.target.value;
+    if (showseats()) {
+        getSeats(selected_movie, selected_date, selected_time, selected_cinema);
+    }
+});
 
+cine.addEventListener('change', (e) => {
+    cine_select_change = true;
+    selected_cinema = e.target.value;
+    // document.cookie = "cinema=" + e.target.value;
+    if (showseats()) {
+        getSeats(selected_movie, selected_date, selected_time, selected_cinema);
+    }
 });
 
 // Seat click event
@@ -90,6 +116,30 @@ container.addEventListener('click', (e) => {
 
 // intial count and total
 updateSelectedCount();
+
+function showseats() {
+    if (date_select_change && time_select_change && cine_select_change) {
+        seatsdisplay.style.display = "";
+        return true;
+    } else return false;
+}
+
+function getSeats(movie, date, time, cinema) {
+    var xhr = new XMLHttpRequest();
+    xhr.open("POST", "../php/seats_data.php", true);
+    xhr.setRequestHeader("Content-Type", "application/x-www-form-urlencoded");
+    xhr.onreadystatechange = function() {
+        if (this.readyState === 4) {
+            alert(xhr.responseText);
+        }
+    };
+    xhr.send("&movie=" + movie + "&date=" + date + "&time=" + time + "&cinema=" + cinema);
+    // xhr.onreadystatechange = function() {
+    data = JSON.parse(this.responseText);
+    console.log(data);
+    // }
+    // xhr.send("data2=" + "test2");
+}
 
 function displayTicketInfo() {
     print_tictype.innerHTML = ticketType.options[ticketType.selectedIndex].text;
@@ -265,16 +315,15 @@ let emailcheck = (id, idx) => {
 
 //Date check
 
-function chkdate(){
+function chkdate() {
 
     var init1 = document.getElementById("date").value;
-    var init2 = new Date(init1).setHours(0,0,0,0);
-    var now = new Date().setHours(0,0,0,0);
-    
-    if (init2 == now){
-      alert("Date is invalid, please select a date in the future");
+    var init2 = new Date(init1).setHours(0, 0, 0, 0);
+    var now = new Date().setHours(0, 0, 0, 0);
+
+    if (init2 == now) {
+        alert("Date is invalid, please select a date in the future");
+    } else if (init2 < now) {
+        alert("Date is invalid, please select a date in the future");
     }
-    else if (init2 < now){
-      alert("Date is invalid, please select a date in the future");
-    }
-    };
+};
