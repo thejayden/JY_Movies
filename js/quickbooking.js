@@ -26,6 +26,8 @@ var time_select_change = false;
 var errorname = true;
 var errorphone = true;
 var erroremail = true;
+var newdate = document.getElementById("date");
+newdate.addEventListener("change", chkdate, false);
 
 // populateUI();
 
@@ -259,3 +261,20 @@ let emailcheck = (id, idx) => {
 //         successIcon[serial].style.opacity = "1";
 //     }
 // };
+
+
+//Date check
+
+function chkdate(){
+
+    var init1 = document.getElementById("date").value;
+    var init2 = new Date(init1).setHours(0,0,0,0);
+    var now = new Date().setHours(0,0,0,0);
+    
+    if (init2 == now){
+      alert("Date is invalid, please select a date in the future");
+    }
+    else if (init2 < now){
+      alert("Date is invalid, please select a date in the future");
+    }
+    };

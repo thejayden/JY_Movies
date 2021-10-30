@@ -276,7 +276,7 @@ padding-top: 30px;
 <tr>
 <th><figcaption>Woodlands</figcaption><img id="imga" alt="Woodlands" src="../images/location/LC_1.png" width="300" height="220">&nbsp;</th>
 <th><figcaption>Farrer Park</figcaption><img id="imgb" alt="Farrer Park" src="../images/location/LC_fp.png" width="300" height="220">&nbsp;</th>
-<th><figcaption>Lavendar</figcaption><img id="imgc" alt="Lavendar" src="../images/location/LC_ld.png" width="300" height="220">&nbsp;</th>
+<th><figcaption>Lavender</figcaption><img id="imgc" alt="Lavender" src="../images/location/LC_ld.png" width="300" height="220">&nbsp;</th>
 <th><figcaption>Serangoon</figcaption><img id="imgd" alt="Serangoon" src="../images/location/LC_srg.png" width="300" height="220">&nbsp;</th>
 
 </tr> 

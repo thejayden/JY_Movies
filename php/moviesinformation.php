@@ -307,7 +307,7 @@ $row2 = $result2->fetch_assoc();
               <button type="submit" name="quickbook" class="quickbook" id="quickbook" value="<?php echo $row1[0]; ?>">Quick Booking</button>
             </form>
             <br>
-            <a href="./movies.php">Back to Movies</a>
+            <a style="color:whitesmoke; text-decoration:none"href="./movies.php">Back to Movies</a>
           </div>
         </div>
 
