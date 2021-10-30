@@ -355,57 +355,6 @@
     <div class="moviemiddle1" style="padding: 100px 0 0 0;">
       <div class="moviebox1">&nbsp;BOOKING CONFIRMATION</div>
     </div>
-    <?php
-    // echo "<p style='color:white'> sesh id" . session_id() . "</p>";
-    // @$db = new mysqli('localhost', 'root', '', 'moviesdb');
-
-    // if (mysqli_connect_errno()) {
-    //   echo "Error: Could not connect to database.  Please try again later.";
-    //   exit;
-    // }
-
-    // $name = $_POST['name'];
-    // $movie_id = $_POST['confirmbook'];
-    // $cinema = $_POST['cinema'];
-    // $date = $_POST['date'];
-    // $time = $_POST['timeslot'];
-    // $ticket = $_POST['tickettype'];
-    // $seats = $_POST['seats'];
-    // $phone = $_POST['phone'];
-    // $email = $_POST['email'];
-    ?>
-    <?php
-
-    //   if (isset($_SESSION['rand'])) {
-    //     echo "<p style='color:white'> top " . $_SESSION['rand'] . "</p>";
-    //     $qry = "insert into bookings (movie_id, cinema_id, seats, name, email, phone, date, timeslot, ticket_type) values 
-    //   ('" . $movie_id . "', 
-    //   '" . $cinema . "', 
-    //   '" . $seats . "', 
-    //   '" . $name . "', 
-    //   '" . $email . "', 
-    //   '" . $phone . "', 
-    //   '" . $date . "', 
-    //   '" . $time . "', 
-    //   '" . $ticket . "'
-    // );";
-    //     if ($insert = $db->query($qry)) {
-    //       $cur_bookingId = $insert->insert_id;
-    //     }
-    //     unset($_SESSION['rand']);
-    //     echo "<p style='color:white'> btm " . $_SESSION['rand'] . "</p>";
-    //   } else {
-    //     $qry = "";
-    //   }
-
-    // echo  $db->affected_rows;
-    // $row1 = $result1->fetch_row();
-
-    // $qry2 = "select * from movieinfo where movie_id = $id";
-    // $result2 = $db->query($qry2);
-    // $row2 = $result2->fetch_assoc();
-    ?>
-
     <div class="moviemiddle2">
       <div class="moviebox2">
         <div class="movieimage">
@@ -520,11 +469,6 @@
 
   <script type="text/javascript" src="../js/carousel.js">
   </script>
-  <!-- <script>
-    if (window.history.replaceState) {
-      window.history.replaceState(null, null, window.location.href);
-    }
-  </script> -->
 </body>
 
 </html>
