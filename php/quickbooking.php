@@ -1,6 +1,9 @@
 <!DOCTYPE html>
 <html>
 <?php
+session_start();
+$rand = rand();
+$_SESSION['rand'] = $rand;
 @$db = new mysqli('localhost', 'root', '', 'moviesdb');
 
 if (mysqli_connect_errno()) {
@@ -9,7 +12,7 @@ if (mysqli_connect_errno()) {
 }
 
 $id = $_POST['quickbook'];
-echo $id;
+// echo $id;
 ?>
 <?php
 $qry = "select * from movies where movie_id = $id";
@@ -414,7 +417,7 @@ $row2 = $result2->fetch_assoc();
       height: 200px;
     }
 
-    table{
+    table {
       margin-top: 20px;
       padding-left: 20px;
       background-color: rgb(255, 255, 255, 0.1);
@@ -477,6 +480,9 @@ $row2 = $result2->fetch_assoc();
                 </div>
               </form>
             </div> -->
+            <?php
+            // echo "<p style='color:white'> sesh id" . session_id() . "</p>";
+            ?>
             <div class="topform">
               <label for="cinema">Cinema:</label>
               <select form="bookingform" name="cinema" id="cinema" required>
@@ -505,9 +511,10 @@ $row2 = $result2->fetch_assoc();
                   <option value="1900">7PM</option>
                   <option value="2100">9PM</option>
                 </select>
+                <!-- <p style="text-align:center; color:red">TEst</p> -->
               </div>
             </div>
-            <div style="margin:auto; text-align:center">
+            <div id="seatsdisplay" style="margin:auto; text-align:center">
               <ul class="showcase">
                 <li>
                   <div class="seat"></div>
@@ -661,7 +668,7 @@ $row2 = $result2->fetch_assoc();
                 <td id="ticket_subtot"></td>
               </tr>
             </table>
-            <p id="seat_msg" class="seat_msg" style="text-align:center; color:red" ></p>
+            <p id="seat_msg" class="seat_msg" style="text-align:center; color:red"></p>
             <!-- </div> -->
             <div class="contact" style="margin: auto; margin-right:10px; padding-top:20px; min-width:fit-content">
               <div>

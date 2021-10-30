@@ -7,6 +7,8 @@ const bookbtn = document.getElementById('confirmbook');
 const hiddenfield = document.getElementById('seats');
 
 const ticketType = document.getElementById('tickettype');
+const timeslot = document.getElementById('timeslot');
+const date = document.getElementById('date');
 
 const print_tictype = document.getElementById('ticket_type');
 const print_ticqty = document.getElementById('ticket_qty');
@@ -15,6 +17,8 @@ const print_ticsubtot = document.getElementById('ticket_subtot');
 
 var selectedSeatsCount = 0;
 var ticketPrice = 0;
+var time;
+
 var change = false;
 var errorname = true;
 var errorphone = true;
@@ -43,7 +47,7 @@ function updateSelectedCount() {
     selectedSeatsCount = selectedSeats.length;
 }
 
-// // Movie select event
+// ticket type select
 ticketType.addEventListener('change', (e) => {
     change = true;
     ticketPrice = e.target.value;
@@ -53,6 +57,14 @@ ticketType.addEventListener('change', (e) => {
         displayTicketInfo();
         seat_msg.innerText = "";
     }
+});
+
+date.addEventListener('change', (e) => {
+
+});
+
+timeslot.addEventListener('change', (e) => {
+
 });
 
 // Seat click event
@@ -225,6 +237,7 @@ let emailcheck = (id, idx) => {
         erroremail = false;
     }
 };
+
 
 // let empty = (id, serial, message) => {
 //     if (id.value.trim() === "") {
