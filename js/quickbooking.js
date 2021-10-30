@@ -19,7 +19,10 @@ var selectedSeatsCount = 0;
 var ticketPrice = 0;
 var time;
 
-var change = false;
+var tic_select_change = false;
+var date_select_change = false;
+var cine_select_change = false;
+var time_select_change = false;
 var errorname = true;
 var errorphone = true;
 var erroremail = true;
@@ -49,7 +52,7 @@ function updateSelectedCount() {
 
 // ticket type select
 ticketType.addEventListener('change', (e) => {
-    change = true;
+    tic_select_change = true;
     ticketPrice = e.target.value;
     // console.log(e.target.value);
     // console.log(selectedSeatsCount);
@@ -73,7 +76,7 @@ container.addEventListener('click', (e) => {
         e.target.classList.toggle('selected');
 
         updateSelectedCount();
-        if (change) {
+        if (tic_select_change) {
             displayTicketInfo();
             seat_msg.innerText = "";
         }
