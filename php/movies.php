@@ -78,8 +78,11 @@ if (mysqli_connect_errno()) {
         <div class="overview">
           <h3>' . $row[1] . '</h3>
           ' . $row[2] . '
-          <br />
-          <form action="./moviesinformation.php" method="post">
+          <br />';
+          $qry2 = "select summary from movieinfo where movie_id=$row[0]";
+          $result_info = $db->query($qry2);
+          $row2 = $result_info->fetch_row();
+          echo '<p>'.$row2[0].'</p><form action="./moviesinformation.php" method="post">
           <button type="submit" name="booknow" class="booknow" id="booknow" value=' . $row[0] . '>Book Now</button>
           </form>
         </div>

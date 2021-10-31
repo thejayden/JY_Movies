@@ -18,7 +18,7 @@ if (mysqli_connect_errno()) {
 ?>
 
 <head>
-    <title>Booking Confirmation - <?php echo $row1[1]; ?></title>
+    <title>Booking Information</title>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1">
     <link rel="stylesheet" href="../css/main.css">
@@ -53,71 +53,78 @@ if (mysqli_connect_errno()) {
             <div class="moviebox2" style="padding-left:20px;">
                 <div class="movieright" style="height:100%; display: flex; flex-direction: column;">
                     <div style="flex-wrap: wrap; display: flex;">
-                    <?php 
-                    echo "<p style='color:white'>$name</p>";
-                    echo "<p style='color:white'>$phone</p>";
-                    echo "<p style='color:white'>$email</p>";
-                    $qry = 'select * from bookings where name="'. $name . '" and phone=' . $phone . ' and email="'.$email .'"';
-                    echo "<br><p style='color:white'>$qry</p>";
-                    if ($result = $db->query($qry)) {
-                        while ($row = $result->fetch_assoc()) {
-                            echo '<div style="width:100%">
+                        <?php
+                        // echo "<p style='color:white'>$name</p>";
+                        // echo "<p style='color:white'>$phone</p>";
+                        // echo "<p style='color:white'>$email</p>";
+                        $qry = 'select * from bookings where name="' . $name . '" and phone=' . $phone . ' and email="' . $email . '"';
+                        // echo "<br><p style='color:white'>$qry</p>";
+                        if ($result = $db->query($qry)) {
+                            if ($result->fetch_assoc() == null) {
+                                echo '<div style="width:100%">
+                            <strong style="align-items: center; text-align:center; justify-content: center;
+                            margin: 0 auto; color:yellow; font-size: 20px; display:block; width:100%"> 
+                            No results found. <br></strong></div>';
+                            }
+                            while ($row = $result->fetch_assoc()) {
+                                echo '<div style="width:100%">
                         <strong style="align-items: center; text-align:center; justify-content: center;
                         margin: 0 auto; color:yellow; font-size: 20px; display:block; width:100%"> 
-                        Booking ID : '.$row["booking_id"] .' <br></strong>
+                        Booking ID : ' . $row["booking_id"] . ' <br></strong>
                             <table class="bookingconfirmation" style="font-size:20px"><br>
                                 <tr>
                                     <td>Movie:</td>';
-                                    $qry_movie = 'select title from movies where movie_id ='. $row["movie_id"];
-                                    $result_movie = $db->query($qry_movie);
-                                    $row_movie = $result_movie->fetch_assoc();
-                                    echo '<th>' . $row_movie["title"] . '</th>
+                                $qry_movie = 'select title from movies where movie_id =' . $row["movie_id"];
+                                $result_movie = $db->query($qry_movie);
+                                $row_movie = $result_movie->fetch_assoc();
+                                echo '<th>' . $row_movie["title"] . '</th>
                                 </tr>
                                 <tr>
                                     <td>Cinema:</td>';
-                                    $qry_cinema = 'select cinema_name from cinemas where cinema_id ="'. $row["cinema_id"] .'"';
-                                    $result_cinema = $db->query($qry_cinema);
-                                    $row_cinema = $result_cinema->fetch_assoc();
-                                    echo '<th>'. $row_cinema["cinema_name"] .'</th>
+                                $qry_cinema = 'select cinema_name from cinemas where cinema_id ="' . $row["cinema_id"] . '"';
+                                $result_cinema = $db->query($qry_cinema);
+                                $row_cinema = $result_cinema->fetch_assoc();
+                                echo '<th>' . $row_cinema["cinema_name"] . '</th>
                                 </tr>
                                 <tr>
                                     <td>Date:</td>
-                                    <th>'. $row["date"] .'</th>
+                                    <th>' . $row["date"] . '</th>
                                 </tr>
                                 <tr>
                                     <td>Time:</td>
                                     <th>';
-                                    $time_hr = ((int)$row["timeslot"]) / 100;
-                                    if ($time_hr >= 12) {
-                                      if (fmod($time_hr, 12) == 0) {
+                                $time_hr = ((int)$row["timeslot"]) / 100;
+                                if ($time_hr >= 12) {
+                                    if (fmod($time_hr, 12) == 0) {
                                         echo "12:00 PM";
-                                      } else {
+                                    } else {
                                         echo fmod($time_hr, 12) . ":" . substr($row["timeslot"], 2) . " PM";
-                                      }
-                                    } else if ($time_hr < 12) {
-                                      if (fmod($time_hr, 12) == 0) {
-                                        echo "12:00 AM";
-                                      } else {
-                                        echo fmod($time_hr, 12) . ":" . substr($row["timeslot"], 2) . " AM";
-                                      }
                                     }
-                                    echo '</th>
+                                } else if ($time_hr < 12) {
+                                    if (fmod($time_hr, 12) == 0) {
+                                        echo "12:00 AM";
+                                    } else {
+                                        echo fmod($time_hr, 12) . ":" . substr($row["timeslot"], 2) . " AM";
+                                    }
+                                }
+                                echo '</th>
                                 </tr>
                                 <tr>
                                     <td>Seat Number(s):</td>
-                                    <th>'. $row["seats"] .'</th>
+                                    <th>' . $row["seats"] . '</th>
                                 </tr>
                             </table>
                             <hr>                       
                         </div>';
-                        }}else{
+                            }
+                        } else {
                             echo '<div style="width:100%">
                             <strong style="align-items: center; text-align:center; justify-content: center;
                             margin: 0 auto; color:yellow; font-size: 20px; display:block; width:100%"> 
                             No results found. <br></strong></div>';
                         }
-                    ?></div>
-                        <!-- <div style="width:100%">
+                        ?></div>
+                    <!-- <div style="width:100%">
                         <strong style="align-items: center; text-align:center; justify-content: center;
                         margin: 0 auto; color:yellow; font-size: 20px; display:block; width:100%"> 
                         Booking ID : <br></strong>
