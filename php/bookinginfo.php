@@ -60,12 +60,6 @@ if (mysqli_connect_errno()) {
                         $qry = 'select * from bookings where name="' . $name . '" and phone=' . $phone . ' and email="' . $email . '"';
                         // echo "<br><p style='color:white'>$qry</p>";
                         if ($result = $db->query($qry)) {
-                            if ($result->fetch_assoc() == null) {
-                                echo '<div style="width:100%">
-                            <strong style="align-items: center; text-align:center; justify-content: center;
-                            margin: 0 auto; color:yellow; font-size: 20px; display:block; width:100%"> 
-                            No results found. <br></strong></div>';
-                            }
                             while ($row = $result->fetch_assoc()) {
                                 echo '<div style="width:100%">
                         <strong style="align-items: center; text-align:center; justify-content: center;
@@ -117,11 +111,13 @@ if (mysqli_connect_errno()) {
                             <hr>                       
                         </div>';
                             }
-                        } else {
+                        } 
+                        $result = $db->query($qry);
+                        if ($result->fetch_assoc() == null) {
                             echo '<div style="width:100%">
-                            <strong style="align-items: center; text-align:center; justify-content: center;
-                            margin: 0 auto; color:yellow; font-size: 20px; display:block; width:100%"> 
-                            No results found. <br></strong></div>';
+                        <strong style="align-items: center; text-align:center; justify-content: center;
+                        margin: 0 auto; color:yellow; font-size: 20px; display:block; width:100%"> 
+                        No results found. <br></strong></div>';
                         }
                         ?></div>
                     <!-- <div style="width:100%">
