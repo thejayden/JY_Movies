@@ -77,10 +77,32 @@ $row2 = $result2->fetch_assoc();
       <div class="moviemiddle2">
         <div class="moviebox2">
           <div class="movieimage">
-            <?php echo '<img src="data:image/jpeg;base64,' . base64_encode($row1[3]) . '" width="315" height="auto" />' ?>
+            <?php echo '<img src="data:image/jpeg;base64,' . base64_encode($row1[3]) . '"
+             width="315" height="auto" />' ?>
+          <figcaption style="text-align: center; padding-left:55px;">
+            <table style="border: 1px solid yellow; padding: 10px 10px 10px 10px">
+              <tr>
+                <th >Ticket Type:</th>
+              <th>Ticket Price:</th>
+              </tr>
+              <tr >
+              <td>Standard</td> 
+              <td> $9.50
+              </tr>
+              <tr>
+              <td>Platinum</td> 
+              <td> $11
+              </tr>
+              <tr>
+              <td>Gold</td> 
+              <td> $13.50
+              </tr>
+            </table>
+          </figcaption>
+          
           </div>
           <div class="movieright" style="height:100%; display: flex; flex-direction: column;">
-            <?php
+          <?php
             // echo "<p style='color:white'> sesh id" . session_id() . "</p>";
             ?>
             <div class="topform" style="padding-right:80px">
