@@ -17,8 +17,10 @@ const print_ticqty = document.getElementById('ticket_qty');
 const print_ticprice = document.getElementById('ticket_price');
 const print_ticsubtot = document.getElementById('ticket_subtot');
 
+var seat_data;
 var selectedSeatsCount = 0;
 var ticketPrice = 0;
+var previous_occupied_seats;
 
 var selected_time;
 var selected_date;
@@ -128,17 +130,36 @@ function getSeats(movie, date, time, cinema) {
     var xhr = new XMLHttpRequest();
     xhr.open("POST", "../php/seats_data.php", true);
     xhr.setRequestHeader("Content-Type", "application/x-www-form-urlencoded");
-    xhr.onreadystatechange = function() {
-        if (this.readyState === 4) {
-            alert(xhr.responseText);
-        }
-    };
-    xhr.send("&movie=" + movie + "&date=" + date + "&time=" + time + "&cinema=" + cinema);
     // xhr.onreadystatechange = function() {
-    data = JSON.parse(this.responseText);
-    console.log(data);
-    // }
-    // xhr.send("data2=" + "test2");
+    //     if (this.readyState === 4) {
+    //         alert(xhr.responseText);
+    //     }
+    // };
+    xhr.send("&movie=" + movie + "&date=" + date + "&time=" + time + "&cinema=" + cinema);
+    xhr.onreadystatechange = function() {
+        if (this.readyState == 4 && this.status == 200) {
+            seat_data = JSON.parse(xhr.responseText);
+            console.log(seat_data);
+            populateUnavailable(seat_data);
+        }
+    }
+}
+
+function populateUnavailable(data) {
+    var occupied_seats = [];
+    for (var i = 0; i < data.length; i++) {
+        occupied_seats = occupied_seats.concat((data[i].seats).split(","));
+    }
+    console.log(occupied_seats);
+    if (previous_occupied_seats != null) {
+        previous_occupied_seats.map(seat_id => {
+            document.getElementById(seat_id).classList.toggle('unavail');
+        });
+    }
+    occupied_seats.map(seat_id => {
+        document.getElementById(seat_id).classList.toggle('unavail');
+    });
+    previous_occupied_seats = occupied_seats;
 }
 
 function displayTicketInfo() {

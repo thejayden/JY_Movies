@@ -32,12 +32,12 @@ input {
     }
 </style>
 <?php
-@$db = new mysqli('localhost', 'root', '', 'moviesdb');
+// @$db = new mysqli('localhost', 'root', '', 'moviesdb');
 
-if (mysqli_connect_errno()) {
-    echo "Error: Could not connect to database.  Please try again later.";
-    exit;
-}
+// if (mysqli_connect_errno()) {
+//     echo "Error: Could not connect to database.  Please try again later.";
+//     exit;
+// }
 ?>
 
 <body>
@@ -84,15 +84,15 @@ if (mysqli_connect_errno()) {
         <div class="moviemiddle2" style="padding-top: 10px;">
             <div class="moviebox2" style="width:85%">
                 <div class="newsletterbox">
-                    <form method="GET">
+                    <form id="checkbooking" name="checkbooking" action="./bookinginfo.php" method="post">
                         <label for="fname">NAME:</label>
-                        <input type="text" id="fname" size="40px" placeholder="Enter name here" required><br><br>
+                        <input type="text" id="name" name="name" size="40px" placeholder="Enter name here" required><br><br>
+                        <label for="fname">PHONE:</label>
+                        <input type="text" id="phone" name="phone" size="40px" placeholder="Enter phone here" required><br><br>
                         <label for="fname">EMAIL:</label>
-                        <input type="email" id="fname" size="40px" placeholder="Enter email here" required><br><br>
-                        <label for="fname">BOOKING ID:</label>
-                        <input type="text" id="fname" size="40px" placeholder="Enter booking ID here" required><br><br>
+                        <input type="email" id="email" name="email" size="40px" placeholder="Enter email here" required><br><br>
                 </div>
-                <button type="submit" name="checkbook" class="checkbook" id="checkbook" value="<?php echo $row1[0]; ?>">Check Booking</button>
+                <button type="submit" name="checkbook" class="checkbook" id="checkbook">Check Booking</button>
                 </form>
             </div>
 

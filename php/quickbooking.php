@@ -80,32 +80,6 @@ $row2 = $result2->fetch_assoc();
             <?php echo '<img src="data:image/jpeg;base64,' . base64_encode($row1[3]) . '" width="315" height="auto" />' ?>
           </div>
           <div class="movieright" style="height:100%; display: flex; flex-direction: column;">
-            <!-- <div style="flex-wrap: wrap; display: flex;"> -->
-            <!-- <div class="topform">
-              <div class="column left">
-                <label for="cinema">Cinema:</label>
-                <select id="movie" form="bookingform" name="cinema" id="cinema">
-                  <option value="1">Woodlands</option>
-                  <option value="2">Yishun</option>
-                  <option value="3">Jurong</option>
-                  <option value="4">Serangoon</option>
-                  <option value="5">Pasir Ris</option>
-                  <option value="6">Sengkang</option>
-                  <option value="7">Orchard</option>
-                  <option value="8">Boon Keng</option>
-                  <option value="9">Lavender</option>
-                  <option value="10">Farrer Park</option>
-                </select>
-              </div>
-              <form>
-                <div class="column middle">
-                  <input type="date" id="date" name="date">
-                </div>
-                <div class="column right">
-                  <input type="time" id="time" name="time">
-                </div>
-              </form>
-            </div> -->
             <?php
             // echo "<p style='color:white'> sesh id" . session_id() . "</p>";
             ?>
@@ -156,12 +130,110 @@ $row2 = $result2->fetch_assoc();
                   <div class="seat unavail"></div>
                   <small>Unavailable</small>
                 </li>
+                <!-- <li>
+                  <div class="seat occupied"></div>
+                  <small>Occupied</small>
+                </li> -->
               </ul>
               <div class="container">
                 <div class="screen">
                   <span>SCREEN</span>
                 </div>
                 <div class="row">
+                  <div class="xlabel">1</div>
+                  <div class="xlabel">2</div>
+                  <div class="xlabel">3</div>
+                  <div class="xlabel">4</div>
+                  <div class="xlabel">5</div>
+                  <div class="xlabel">6</div>
+                  <div class="xlabel">7</div>
+                  <div class="xlabel">8</div>
+                  <div class="xlabel">9</div>
+                  <div class="xlabel">10</div>
+                </div>
+                <div class="row" id="rowA">
+                  <div class="ylabel">A</div>
+                  <div class="seat" id="A1"></div>
+                  <div class="seat" id="A2"></div>
+                  <div class="seat" id="A3"></div>
+                  <div class="seat" id="A4"></div>
+                  <div class="seat" id="A5"></div>
+                  <div class="seat" id="A6"></div>
+                  <div class="seat" id="A7"></div>
+                  <div class="seat" id="A8"></div>
+                  <div class="seat" id="A9"></div>
+                  <div class="seat" id="A10"></div>
+                </div>
+                <div class="row" id="rowB">
+                  <div class="ylabel">B</div>
+                  <div class="seat" id="B1"></div>
+                  <div class="seat" id="B2"></div>
+                  <div class="seat" id="B3"></div>
+                  <div class="seat" id="B4"></div>
+                  <div class="seat" id="B5"></div>
+                  <div class="seat" id="B6"></div>
+                  <div class="seat" id="B7"></div>
+                  <div class="seat" id="B8"></div>
+                  <div class="seat" id="B9"></div>
+                  <div class="seat" id="B10"></div>
+                </div>
+
+                <div class="row" id="rowC">
+                  <div class="ylabel">C</div>
+                  <div class="seat" id="C1"></div>
+                  <div class="seat" id="C2"></div>
+                  <div class="seat" id="C3"></div>
+                  <div class="seat" id="C4"></div>
+                  <div class="seat" id="C5"></div>
+                  <div class="seat" id="C6"></div>
+                  <div class="seat" id="C7"></div>
+                  <div class="seat" id="C8"></div>
+                  <div class="seat" id="C9"></div>
+                  <div class="seat" id="C10"></div>
+                </div>
+
+                <div class="row" id="rowD">
+                  <div class="ylabel">D</div>
+                  <div class="seat" id="D1"></div>
+                  <div class="seat" id="D2"></div>
+                  <div class="seat" id="D3"></div>
+                  <div class="seat" id="D4"></div>
+                  <div class="seat" id="D5"></div>
+                  <div class="seat" id="D6"></div>
+                  <div class="seat" id="D7"></div>
+                  <div class="seat" id="D8"></div>
+                  <div class="seat" id="D9"></div>
+                  <div class="seat" id="D10"></div>
+                </div>
+
+                <div class="row" id="rowE">
+                  <div class="ylabel">E</div>
+                  <div class="seat" id="E1"></div>
+                  <div class="seat" id="E2"></div>
+                  <div class="seat" id="E3"></div>
+                  <div class="seat" id="E4"></div>
+                  <div class="seat" id="E5"></div>
+                  <div class="seat" id="E6"></div>
+                  <div class="seat" id="E7"></div>
+                  <div class="seat" id="E8"></div>
+                  <div class="seat" id="E9"></div>
+                  <div class="seat" id="E10"></div>
+                </div>
+
+                <div class="row" id="rowF">
+                  <div class="ylabel">F</div>
+                  <div class="seat" id="F1"></div>
+                  <div class="seat" id="F2"></div>
+                  <div class="seat" id="F3"></div>
+                  <div class="seat" id="F4"></div>
+                  <div class="seat" id="F5"></div>
+                  <div class="seat" id="F6"></div>
+                  <div class="seat" id="F7"></div>
+                  <div class="seat" id="F8"></div>
+                  <div class="seat" id="F9"></div>
+                  <div class="seat" id="F10"></div>
+                </div>
+                <!-- <div class="row">
                   <div class="xlabel">1</div>
                   <div class="xlabel">2</div>
                   <div class="xlabel">3</div>
@@ -254,7 +326,7 @@ $row2 = $result2->fetch_assoc();
                   <div class="seat unavail" id="F8"></div>
                   <div class="seat" id="F9"></div>
                   <div class="seat" id="F10"></div>
-                </div>
+                </div> -->
               </div>
               <?php
               $qry = "select * from tickets";
