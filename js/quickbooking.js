@@ -341,10 +341,34 @@ function chkdate() {
     var init1 = document.getElementById("date").value;
     var init2 = new Date(init1).setHours(0, 0, 0, 0);
     var now = new Date().setHours(0, 0, 0, 0);
+    setTime();
+    // var hours = (new Date()).getHours();
+    // console.log("hours: " + hours);
+    // console.log("now: " + now);
 
     if (init2 == now) {
-        alert("Date is invalid, please select a date in the future");
+        // alert("Date is invalid, please select a date in the future");
+        checktime();
     } else if (init2 < now) {
         alert("Date is invalid, please select a date in the future");
     }
 };
+
+function checktime() {
+    console.log("here");
+    var hours = (new Date()).getHours();
+    var time_option = timeslot.getElementsByTagName("option");
+    for (var i = 0; i < time_option.length; i++) {
+        console.log("option: " + parseInt(time_option[i].value) / 100);
+        console.log("hours: " + hours);
+        if ((parseInt(time_option[i].value) / 100) <= hours)
+            time_option[i].disabled = true;
+    }
+}
+
+function setTime() {
+    var time_option = timeslot.getElementsByTagName("option");
+    for (var i = 0; i < time_option.length; i++) {
+        time_option[i].disabled = false;
+    }
+}
