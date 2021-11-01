@@ -342,6 +342,7 @@ function chkdate() {
     var init2 = new Date(init1).setHours(0, 0, 0, 0);
     var now = new Date().setHours(0, 0, 0, 0);
     setTime();
+    // console.log("val_o: " + init1);
     // var hours = (new Date()).getHours();
     // console.log("hours: " + hours);
     // console.log("now: " + now);
@@ -351,6 +352,8 @@ function chkdate() {
         checktime();
     } else if (init2 < now) {
         alert("Date is invalid, please select a date in the future");
+        document.getElementById("date").value = '';
+        // console.log("val: " + document.getElementById("date").value);
     }
 };
 
@@ -372,3 +375,40 @@ function setTime() {
         time_option[i].disabled = false;
     }
 }
+
+function getMaxDate() {
+    var current_date = new Date();
+    // console.log(1/10);
+    // console.log(current_date);
+    var day = current_date.getDate().toString();
+    var month = current_date.getMonth().toString();
+    var year = current_date.getFullYear().toString();
+
+    console.log("DAY LENGTH: " + day.length);
+    console.log("MONTH LENGTH: " + month.length);
+
+    if (checkDigit(day)) {
+        day = day.padStart(1, "0");
+    }
+    if (checkDigit(month)) {
+        month = month.padStart(1, "0");
+    }
+    console.log(day);
+    console.log(month);
+    console.log(year);
+
+    var max_date = year + "-" + month + "-" + day;
+
+    console.log(max_date);
+
+    getElementById("date").setAttribute("max", max_date);
+}
+
+function checkDigit(number_string) {
+    if (number_string.length < 2) {
+        return true;
+    }
+    return false;
+}
+
+getMaxDate();

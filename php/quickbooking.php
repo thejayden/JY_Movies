@@ -37,28 +37,27 @@ $row2 = $result2->fetch_assoc();
 
   <style>
     input {
-    /* width: 100%; */
-    /* height: 40px; */
-    height: 32.5px;
-    border-radius: 8px;
-    outline: none;
-    border: 2px solid #c4c4c4;
-    /* padding: 0 30px; */
-    box-shadow: 2px 2px 4px rgba(0, 0, 0, 0.1);
-    /* display: block; */
-  }
-
+      /* width: 100%; */
+      /* height: 40px; */
+      height: 32.5px;
+      border-radius: 8px;
+      outline: none;
+      border: 2px solid #c4c4c4;
+      /* padding: 0 30px; */
+      box-shadow: 2px 2px 4px rgba(0, 0, 0, 0.1);
+      /* display: block; */
+    }
   </style>
 </head>
 
 <body>
 
-<div class="top" >
+  <div class="top">
     <div class="bar white card" id="myNavbar">
       <a href="home.php" style="color: rgb(241, 212, 47); text-decoration: none; font-size: large; font-weight: bold;">
         <img border="0" src="../images/others/pagelogo.jpg" width="75" height="60"> JY MOVIES</a>
       <!-- Right-sided navbar links -->
-      <div class="right "style="padding-top:10px" >
+      <div class="right " style="padding-top:10px">
         <a href="home.php" class="bar-item button">HOME</a>
         <a href="movies.php" class="bar-item button"></i> MOVIES <img src="../images/others/bookhere.png" width="50" height="33"></a>
         <a href="cinema.php" class="bar-item button"></i> CINEMA</a>
@@ -66,7 +65,7 @@ $row2 = $result2->fetch_assoc();
 
       </div>
     </div>
-  </div>  
+  </div>
 
 
   <div>
@@ -79,30 +78,30 @@ $row2 = $result2->fetch_assoc();
           <div class="movieimage">
             <?php echo '<img src="data:image/jpeg;base64,' . base64_encode($row1[3]) . '"
              width="315" height="auto" />' ?>
-          <figcaption style="text-align: center; padding-left:55px;">
-            <table style="border: 1px solid yellow; padding: 10px 10px 10px 10px">
-              <tr>
-                <th >Ticket Type:</th>
-              <th>Ticket Price:</th>
-              </tr>
-              <tr >
-              <td>Standard</td> 
-              <td> $9.50
-              </tr>
-              <tr>
-              <td>Platinum</td> 
-              <td> $11
-              </tr>
-              <tr>
-              <td>Gold</td> 
-              <td> $13.50
-              </tr>
-            </table>
-          </figcaption>
-          
+            <figcaption style="text-align: center; padding-left:55px;">
+              <table style="border: 1px solid yellow; padding: 10px 10px 10px 10px">
+                <tr>
+                  <th>Ticket Type:</th>
+                  <th>Ticket Price:</th>
+                </tr>
+                <tr>
+                  <td>Standard</td>
+                  <td> $9.50
+                </tr>
+                <tr>
+                  <td>Platinum</td>
+                  <td> $11
+                </tr>
+                <tr>
+                  <td>Gold</td>
+                  <td> $13.50
+                </tr>
+              </table>
+            </figcaption>
+
           </div>
           <div class="movieright" style="height:100%; display: flex; flex-direction: column;">
-          <?php
+            <?php
             // echo "<p style='color:white'> sesh id" . session_id() . "</p>";
             ?>
             <div class="topform" style="padding-right:80px">
@@ -418,7 +417,7 @@ $row2 = $result2->fetch_assoc();
               <input type="hidden" name="seats" id="seats" value="test" />
               <button type="submit" name="confirmbook" class="quickbook" id="confirmbook" value=<?php echo $row1[0] ?>>Book Tickets</button>
               <br><br>
-              <a style="color:whitesmoke; text-decoration:none"href="./movies.php">Back to Movies</a>
+              <a style="color:whitesmoke; text-decoration:none" href="./movies.php">Back to Movies</a>
             </div>
           </div>
 
@@ -444,8 +443,8 @@ $row2 = $result2->fetch_assoc();
             <a href="https://facebook.com"><img src="../images/others/facebook.png" width="30" height="30"></a>
           </th>
           <th>
-          <a href="https://play.google.com"><img src="../images/others/appstore.png" width="100" height="40"></a> &nbsp;
-          <a href="https://apps.apple.com"> <img src="../images/others/appstore2.png" width="40" height="40"></a>
+            <a href="https://play.google.com"><img src="../images/others/appstore.png" width="100" height="40"></a> &nbsp;
+            <a href="https://apps.apple.com"> <img src="../images/others/appstore2.png" width="40" height="40"></a>
           </th>
           <th>jymovies@i.movies.com <br>
             working hours: 9am-2am daily<br>
