@@ -250,7 +250,9 @@ let namecheck = (id, idx) => {
 };
 
 let phonecheck = (id, idx) => {
-    var pos = id.value.search(/\+?^[\d]+$/);
+    // var pos = id.value.search(/\+?^[\d]+$/);
+    var pos = id.value.search(/^(\+65){0,1}+[0-9]{8}$/);
+
 
     if (id.value.trim() === "") {
         errorMsg[idx].innerHTML = "Phone cannot be blank";
@@ -267,14 +269,17 @@ let phonecheck = (id, idx) => {
         failureIcon[idx].style.opacity = "1";
         successIcon[idx].style.opacity = "0";
         errorphone = true;
-    } else if (id.value.length < 8) {
-        errorMsg[idx].innerHTML = "Please enter a valid phone number";
-        id.style.border = "2px solid red";
-        // icons
-        failureIcon[idx].style.opacity = "1";
-        successIcon[idx].style.opacity = "0";
-        errorphone = true;
-    } else {
+    }
+
+    // else if (id.value.length < 8) {
+    //     errorMsg[idx].innerHTML = "Please enter a valid phone number";
+    //     id.style.border = "2px solid red";
+    //     // icons
+    //     failureIcon[idx].style.opacity = "1";
+    //     successIcon[idx].style.opacity = "0";
+    //     errorphone = true;
+    // } 
+    else {
         errorMsg[idx].innerHTML = "";
         id.style.border = "2px solid green";
 
@@ -348,8 +353,7 @@ function chkdate() {
     // console.log("now: " + now);
 
     if (init2 == now) {
-        // alert("Date is invalid, please select a date in the future");
-        checktime();
+        alert("Date is invalid, please select a date in the future");
     } else if (init2 < now) {
         alert("Date is invalid, please select a date in the future");
         document.getElementById("date").value = '';
