@@ -251,6 +251,8 @@ let namecheck = (id, idx) => {
 
 let phonecheck = (id, idx) => {
     var pos = id.value.search(/\+?^[\d]+$/);
+    // var pos = id.value.search(/^(\+65){0,1}+[0-9]{8}$/);
+
 
     if (id.value.trim() === "") {
         errorMsg[idx].innerHTML = "Phone cannot be blank";
@@ -267,14 +269,18 @@ let phonecheck = (id, idx) => {
         failureIcon[idx].style.opacity = "1";
         successIcon[idx].style.opacity = "0";
         errorphone = true;
-    } else if (id.value.length < 8) {
-        errorMsg[idx].innerHTML = "Please enter a valid phone number";
-        id.style.border = "2px solid red";
-        // icons
-        failureIcon[idx].style.opacity = "1";
-        successIcon[idx].style.opacity = "0";
-        errorphone = true;
-    } else {
+    } 
+    
+    // else if (id.value.length < 8) {
+    //     errorMsg[idx].innerHTML = "Please enter a valid phone number";
+    //     id.style.border = "2px solid red";
+    //     // icons
+    //     failureIcon[idx].style.opacity = "1";
+    //     successIcon[idx].style.opacity = "0";
+    //     errorphone = true;
+    // } 
+    
+    else {
         errorMsg[idx].innerHTML = "";
         id.style.border = "2px solid green";
 
@@ -341,34 +347,10 @@ function chkdate() {
     var init1 = document.getElementById("date").value;
     var init2 = new Date(init1).setHours(0, 0, 0, 0);
     var now = new Date().setHours(0, 0, 0, 0);
-    setTime();
-    // var hours = (new Date()).getHours();
-    // console.log("hours: " + hours);
-    // console.log("now: " + now);
 
     if (init2 == now) {
-        // alert("Date is invalid, please select a date in the future");
-        checktime();
+        alert("Date is invalid, please select a date in the future");
     } else if (init2 < now) {
         alert("Date is invalid, please select a date in the future");
     }
 };
-
-function checktime() {
-    console.log("here");
-    var hours = (new Date()).getHours();
-    var time_option = timeslot.getElementsByTagName("option");
-    for (var i = 0; i < time_option.length; i++) {
-        console.log("option: " + parseInt(time_option[i].value) / 100);
-        console.log("hours: " + hours);
-        if ((parseInt(time_option[i].value) / 100) <= hours)
-            time_option[i].disabled = true;
-    }
-}
-
-function setTime() {
-    var time_option = timeslot.getElementsByTagName("option");
-    for (var i = 0; i < time_option.length; i++) {
-        time_option[i].disabled = false;
-    }
-}
