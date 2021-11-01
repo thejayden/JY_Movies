@@ -353,7 +353,8 @@ function chkdate() {
     // console.log("now: " + now);
 
     if (init2 == now) {
-        alert("Date is invalid, please select a date in the future");
+        // alert("Date is invalid, please select a date in the future");
+        checkTime();
     } else if (init2 < now) {
         alert("Date is invalid, please select a date in the future");
         document.getElementById("date").value = '';
@@ -361,7 +362,7 @@ function chkdate() {
     }
 };
 
-function checktime() {
+function checkTime() {
     console.log("here");
     var hours = (new Date()).getHours();
     var time_option = timeslot.getElementsByTagName("option");
@@ -385,27 +386,41 @@ function getMaxDate() {
     // console.log(1/10);
     // console.log(current_date);
     var day = current_date.getDate().toString();
-    var month = current_date.getMonth().toString();
-    var year = current_date.getFullYear().toString();
+    // var month = (current_date.getMonth() + 1).toString();
+    // var year = current_date.getFullYear().toString();
 
-    console.log("DAY LENGTH: " + day.length);
-    console.log("MONTH LENGTH: " + month.length);
+    var month = current_date.getMonth();
+    month = month + 2;
+    console.log(month);
+    var year = current_date.getFullYear();
+
+    if (month > 12) {
+        year += 1;
+        month = 01;
+    }
+
+    month = month.toString();
+    year = year.toString();
+
+    // console.log("DAY LENGTH: " + day.length);
+    // console.log("MONTH LENGTH: " + month.length);
 
     if (checkDigit(day)) {
-        day = day.padStart(1, "0");
+        day = day.padStart(2, "0");
     }
     if (checkDigit(month)) {
-        month = month.padStart(1, "0");
+        month = month.padStart(2, "0");
     }
-    console.log(day);
-    console.log(month);
-    console.log(year);
+
+    // console.log(day);
+    // console.log(month);
+    // console.log(year);
 
     var max_date = year + "-" + month + "-" + day;
 
     console.log(max_date);
 
-    getElementById("date").setAttribute("max", max_date);
+    document.getElementById("date").setAttribute("max", max_date);
 }
 
 function checkDigit(number_string) {
