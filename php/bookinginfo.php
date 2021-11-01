@@ -153,7 +153,7 @@ if (mysqli_connect_errno()) {
       justify-content: center;
       margin: 0 auto;">
                         <div style=" text-align:center; padding:20px 0 20px 0">
-                            <a class="quickbook" style="text-decoration:none" href="./movies.php">Back to Movies</a>
+                            <a class="quickbook" style="text-decoration:none" href="./checkbooking.php">Back to Check Booking</a>
                         </div>
 
                     </div>
