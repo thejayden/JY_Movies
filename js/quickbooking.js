@@ -191,9 +191,15 @@ let namewa = id("name"),
     failureIcon = classes("failure-icon");
 
 form.addEventListener("submit", (e) => {
+    // e.preventDefault();
     namecheck(namewa, 0);
     phonecheck(phone, 1);
     emailcheck(email, 2);
+
+    // console.log("errorname" + errorname);
+    // console.log("errorphone" + errorphone);
+    // console.log("erroremail" + erroremail);
+    // console.log("seats" + seatscheck());
     if (!errorname && !errorphone && !erroremail && !seatscheck()) {
         // if (seatscheck() == false) {
         console.log("HERE");
@@ -251,7 +257,7 @@ let namecheck = (id, idx) => {
 
 let phonecheck = (id, idx) => {
     // var pos = id.value.search(/\+?^[\d]+$/);
-    var pos = id.value.search(/^(\+65){0,1}+[0-9]{8}$/);
+    var pos = id.value.search(/^(\+65){0,1}[0-9]{8}$/);
 
 
     if (id.value.trim() === "") {
@@ -263,14 +269,13 @@ let phonecheck = (id, idx) => {
         successIcon[idx].style.opacity = "0";
         errorphone = true;
     } else if (pos != 0) {
-        errorMsg[idx].innerHTML = "Please enter only digits";
+        errorMsg[idx].innerHTML = "Please enter only 8 digits (+65 excluded)";
         id.style.border = "2px solid red";
         // icons
         failureIcon[idx].style.opacity = "1";
         successIcon[idx].style.opacity = "0";
         errorphone = true;
     }
-
     // else if (id.value.length < 8) {
     //     errorMsg[idx].innerHTML = "Please enter a valid phone number";
     //     id.style.border = "2px solid red";
@@ -386,20 +391,28 @@ function getMaxDate() {
     // console.log(1/10);
     // console.log(current_date);
     var day = current_date.getDate().toString();
+    var year = current_date.getFullYear();
+    var month = current_date.getMonth();
     // var month = (current_date.getMonth() + 1).toString();
     // var year = current_date.getFullYear().toString();
 
-    var month = current_date.getMonth();
-    month = month + 2;
-    console.log(month);
-    var year = current_date.getFullYear();
+    // min_date = day - 1;
+    // if (min_date < 0) {
+    //     min_month = month;
+    //     min_date =
+    // }
 
-    if (month > 12) {
+    // console.log(day);
+
+    max_month = month + 2;
+    // console.log(max_month);
+
+    if (max_month > 12) {
         year += 1;
-        month = 01;
+        max_month = 01;
     }
 
-    month = month.toString();
+    max_month = max_month.toString();
     year = year.toString();
 
     // console.log("DAY LENGTH: " + day.length);
@@ -408,15 +421,15 @@ function getMaxDate() {
     if (checkDigit(day)) {
         day = day.padStart(2, "0");
     }
-    if (checkDigit(month)) {
-        month = month.padStart(2, "0");
+    if (checkDigit(max_month)) {
+        max_month = max_month.padStart(2, "0");
     }
 
     // console.log(day);
     // console.log(month);
     // console.log(year);
 
-    var max_date = year + "-" + month + "-" + day;
+    var max_date = year + "-" + max_month + "-" + day;
 
     console.log(max_date);
 
