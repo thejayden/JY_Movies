@@ -104,8 +104,11 @@ if (mysqli_connect_errno()) {
                                 echo '</th>
                                 </tr>
                                 <tr>
-                                    <td>Seat Number(s):</td>
-                                    <th>' . $row["seats"] . '</th>
+                                    <td>Seat Number(s):</td>';
+                                    $qry_tic = 'select tic_type from tickets where tic_price =' . $row["ticket_type"] . '';
+                                    $result_tic = $db->query($qry_tic);
+                                    $row_tic = $result_tic->fetch_assoc();
+                                    echo '<th>' . $row["seats"] . ' (' . $row_tic['tic_type'] . ')</th>
                                 </tr>
                             </table>
                             <hr>                       

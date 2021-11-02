@@ -143,7 +143,12 @@ $row1 = $result1->fetch_row();
                     </tr> -->
                 <tr>
                   <td>Seat Number(s):</td>
-                  <th><?php echo $seats ?></th>
+                  <th><?php
+                  $qry = "select tic_type from tickets where tic_price = '" . $ticket . "';";
+                  $result = $db->query($qry);
+                  $row = $result->fetch_assoc();
+                  echo $seats . " (" . $row['tic_type'] . ")";
+                  ?></th>
                 </tr>
                 <tr>
                   <td>Email:</td>
