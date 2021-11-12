@@ -29,17 +29,3 @@
 
     echo json_encode($data);
 ?>
-
-<?php
-// $outputString = $_POST["date"].$_POST["time"].$_POST["cinema"];
-// $fp = fopen("../trash.txt","w");
-// if (!$fp){
-//     $message = "Error writing to file. Try again later!" ;
-// }else{
-//     fwrite($fp, $outputString);
-//     $message = "File saved!"; 
-// }
-// fclose($fp);
-
-// echo $message;
-?>
