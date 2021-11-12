@@ -1,7 +1,7 @@
 <?php
     header('Content-Type: application/json');
 
-    @$db = new mysqli('localhost', 'root', '', 'moviesdb');
+    @$db = new mysqli('localhost', 'f32ee', 'f32ee', 'f32ee');
 
     $date = $_POST["date"];
     $time = $_POST["time"];

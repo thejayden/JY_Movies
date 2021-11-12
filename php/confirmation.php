@@ -14,7 +14,7 @@ $phone = $_POST['phone'];
 $email = $_POST['email'];
 $_SESSION['bookid'];
 
-@$db = new mysqli('localhost', 'root', '', 'moviesdb');
+@$db = new mysqli('localhost', 'f32ee', 'f32ee', 'f32ee');
 
 if (mysqli_connect_errno()) {
   echo "Error: Could not connect to database.  Please try again later.";
